@@ -1,0 +1,3 @@
+[submodule "easyant-build-component"]
+	path = easyant-build-component
+	url = https://gitlab.cross/Infra/I0048_EasyAnt-Build-Component.git
