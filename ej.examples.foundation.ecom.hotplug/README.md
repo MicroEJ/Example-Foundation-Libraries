@@ -1,4 +1,4 @@
-This example shows how to write some bytes to a CommConnection.
+This example shows how to listen on plug/unplug of dynamic ComConnections and shows their properties.
 
 #Run on the board#
 1. Right Click on ExampleHotPlug

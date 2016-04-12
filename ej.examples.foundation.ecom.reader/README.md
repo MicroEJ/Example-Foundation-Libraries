@@ -1,4 +1,4 @@
-This example shows how to write some bytes to a CommConnection.
+This example shows how to read some bytes from a CommConnection.
 
 #Run on the Simulator#
 1. Right Click on ExampleUARTReader
