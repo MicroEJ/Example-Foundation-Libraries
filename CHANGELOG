@@ -1,0 +1,10 @@
+MicroEj 4.0:
+Addition:
+ej.examples.foundation.microui.antialiased
+
+Deletion
+MicroUI -> MyFiltersSample
+MicroUI -> Brushes
+
+MicroEj 3.1:
+Initial version
