@@ -1,7 +1,7 @@
-/**
+/*
  * Java
  *
- * Copyright 2009-2014 IS2T. All rights reserved.
+ * Copyright 2009-2016 IS2T. All rights reserved.
  * For demonstration purpose only.
  * IS2T PROPRIETARY. Use is subject to license terms.
  */
@@ -29,11 +29,11 @@ public class ExampleImages {
 	 * Images decoded at runtime (using the runtime PNG decoder)
 	 */
 	public static final String IMAGE_RUNTIME_A = "/images/angkor.png"; // image
-																		// without
-																		// transparency
+	// without
+	// transparency
 	public static final String IMAGE_RUNTIME_B = "/images/plane.png"; // image
-																		// with
-																		// transparency
+	// with
+	// transparency
 
 	public static final int SLEEP = 1000; // in ms
 
@@ -49,7 +49,6 @@ public class ExampleImages {
 
 		// Creates an ExampleModel
 		ImageModel exampleModel = new ImageModel();
-
 
 		// Defines model as view's model
 		displayable.setModel(exampleModel);

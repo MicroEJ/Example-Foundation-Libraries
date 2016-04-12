@@ -1,7 +1,7 @@
-/**
+/*
  * Java
  *
- * Copyright 2011-2014 IS2T. All rights reserved.
+ * Copyright 2011-2016 IS2T. All rights reserved.
  * For demonstration purpose only.
  * IS2T PROPRIETARY. Use is subject to license terms.
  */
@@ -16,7 +16,7 @@ public class ImageModel extends Observable {
 	/**
 	 * Current image.
 	 */
-	private Image image;	// null init
+	private Image image; // null init
 
 	/**
 	 * Current image path.
@@ -40,7 +40,8 @@ public class ImageModel extends Observable {
 	/**
 	 * Create a new image from the path.
 	 *
-	 * @param path New image path.
+	 * @param path
+	 *            New image path.
 	 */
 	public void setImage(String path) {
 
@@ -70,15 +71,15 @@ public class ImageModel extends Observable {
 			// several errors are possible:
 			//
 			// - the image is a runtime image:
-			//		* the path is invalid
-			// 		* the image type is invalid
-			//		* the image resource has not been added as application resource
-			// 		* the platform cannot allocate some memory to decode the image
-			//		* the platform cannot load this kind of dynamic image
+			// * the path is invalid
+			// * the image type is invalid
+			// * the image resource has not been added as application resource
+			// * the platform cannot allocate some memory to decode the image
+			// * the platform cannot load this kind of dynamic image
 			//
 			// - the image is a compile-time image:
-			//		* the path is invalid
-			//		* the pre-processing step has failed
+			// * the path is invalid
+			// * the pre-processing step has failed
 
 			System.out.println("\nThe image loading has failed. Check your .list path and the image path.");
 			return null;
