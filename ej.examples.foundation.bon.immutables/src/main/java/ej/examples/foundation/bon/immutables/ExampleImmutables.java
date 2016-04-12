@@ -1,7 +1,7 @@
-/**
+/*
  * Java
- * 
- * Copyright 2009-2012 IS2T. All rights reserved.
+ *
+ * Copyright 2009-2016 IS2T. All rights reserved.
  * For demonstration purpose only.
  * IS2T PROPRIETARY. Use is subject to license terms.
  */
@@ -13,7 +13,7 @@ import ej.bon.Immutables;
 
 /**
  * Demo on immutables usage
- * 
+ *
  */
 public class ExampleImmutables {
 
@@ -24,20 +24,20 @@ public class ExampleImmutables {
 			e.printStackTrace();
 			return;
 		}
-		
+
 		double[] tableSin;
 		try{ tableSin = (double[])Immutables.get("tabsin"); }
 		catch(NoSuchElementException e){
 			e.printStackTrace();
 			return;
 		}
-		
+
 		System.out.println("==== TABLE ====");
 		for(int i=0; i<=90;++i){
 			System.out.println("cos["+i+"] = "+tableCos[i]+"\t\t\t sin["+i+"] = "+tableSin[i]);
 		}
 		System.out.println("===============");
-		
+
 	}
 
 }
