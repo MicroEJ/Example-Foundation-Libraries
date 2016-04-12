@@ -99,9 +99,9 @@
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationJPFConfigurationTabCSTART_com.is2t.microej.workbench.std.launch.ext.TextFieldOption_CENDs3.mock.uart.com0.socket.port" value="12400"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationJPFConfigurationTabCSTART_com.is2t.microej.workbench.std.launch.ext.TextFieldOption_CENDs3.slow" value="0"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationJPFConfigurationTabCSTART_com.is2t.microej.workbench.std.launch.ext.TextFieldOption_CENDsp.server.port" value="10082"/>
-<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationMainClass" value="ej.examples.foundation.edc.helloworld.ExampleHelloWorld"/>
+<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationMainClass" value="ej.examples.foundation.microui.input.ExampleCheckInput"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationMicroJVM" value="MICROJVM"/>
-<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationOutputDir" value="${project_loc:ej.examples.foundation.edc.helloworld}"/>
+<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationOutputDir" value="${project_loc:ej.examples.foundation.microui.input}"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformArchitecture" value="CM7"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformBaseline" value="14"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformEdition" value="STD"/>
@@ -112,12 +112,12 @@
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformProvider" value="MicroEJ"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformToolchain" value="CM7hardfp_ARMCC5"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformVersion" value="2.0.0"/>
-<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationProject" value="ej.examples.foundation.edc.helloworld"/>
+<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationProject" value="ej.examples.foundation.microui.input"/>
 <listAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationRequiredTypes"/>
 <listAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationResources"/>
 <booleanAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationVerbose" value="false"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/ej.examples.foundation.edc.helloworld/src/main/java/ej/examples/foundation/edc/helloworld/ExampleHelloWorld.java"/>
+<listEntry value="/ej.examples.foundation.microui.antialiased/src/main/java/ej/examples/foundation/microui/antialiased/ExampleAntialiased.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
@@ -125,6 +125,6 @@
 <booleanAttribute key="org.eclipse.jdt.launching.ALLOW_TERMINATE" value="true"/>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ej.examples.foundation.edc.helloworld.ExampleHelloWorld"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ej.examples.foundation.edc.helloworld"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ej.examples.foundation.microui.input.ExampleCheckInput"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ej.examples.foundation.microui.input"/>
 </launchConfiguration>
