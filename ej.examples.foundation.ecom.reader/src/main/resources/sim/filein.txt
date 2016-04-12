@@ -1,0 +1,3 @@
+This is an example to send some characters.
+Don't forget the '\n' at the end of the string to send the string.
+
