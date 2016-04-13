@@ -72,7 +72,6 @@ public class ImageModel extends Observable {
 			//
 			// - the image is a runtime image:
 			// * the path is invalid
-			// * the image type is invalid
 			// * the image resource has not been added as application resource
 			// * the platform cannot allocate some memory to decode the image
 			// * the platform cannot load this kind of dynamic image
