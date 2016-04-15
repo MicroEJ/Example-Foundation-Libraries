@@ -1,7 +1,7 @@
 This example prints Hello World on the standard output stream.
 
 #Run on the Simulator#
-1. Right Click on ExampleHelloWorld
+1. Right Click on `ExampleHelloWorld`
 2. Select Run as -> Run Configuration 
 3. Click on new launch configuration
 4. Go to Execution tab
@@ -10,7 +10,7 @@ This example prints Hello World on the standard output stream.
 15. Press Run
 
 #Run on the board#
-1. Right Click on ExampleHelloWorld
+1. Right Click on `ExampleHelloWorld`
 2. Select Run as -> Run Configuration 
 3. Click on new launch configuration
 4. Select Execute on EmbJPF

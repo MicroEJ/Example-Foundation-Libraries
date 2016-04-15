@@ -1,7 +1,7 @@
 This example shows how to do the redirection of the standard SystemOut to the display
 
 #Run on the Simulator#
-1. Right Click on ExampleSysOutRedirection
+1. Right Click on `ExampleSysOutRedirection`
 2. Select Run as -> Run Configuration 
 3. Click on new launch configuration
 4. Go to Execution tab
@@ -9,12 +9,12 @@ This example shows how to do the redirection of the standard SystemOut to the di
 6. Go to Configuration tab
 7. Go to Libraries -> EDC
 8. Check Use a custom Java output stream
-9. Put the class ej.examples.foundation.microui.out.OutputStreamRedirection
+9. Put the class `ej.examples.foundation.microui.out.OutputStreamRedirection`
 10. Press Apply
 11. Press Run
 
 #Run on the board#
-1. Right Click on ExampleSysOutRedirection
+1. Right Click on `ExampleSysOutRedirection`
 2. Select Run as -> Run Configuration 
 3. Click on new launch configuration
 4. Select Execute on EmbJPF
@@ -24,7 +24,7 @@ This example shows how to do the redirection of the standard SystemOut to the di
 6. Go to Configuration tab
 7. Go to Libraries -> EDC
 8. Check Use a custom Java output stream
-9. Put the class ej.examples.foundation.microui.out.OutputStreamRedirection
+9. Put the class `ej.examples.foundation.microui.out.OutputStreamRedirection`
 15. Press Apply
 16. Press Run
 17. Select Run -> Run Configuration

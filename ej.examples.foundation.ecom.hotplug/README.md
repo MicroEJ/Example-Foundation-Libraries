@@ -1,7 +1,7 @@
 This example shows how to listen on plug/unplug of dynamic ComConnections and shows their properties.
 
 #Run on the board#
-1. Right Click on ExampleHotPlug
+1. Right Click on `ExampleHotPlug`
 2. Select Run as -> Run Configuration 
 3. Click on new launch configuration
 4. Select Execute on EmbJPF

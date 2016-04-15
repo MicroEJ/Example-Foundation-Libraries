@@ -1,7 +1,7 @@
 This example shows how to read some bytes from a CommConnection.
 
 #Run on the Simulator#
-1. Right Click on ExampleUARTReader
+1. Right Click on `ExampleUARTReader`
 2. Select Run as -> Run Configuration 
 3. Click on new launch configuration
 4. Go to Execution tab
@@ -18,7 +18,7 @@ This example shows how to read some bytes from a CommConnection.
 15. Press Run
 
 #Run on the board#
-1. Right Click on ExampleUARTReader
+1. Right Click on `ExampleUARTReader`
 2. Select Run as -> Run Configuration 
 3. Click on new launch configuration
 4. Select Execute on EmbJPF

@@ -1,7 +1,7 @@
 This example shows how to write some bytes to a CommConnection.
 
 #Run on the Simulator#
-1. Right Click on ExampleUARTWriter
+1. Right Click on `ExampleUARTWriter`
 2. Select Run as -> Run Configuration 
 3. Click on new launch configuration
 4. Go to Execution tab
@@ -12,13 +12,13 @@ This example shows how to write some bytes to a CommConnection.
 9. Map the UART com port (available on your platform documentation) to the application port "42"
 10. Go to Simulator -> Com Port
 11. Select simulation type UART <-> FILE
-12. for the File input mapping choose ${project_loc:ej.examples.foundation.ecom.writer}/src/main/resources/sim/filein.txt
-13. for the File output mapping choose ${project_loc:ej.examples.foundation.ecom.writer}/src/main/resources/sim/fileout.txt
+12. for the File input mapping choose `${project_loc:ej.examples.foundation.ecom.writer}/src/main/resources/sim/filein.txt`
+13. for the File output mapping choose `${project_loc:ej.examples.foundation.ecom.writer}/src/main/resources/sim/fileout.txt`
 14. Press Apply
 15. Press Run
 
 #Run on the board#
-1. Right Click on ExampleUARTWriter
+1. Right Click on `ExampleUARTWriter`
 2. Select Run as -> Run Configuration 
 3. Click on new launch configuration
 4. Select Execute on EmbJPF
