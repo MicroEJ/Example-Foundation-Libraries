@@ -2,7 +2,7 @@
 images/flower_A.png:RGB565
 
 # image uncompressed with transparency
-images/flower_B.png:ARGB4444
+images/flower_B.png:ARGB1555
 
 # image compressed without transparency
 images/angkor.png
