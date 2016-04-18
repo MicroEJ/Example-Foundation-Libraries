@@ -1,6 +1,8 @@
 MicroEj 4.0:
 Addition:
 ej.examples.foundation.microui.antialiased
+ej.examples.foundation.microui.movableimage
+ej.examples.foundation.hal.gpio
 
 Move
 MicroUI -> MVC => MWT -> MVC
