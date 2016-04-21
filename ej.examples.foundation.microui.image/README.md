@@ -6,10 +6,6 @@ This example shows how to create and use a font
 3. Click on new launch configuration
 4. Go to Execution tab
 5. Select your jpf 
-6. Go to Configuration tab
-7. Go to Libraries -> Libraries -> MicroUI -> Images
-8. Check Activate the image pre-processing step
-9. Put the path `${project_loc:ej.examples.foundation.microui.images}/src/main/resources/ej/examples/foundation/microui/images/examples.images.list`
 10. Press Apply
 11. Press Run
 
