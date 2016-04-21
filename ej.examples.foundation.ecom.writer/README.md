@@ -37,7 +37,8 @@ This example shows how to write some bytes to a CommConnection.
 	* Go to Libraries -> ECOM -> Comm Connection**
 1. Press **Apply**
 1. Press **Run**
-1. Copy the path to the generated .out file
+1. Copy the generated .out file path
+
 ## Flash
 1. Select **Run -> Run Configuration**
 1. Select **MicroEJ Tool**
@@ -45,7 +46,7 @@ This example shows how to write some bytes to a CommConnection.
 1. Select your jpf 
 1. Select **Program with St link**
 1. Go to **Configuration tab**
-	* Put the path to the generated .out file
+	* Set the **Java application definition** field to the generated .out file path
 1. Press **Apply**
 1. Press **Run**
 
