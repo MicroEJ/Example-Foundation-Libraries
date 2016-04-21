@@ -3,7 +3,7 @@
 This example shows how to write some bytes to a CommConnection.
 
 # Usage
-## Run on the Simulator
+## Run on MicroEJ Simulator
 1. Right Click on [ExampleUARTWriter.java](ej.examples.foundation.ecom.writer/src/main/java/ej/examples/foundation/ecom/uartwriter/ExampleUARTWriter.java)
 1. Select **Run as -> Run Configuration** 
 1. Click on **New launch configuration** icon
@@ -20,7 +20,7 @@ This example shows how to write some bytes to a CommConnection.
 1. Press **Apply**
 1. Press **Run**
 
-## Run on the board
+## Run on device
 ### Build
 1. Right Click on [ExampleUARTWriter.java](ej.examples.foundation.ecom.writer/src/main/java/ej/examples/foundation/ecom/uartwriter/ExampleUARTWriter.java)
 1. Select **Run as -> Run Configuration** 
