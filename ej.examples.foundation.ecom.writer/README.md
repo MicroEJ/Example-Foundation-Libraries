@@ -1,7 +1,8 @@
-#Overview#
+# Overview
+
 This example shows how to write some bytes to a CommConnection.
 
-#Run on the Simulator#
+# Run on the Simulator
 1. Right Click on [ExampleUARTWriter.java](ej.examples.foundation.ecom.writer/src/main/java/ej/examples/foundation/ecom/uartwriter/ExampleUARTWriter.java)
 1. Select *Run as -> Run Configuration* 
 1. Click on *New launch configuration* icon
@@ -18,7 +19,7 @@ This example shows how to write some bytes to a CommConnection.
 1. Press *Apply*
 1. Press *Run*
 
-#Run on the board#
+# Run on the board
 1. Right Click on [ExampleUARTWriter.java](ej.examples.foundation.ecom.writer/src/main/java/ej/examples/foundation/ecom/uartwriter/ExampleUARTWriter.java)
 1. Select *Run as -> Run Configuration* 
 1. Click on *New launch configuration* icon
@@ -46,6 +47,6 @@ This example shows how to write some bytes to a CommConnection.
 1. Press *Apply*
 1. Press *Run*
 
-#Troubleshooting#
+# Troubleshooting
 1. When executing I get the error *ECOM-COMM: Invalid connection descriptor.*
 	* The port com has not been correctly set, redo the steps *Go to Configuration tab*
