@@ -1,10 +1,13 @@
+# Overview
 This example shows a simple hello world using MWT.
 
+# Usage
 ## Run on MicroEJ Simulator
 1. Right Click on the project
 1. Select **Run as -> MicroEJ Application**
 1. Select your platform 
 1. Press **Ok**
+
 
 ## Run on device
 ### Build
@@ -31,9 +34,10 @@ This example shows a simple hello world using MWT.
 1. Press **Run**
 
 # Requirements
-  - EDC-1.2 or higher
-  - MWT-2.1 or higher
-  - MICROUI-2.0 or higher
+* MicroEJ 4 or Higher
+	* EDC-1.2 or higher
+	* MICROUI-2.0 or higher
+	* MWT-2.1 or higher
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.

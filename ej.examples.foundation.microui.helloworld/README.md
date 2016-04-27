@@ -1,31 +1,42 @@
-This example shows how to print a string on a display
+# Overview
+This example shows how to print a string on a display.
 
-#Run on the Simulator#
-1. Right Click on `ExampleHelloWorld`
-2. Select Run as -> Run Configuration 
-3. Click on new launch configuration
-4. Go to Execution tab
-5. Select your jpf 
-6. Press Apply
-15. Press Run
+# Usage
+## Run on MicroEJ Simulator
+1. Right Click on the project
+1. Select **Run as -> MicroEJ Application**
+1. Select your platform 
+1. Press **Ok**
 
-#Run on the board#
-1. Right Click on `ExampleHelloWorld`
-2. Select Run as -> Run Configuration 
-3. Click on new launch configuration
-4. Select Execute on EmbJPF
-5. Select Build & Deploy
-6. Go to Execution tab
-7. Select your jpf 
-15. Press Apply
-16. Press Run
-17. Select Run -> Run Configuration
-18. Select MicroEJ Tool
-19. Click on new launch configuration
-20. Select your jpf 
-21. Select program with St link
-22. Go to Configuration tab
-23. Put the path to the generated .out file
-24. Press Apply
-25. Press Run
 
+## Run on device
+### Build
+1. Right Click on [ExampleHelloWorld.java](ej.examples.foundation.microui.helloworld/src/main/java/ej/examples/foundation/microui/helloworld/ExampleHelloWorld.java)
+1. Select **Run as -> Run Configuration** 
+1. Click on **New launch configuration** icon
+1. Select **Execute on Device**
+1. Select **Build & Deploy**
+1. Go to **Execution** tab
+	* Select your platform 
+1. Press **Apply**
+1. Press **Run**
+1. Copy the generated `.out` file path
+
+### Flash
+1. Select **Run -> Run Configuration**
+1. Select **MicroEJ Tool**
+1. Click on **New launch configuration** icon
+1. Select your platform 
+1. Select **Program with ST Link**
+1. Go to **Configuration tab**
+	* Set the **Java Application Definition** field to the generated `.out` file path
+1. Press **Apply**
+1. Press **Run**
+
+# Requirements
+* MicroEJ 4 or Higher
+	* EDC-1.2 or higher
+	* MICROUI-2.0 or higher
+
+## Dependencies
+_All dependencies are retrieved transitively by Ivy resolver_.

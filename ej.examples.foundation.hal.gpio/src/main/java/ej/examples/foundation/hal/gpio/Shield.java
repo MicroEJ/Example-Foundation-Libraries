@@ -9,109 +9,88 @@ package ej.examples.foundation.hal.gpio;
 /**
  *
  */
-public final class Shield {
+public interface Shield {
+
+	int DIGITAL_PORT = 30;
+	int ANALOG_PORT = 31;
+
 	/**
 	 * 'ON' digital value.
 	 */
-	public final static boolean DIGITAL_HIGH = false;
+	boolean DIGITAL_HIGH = false;
 	/**
 	 * 'OFF' digital value.
 	 */
-	public final static boolean DIGITAL_LOW = true;
+	boolean DIGITAL_LOW = true;
 
 	/**
 	 * Minimal analog value.
 	 */
-	public final static int ANALOG_MIN_VALUE = 0;
+	int ANALOG_MIN_VALUE = 0;
 	/**
 	 * Maximal analog value.
 	 */
-	public final static int ANALOG_MAX_VALUE = 4095;
-	private static final int ANALOG_MIDDLE_VALUE = (ANALOG_MAX_VALUE - ANALOG_MIN_VALUE) / 2;
+	int ANALOG_MAX_VALUE = 4095;
+
+	float MCU_VOLTAGE = 3.3f;
+	// D 0 1 14 15
+	// A 4 5
+
+	// free D 7 8
+	// free A 3
 
 	/**
-	 * Array containing value for digit (0-9) than can be displayed on the segment led display.
+	 * Pin of the first button (named SW1 on board).
 	 */
-	public final static byte[] SEGMENT_LED_VALUE = { (byte) 0xC0, (byte) 0xF9, (byte) 0xA4, (byte) 0xB0, (byte) 0x99, (byte) 0x92, (byte) 0x82, (byte) 0xF8,
-			(byte) 0x80, (byte) 0x90 };
-
+	int PIN_DIGITAL_BTN1 = 2;
 	/**
-	 * Array containing id of each LED Digit.
+	 * Pin of the second button (named SW2 on board).
 	 */
-	public final static byte[] SEGMENT_LED_SELECT_DIGIT = { (byte) 0xF1, (byte) 0xF2, (byte) 0xF4, (byte) 0xF8 };
-
-	// 0 1 2 5 6 9 14 15
+	int PIN_DIGITAL_BTN2 = 3;
+	/**
+	 * Pin of the DHT11 temperature sensor.
+	 */
+	int PIN_DIGITAL_TEMPERATURE_SENSOR_DHT11 = 4;
 	/**
 	 * Pin of the Buzzer component.
 	 */
-	public final static int PIN_DIGITAL_BUZZER = 3;
+	int PIN_DIGITAL_BUZZER = 5;
 	/**
-	 * Pin of the first LED.
+	 * Pin of the Infra-Red receiver.
 	 */
-	public final static int PIN_DIGITAL_LED_D1 = 13;
+	int PIN_DIGITAL_IR_RECEIVER = 6;
+	/**
+	 * Pin red of the RGB LED.
+	 */
+	int PIN_DIGITAL_LED_RGB_R = 9;
+	/**
+	 * Pin green of the RGB LED.
+	 */
+	int PIN_DIGITAL_LED_RGB_G = 10;
+	/**
+	 * Pin blue of the RGB LED.
+	 */
+	int PIN_DIGITAL_LED_RGB_B = 11;
 	/**
 	 * Pin of the second LED.
 	 */
-	public final static int PIN_DIGITAL_LED_D2 = 12;
+	int PIN_DIGITAL_LED2 = 12;
 	/**
-	 * Pin of the third LED.
+	 * Pin of the first LED.
 	 */
-	public final static int PIN_DIGITAL_LED_D3 = 11;
-	/**
-	 * Pin of the fourth LED.
-	 */
-	public final static int PIN_DIGITAL_LED_D4 = 10;
-	/**
-	 * Pin for data sending to digital segment LED.
-	 */
-	public final static int PIN_DIGITAL_SEGMENT_LED_DATA = 8;
-	/**
-	 * Pin for clock of digital segment LED.
-	 */
-	public final static int PIN_DIGITAL_SEGMENT_LED_CLOCK = 7;
-	/**
-	 * Pin for latch of digital segment LED.
-	 */
-	public final static int PIN_DIGITAL_SEGMENT_LED_LATCH = 4;
+	int PIN_DIGITAL_LED1 = 13;
 
-	// 5
 	/**
 	 * Pin of the pot.
 	 */
-	public final static int PIN_ANALOG_POT = 0;
+	int PIN_ANALOG_POT = 0;
 	/**
-	 * Pin of the first button.
+	 * Pin of the light sensor.
 	 */
-	public final static int PIN_ANALOG_BTN1 = 1;
+	int PIN_ANALOG_LIGHT_SENSOR = 1;
 	/**
-	 * Pin of the second button.
+	 * Pin of the LM35 temperature sensor.
 	 */
-	public final static int PIN_ANALOG_BTN2 = 2;
-	/**
-	 * Pin of the third button.
-	 */
-	public final static int PIN_ANALOG_BTN3 = 3;// not tested
-	/**
-	 * Pin of the temperature sensor.
-	 *
-	 * Design for a LM35 sensor not included on the board.
-	 */
-	public final static int PIN_ANALOG_TEMPERTURE = 4;// not tested
-
-	/**
-	 * Convert the analog value given by a button to a digital value.
-	 *
-	 * @param btnAnalogValue
-	 *            the value of the button.
-	 *
-	 * @return {@code true} if button is pressed, {@code false} otherwise.
-	 */
-	public static boolean btnAnalog2Digital(int btnAnalogValue) {
-		return btnAnalogValue < ANALOG_MIDDLE_VALUE;
-	}
-
-	private Shield() {
-		// Forbid new instance
-	}
+	int PIN_ANALOG_TEMPERATURE_SENSOR_LM35 = 2;
 
 }

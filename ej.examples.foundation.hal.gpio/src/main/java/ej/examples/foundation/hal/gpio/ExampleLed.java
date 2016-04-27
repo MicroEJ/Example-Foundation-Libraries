@@ -19,17 +19,14 @@ public class ExampleLed implements Runnable {
 		caterpillar, bounce, kit, strobe, random
 	};
 
-	private static final int ARDUINO_DIGITAL_PORT = 30;
-
-	private static final int[] MULTI_FUNCTION_SHIELD_LED = { Shield.PIN_DIGITAL_LED_D1,
-			Shield.PIN_DIGITAL_LED_D2, Shield.PIN_DIGITAL_LED_D3,
-			Shield.PIN_DIGITAL_LED_D4 };
+	private final int[] MULTI_FUNCTION_SHIELD_LED = { Shield.PIN_DIGITAL_LED1, Shield.PIN_DIGITAL_LED2,
+			Shield.PIN_DIGITAL_LED_RGB_R, Shield.PIN_DIGITAL_LED_RGB_G, Shield.PIN_DIGITAL_LED_RGB_B };
 
 	public static final int SLEEP = 150;
 
 	public static void main(String[] args) {
 		// Set the port for the leds.
-		GPIOLed.setDigitalPort(ARDUINO_DIGITAL_PORT);
+		GPIOLed.setDigitalPort(Shield.DIGITAL_PORT);
 
 		new ExampleLed();
 	}
