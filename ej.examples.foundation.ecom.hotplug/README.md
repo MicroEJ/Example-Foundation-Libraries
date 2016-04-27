@@ -33,7 +33,8 @@ This example shows how to listen on plug/unplug of dynamic ComConnections and sh
 1. Press **Run**
 
 # Requirements
-* MicroEJ 4 or Higher
+* MicroEJ Studio or SDK 4.0 or later
+* A platform with at least:
 	* EDC-1.2 or higher
 	* ECOM-1.1 or higher
 	* ECOM-COMM-1.1 or higher

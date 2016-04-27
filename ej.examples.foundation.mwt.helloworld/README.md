@@ -34,7 +34,8 @@ This example shows a simple hello world using MWT.
 1. Press **Run**
 
 # Requirements
-* MicroEJ 4 or Higher
+* MicroEJ Studio or SDK 4.0 or later
+* A platform with at least:
 	* EDC-1.2 or higher
 	* MICROUI-2.0 or higher
 	* MWT-2.1 or higher

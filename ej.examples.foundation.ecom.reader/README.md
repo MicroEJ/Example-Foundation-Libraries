@@ -49,7 +49,8 @@ This example shows how to read some bytes from a CommConnection.
 	* The port com has not been correctly set, redo the steps **Go to Configuration tab**
 
 # Requirements
-* MicroEJ 4 or Higher
+* MicroEJ Studio or SDK 4.0 or later
+* A platform with at least:
 	* EDC-1.2 or higher
 	* ECOM-1.1 or higher
 	* ECOM-COMM-1.1 or higher

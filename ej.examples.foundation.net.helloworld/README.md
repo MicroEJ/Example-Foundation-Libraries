@@ -41,7 +41,8 @@ This example shows a simple helloworld using NET.
 1. Press **Run**
 
 # Requirements
-* MicroEJ 4 or Higher
+* MicroEJ Studio or SDK 4.0 or later
+* A platform with at least:
 	* EDC-1.2 or higher
 	* NET-1.0 or higher
 

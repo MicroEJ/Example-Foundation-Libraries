@@ -45,7 +45,8 @@ This example shows how to print a string on a display.
 1. Press **Run**
 
 # Requirements
-* MicroEJ 4 or Higher
+* MicroEJ Studio or SDK 4.0 or later
+* A platform with at least:
 	* EDC-1.2 or higher
 	* MICROUI-2.0 or higher
 	* NLS-2.0 or higher
