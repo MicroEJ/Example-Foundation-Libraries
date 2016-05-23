@@ -24,6 +24,7 @@ import com.is2t.examples.netembedded.logger.NetSysoutLogger;ges to the client.
  */
 public class ExampleEchoServer implements NetEchoConstants{
 
+	private static int WAIT_FOR_CONNECTION = 5000;
 	/**
 	 * Application logger.
 	 */
@@ -36,6 +37,16 @@ public class ExampleEchoServer implements NetEchoConstants{
 		// Display all messages.
 		Logger.setLevel(Level.ALL);
 
+		Logger.info("Wainting for connection to be setup...");
+
+		try {
+			// Wait for the connection to be up. Would be better to use a
+			// connectivity manager (eg ej.library.iot.connectivity).
+			Thread.sleep(WAIT_FOR_CONNECTION);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 		Logger.info("server initialization...");
 		// initiate a structure to append characters sent by the client
 		StringBuffer sb = new StringBuffer();
@@ -44,9 +55,11 @@ public class ExampleEchoServer implements NetEchoConstants{
 		InputStream is = null;
 		OutputStream os = null;
 		try {
+
 			// server initialization
 			serv = new ServerSocket(PORT);
-			Logger.info("server initialized. Waiting for connection on port "+PORT+"...");
+			Logger.info("server initialized. Waiting for connection on port " + PORT + "...");
+
 			// wait the client connection
 			client = serv.accept();
 			Logger.info("client connected. Echo client message start");

@@ -19,6 +19,7 @@ import java.util.logging.Logger;
  */
 public class ExampleClient implements HelloWorldConstants{
 
+	private static final int WAIT_FOR_CONNECTION = 5000;
 	/**
 	 * Application logger.
 	 */
@@ -32,6 +33,14 @@ public class ExampleClient implements HelloWorldConstants{
 	public static void main(String[] args) {
 		// Display all messages.
 		Logger.setLevel(Level.ALL);
+		try {
+			Logger.info("Wainting for connection to be setup...");
+			// Wait for the connection to be up. Would be better to use a
+			// connectivity manager (eg ej.library.iot.connectivity).
+			Thread.sleep(WAIT_FOR_CONNECTION);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
 		Socket s = null;
 		OutputStream os = null;
