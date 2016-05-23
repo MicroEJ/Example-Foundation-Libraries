@@ -23,15 +23,7 @@ This example shows a simple hello world using MWT.
 1. Copy the generated `.out` file path
 
 ### Flash
-1. Select **Run -> Run Configuration**
-1. Select **MicroEJ Tool**
-1. Click on **New launch configuration** icon
-1. Select your platform 
-1. Select **Program with ST Link**
-1. Go to **Configuration tab**
-	* Set the **Java Application Definition** field to the generated `.out` file path
-1. Press **Apply**
-1. Press **Run**
+1. Use the appropriate MicroEJ tool.
 
 # Requirements
 * MicroEJ Studio or SDK 4.0 or later

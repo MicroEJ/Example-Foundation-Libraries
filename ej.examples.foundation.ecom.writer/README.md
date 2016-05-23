@@ -34,15 +34,7 @@ This example shows how to write some bytes to a CommConnection.
 1. Copy the generated `.out` file path
 
 ### Flash
-1. Select **Run -> Run Configuration**
-1. Select **MicroEJ Tool**
-1. Click on **New launch configuration** icon
-1. Select your platform 
-1. Select **Program with ST Link**
-1. Go to **Configuration tab**
-	* Set the **Java Application Definition** field to the generated `.out` file path
-1. Press **Apply**
-1. Press **Run**
+1. Use the appropriate MicroEJ tool.
 
 ## Troubleshooting
 1. When executing I get the error **ECOM-COMM: Invalid connection descriptor.**
