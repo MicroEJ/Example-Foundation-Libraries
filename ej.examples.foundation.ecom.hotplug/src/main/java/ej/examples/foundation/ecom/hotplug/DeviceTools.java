@@ -37,7 +37,7 @@ public class DeviceTools {
 				descriptorName == Device.UNKNOWN_NAME ||
 				propertyNames.length != propertyValues.length
 				){
-			// the device has been unplugged during taking a snapshot of its descriptor
+			// the device has been unplugged while taking a snapshot of its descriptor
 			return null;
 		}
 

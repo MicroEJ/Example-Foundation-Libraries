@@ -5,10 +5,13 @@ This example shows how to write some bytes to a CommConnection.
 ## Run on MicroEJ Simulator
 1. Right Click on [ExampleUARTWriter.java](ej.examples.foundation.ecom.writer/src/main/java/ej/examples/foundation/ecom/uartwriter/ExampleUARTWriter.java)
 1. Select **Run as -> Run Configuration** 
+1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
-1. Go to **Execution** tab
-	* Select your platform 
-1. Go to **Configuration** tab
+1. In **Execution** tab
+	1. In **Target** frame, in **Platform** field, select a relevant platform (but not a virtual device)
+	1. In **Execution** frame
+		1. Select **Execute on Simulator**
+1. In **Configuration** tab
 	* Go to **Libraries -> ECOM -> Comm Connection**
 		* Check **Enable comm connections**
 		* Map the UART com port (available on your platform documentation) to the application port `42`
@@ -23,18 +26,20 @@ This example shows how to write some bytes to a CommConnection.
 ## Run on device
 ### Build
 1. Right Click on [ExampleUARTWriter.java](ej.examples.foundation.ecom.writer/src/main/java/ej/examples/foundation/ecom/uartwriter/ExampleUARTWriter.java)
-1. Select **Run as -> Run Configuration** 
+1. Select **Run as -> Run Configuration**
+1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
-1. Select **Execute on Device**
-1. Select **Build & Deploy**
-1. Go to **Execution** tab
-	* Select your platform 
+1. In **Execution** tab
+	1. In **Target** frame, in **Platform** field, select a relevant platform (but not a virtual device)
+	1. In **Execution** frame
+		1. Select **Execute on Device**
+		2. In **Settings** field, select **Build & Deploy**
 1. Press **Apply**
 1. Press **Run**
-1. Copy the generated `.out` file path
+1. Copy the generated `.out` file path shown by the console
 
 ### Flash
-1. Use the appropriate MicroEJ tool.
+1. Use the appropriate flashing tool.
 
 ## Troubleshooting
 1. When executing I get the error **ECOM-COMM: Invalid connection descriptor.**

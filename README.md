@@ -1,1 +1,1 @@
-This project gather all the basic examples of the foundation library
+This project gathers all the basic examples of the foundation libraries

@@ -12,7 +12,7 @@ import ej.ecom.io.CommPort;
 
 /**
  * This example listens for dynamic {@link CommPort} hot plugging.
- * When a new {@link CommPort} is plugged, its descriptor is dumped in a json format.
+ * When a new {@link CommPort} is plugged, its descriptor is dumped in JSON format.
  */
 public class ExampleHotPlug {
 
