@@ -65,7 +65,7 @@ public class ExampleImages {
 
 	private static ImageContainer createBackgroundImage(Display display, String name) throws IOException {
 
-		// create an image with the same size like display
+		// create an image with the same size as display
 		int width = display.getWidth();
 		int height = display.getHeight();
 		Image background = Image.createImage(display, width, height);

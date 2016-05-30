@@ -1,5 +1,5 @@
 # Overview
-This example shows how to create and use a font.
+This example shows how to create and use a movable image.
 
 # Usage
 ## Run on MicroEJ Simulator
@@ -13,17 +13,16 @@ This example shows how to create and use a font.
 ### Build
 1. Right Click on [ExampleImages.java](ej.examples.foundation.microui.movableimage/src/main/java/ej/examples/foundation/microui/movableimage/ExampleImages.java)
 1. Select **Run as -> Run Configuration** 
+1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
-1. Select **Execute on Device**
-1. Select **Build & Deploy**
-1. Go to **Execution** tab
-	* Select your platform 
+1. In **Execution** tab
+	1. In **Target** frame, in **Platform** field, select a relevant platform (but not a virtual device)
+	1. In **Execution** frame
+		1. Select **Execute on Device**
+		2. In **Settings** field, select **Build & Deploy**
 1. Press **Apply**
 1. Press **Run**
-1. Copy the generated `.out` file path
-
-### Flash
-1. Use the appropriate MicroEJ tool.
+1. Copy the generated `.out` file path shown by the console
 
 # Requirements
 * MicroEJ Studio or SDK 4.0 or later

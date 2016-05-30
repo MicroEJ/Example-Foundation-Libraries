@@ -68,7 +68,7 @@ public class ExampleFileSystem {
 
 
 	/**
-	 * <p>Recursively lists on standard output the folders and files list of the given root.</p>
+	 * <p>Recursively lists on standard output the folders and files of the given root.</p>
 	 * @param root
 	 */
 	protected static void listFolders(File root) {
@@ -76,7 +76,7 @@ public class ExampleFileSystem {
 	}
 
 	/**
-	 * <p>Recursively lists on standard output the folders and files list of the given root.</p>
+	 * <p>Recursively lists on standard output the folders and files of the given root.</p>
 	 * @param root
 	 * @param level deep level for tabulation purpose
 	 */
@@ -101,7 +101,7 @@ public class ExampleFileSystem {
 	}
 
 	/**
-	 * <p>Delete the given resource, if this is a directory, deletes its children firsts.</p>
+	 * <p>Deletes the given resource, if this is a directory, deletes its children first.</p>
 	 * @param resource the resource to recursively delete
 	 */
 	public static void recursiveDeleteFolder(File resource) {
@@ -112,7 +112,7 @@ public class ExampleFileSystem {
 		//file
 		if(resource.isFile()) {
 			if(resource.delete()){
-				System.out.println(resource+" was deleted");
+				System.out.println(resource+" has been deleted");
 			}else{
 				System.out.println(resource+" cannot be deleted");
 			}
@@ -123,7 +123,7 @@ public class ExampleFileSystem {
 		File[] children = resource.listFiles();
 		if(children == null || children.length == 0) {
 			if(resource.delete()){
-				System.out.println(resource+" was deleted");
+				System.out.println(resource+" has been deleted");
 			}else{
 				System.out.println(resource+" cannot be deleted");
 			}
@@ -137,7 +137,7 @@ public class ExampleFileSystem {
 
 		//the folder is now empty, delete it
 		if(resource.delete()){
-			System.out.println(resource+" was deleted");
+			System.out.println(resource+" has been deleted");
 		}else{
 			System.out.println(resource+" cannot be deleted");
 		}
@@ -189,7 +189,7 @@ public class ExampleFileSystem {
 			Date date = new Date(System.currentTimeMillis());
 			String content = date.toString();
 
-			// each time this example is called, the current date is append to the file
+			// each time this example is called, the current date is appended to the file
 			if (os != null) {
 				try {
 					System.out.println("Writing content to " + fileName);

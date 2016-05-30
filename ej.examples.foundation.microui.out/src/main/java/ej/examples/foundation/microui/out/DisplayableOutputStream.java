@@ -45,7 +45,7 @@ public class DisplayableOutputStream extends Displayable{
 
 	@Override
 	public EventHandler getController() {
-		// Nothing todo
+		// Nothing to do
 		return null;
 	}
 }

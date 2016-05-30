@@ -66,7 +66,7 @@ public class ImageDisplayable extends Displayable implements Observer {
 		Image i = model.getImage();
 
 		if (i != null) {
-			// draw the image in the center of display
+			// draw the image to the center of display
 			g.drawImage(i, this.getDisplay().getWidth() / 2, this.getDisplay().getHeight() / 2,
 					GraphicsContext.HCENTER | GraphicsContext.VCENTER);
 

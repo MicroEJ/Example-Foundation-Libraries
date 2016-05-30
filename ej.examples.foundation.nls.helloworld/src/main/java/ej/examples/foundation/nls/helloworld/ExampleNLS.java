@@ -18,7 +18,7 @@ import ej.nls.NLS;
 
 /**
  * Internationalization demo.
- * Show how referring to input nls file, browse the different locals and
+ * Shows how to refer to an input nls file, browse the different locales and
  * display a message into the available languages.
  */
 public class ExampleNLS {

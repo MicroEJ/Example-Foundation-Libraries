@@ -20,7 +20,7 @@ public abstract class PercentageView extends Observable implements Observer{
 		this.percentage = percentage;
 		this.needToRepaint = true;
 		
-		// this view listens the percentage model
+		// this view listens to the percentage model
 		percentage.addObserver(this);
 	}
 	

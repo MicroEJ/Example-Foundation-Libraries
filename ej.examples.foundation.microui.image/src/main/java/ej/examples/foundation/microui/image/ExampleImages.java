@@ -55,8 +55,8 @@ public class ExampleImages {
 
 		displayable.show();
 
-		// Does an infinite loop that change the model
-		// Modifying model leads to repaint the view (MVC design pattern)
+		// Does an infinite loop that changes the model
+		// Modifying model leads to repainting the view (MVC design pattern)
 		while (true) {
 			setDisplayedImage(exampleModel, IMAGE_COMPILETIME_A);
 			setDisplayedImage(exampleModel, IMAGE_COMPILETIME_B);

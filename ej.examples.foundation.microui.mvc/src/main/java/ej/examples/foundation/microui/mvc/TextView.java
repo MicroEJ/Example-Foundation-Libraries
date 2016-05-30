@@ -25,7 +25,7 @@ public class TextView extends PercentageView {
 		.append("%")
 		.toString();
 
-		// draw message in the middle of the view
+		// draw message to the middle of the view
 		g.drawString(message, getWidth() / 2, getHeight() / 2, GraphicsContext.VCENTER | GraphicsContext.HCENTER);
 		
 	}

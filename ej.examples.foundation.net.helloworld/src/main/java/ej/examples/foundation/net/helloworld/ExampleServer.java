@@ -15,8 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * This example open a client socket, send a "Hello World!" message to a server and close the connection.
- * The server read the client message and close the remote socket.
+ * This example opens a client socket, send a "Hello World!" message to a server and close the connection.
+ * The server reads the client message and close the remote socket.
  */
 public class ExampleServer implements HelloWorldConstants{
 
@@ -51,7 +51,7 @@ public class ExampleServer implements HelloWorldConstants{
 			// server initialization
 			serv = new ServerSocket(PORT);
 			Logger.info("server initialized. Waiting for connection..");
-			// wait the client connection
+			// wait for the client connection
 			client = serv.accept();
 			Logger.info("client connected.");
 			// read client message and stop the server

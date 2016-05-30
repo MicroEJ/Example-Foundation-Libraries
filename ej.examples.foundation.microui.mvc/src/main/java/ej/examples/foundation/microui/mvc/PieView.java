@@ -29,7 +29,7 @@ public class PieView extends PercentageView {
 		int pieXCenter = (width - pieDiameter) / 2;
 		int pieYCenter = (height - pieDiameter) / 2;
 		
-		// compute angle fit the percentage
+		// compute angle that fits the percentage
 		int fillAngle = percentage * 360 / 100;
 		
 		// draw pie fill
