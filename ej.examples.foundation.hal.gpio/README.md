@@ -22,7 +22,7 @@ The pins are cabled for a YwroBot Easy Module Shield V1
 1. Use the appropriate flashing tool.
 
 # Requirements
-* MicroEJ Studio or SDK 4.0 or later
+* MicroEJ SDK 4.0 or later
 * A platform with at least:
 	* EDC-1.2 or higher
 	* HAL-1.0 or higher
