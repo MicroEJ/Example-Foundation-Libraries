@@ -13,7 +13,7 @@ import java.util.Random;
 /**
  *
  */
-public class ExampleLed implements Runnable {
+public class ExampleGPIO implements Runnable {
 
 	private enum MODES {
 		caterpillar, bounce, kit, strobe, random
@@ -22,13 +22,56 @@ public class ExampleLed implements Runnable {
 	private final int[] MULTI_FUNCTION_SHIELD_LED = { Shield.PIN_DIGITAL_LED1, Shield.PIN_DIGITAL_LED2,
 			Shield.PIN_DIGITAL_LED_RGB_R, Shield.PIN_DIGITAL_LED_RGB_G, Shield.PIN_DIGITAL_LED_RGB_B };
 
+	static public class ExampleButton implements Runnable {
+		private final int[] MULTI_FUNCTION_BUTTONS = { Shield.PIN_DIGITAL_BTN1, Shield.PIN_DIGITAL_BTN2 };
+
+		// All the buttons
+		private final List<GPIOButton> buttons;
+
+		public ExampleButton() {
+			super();
+			buttons = new ArrayList<GPIOButton>();
+
+			for (int button : MULTI_FUNCTION_BUTTONS) {
+				buttons.add(new GPIOButton(button));
+			}
+
+			new Thread(this).start();
+		}
+		
+		private void sleep() {
+			try {
+				Thread.sleep(SLEEP);
+			} catch (InterruptedException e) {
+			}
+		}
+
+		@Override
+		public void run() {
+			do
+			{
+				for (int i = 0; i < buttons.size(); i++) {
+
+					if ( ! buttons.get(i).isUp() )
+					{
+						System.out.println("Button " + i + " down");
+					};
+				}
+
+				sleep();
+			} while(true);
+		}
+	}
+
+
 	public static final int SLEEP = 150;
 
 	public static void main(String[] args) {
 		// Set the port for the leds.
 		GPIOLed.setDigitalPort(Shield.DIGITAL_PORT);
 
-		new ExampleLed();
+		new ExampleGPIO();
+		new ExampleButton();
 	}
 
 	// All the leds
@@ -37,7 +80,7 @@ public class ExampleLed implements Runnable {
 	/**
 	 *
 	 */
-	public ExampleLed() {
+	public ExampleGPIO() {
 		super();
 		leds = new ArrayList<GPIOLed>();
 
