@@ -8,7 +8,6 @@ package ej.examples.foundation.hal.gpio;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  *
@@ -20,14 +19,14 @@ public class ButtonManager implements Runnable {
 	private final int[] MULTI_FUNCTION_BUTTONS = { Shield.PIN_DIGITAL_BTN1, Shield.PIN_DIGITAL_BTN2 };
 
 	// All the buttons
-	private final List<GPIOButton> buttons;
+	private final List<GPIODigitalInput> buttons;
 
 	public ButtonManager() {
 		super();
-		buttons = new ArrayList<GPIOButton>();
+		buttons = new ArrayList<GPIODigitalInput>();
 
 		for (int button : MULTI_FUNCTION_BUTTONS) {
-			buttons.add(new GPIOButton(button));
+			buttons.add(new GPIODigitalInput(button));
 		}
 
 		new Thread(this).start();
@@ -45,11 +44,11 @@ public class ButtonManager implements Runnable {
 	public void run() {
 		do
 		{
-			for (int i = 0; i < buttons.size(); i++) {
+			for (GPIODigitalInput button : buttons) {
 
-				if ( ! buttons.get(i).isUp() )
+				if ( ! button.isUp() )
 				{
-					System.out.println("Button " + i + " down");
+					System.out.println("Button " + button.getPin() + " down");
 				};
 			}
 			sleep();

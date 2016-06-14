@@ -12,19 +12,15 @@ import ej.hal.gpio.GPIO.Mode;
 /**
  *
  */
-public class GPIOButton {
+public class GPIODigitalInput extends GPIOInputOutput {
 	private static int DIGITAL_PORT = 30;
-
-	private final int pin;
 
 	/**
 	 *
 	 * @param pin
 	 */
-	public GPIOButton(int pin) {
-		super();
-		this.pin = pin;
-		GPIO.setMode(DIGITAL_PORT, pin, Mode.DIGITAL_INPUT);
+	public GPIODigitalInput(int pin) {
+		super(DIGITAL_PORT,pin, Mode.DIGITAL_INPUT);
 	}
 
 
@@ -36,7 +32,6 @@ public class GPIOButton {
 	public boolean isUp() {
 		return GPIO.getDigitalValue(DIGITAL_PORT, pin);
 	}
-
 
 	public static void setDigitalPort(int port) {
 		DIGITAL_PORT = port;

@@ -21,23 +21,28 @@ public class LedManager implements Runnable {
 		caterpillar, bounce, kit, strobe, random
 	};
 
-	private final int[] MULTI_FUNCTION_SHIELD_LED = { Shield.PIN_DIGITAL_LED1, Shield.PIN_DIGITAL_LED2,
-			Shield.PIN_DIGITAL_LED_RGB_R, Shield.PIN_DIGITAL_LED_RGB_G, Shield.PIN_DIGITAL_LED_RGB_B };
+	private final int[] MULTI_FUNCTION_SHIELD_LED = {
+			Shield.PIN_DIGITAL_LED1,
+			Shield.PIN_DIGITAL_LED2,
+			Shield.PIN_DIGITAL_LED_RGB_R,
+			Shield.PIN_DIGITAL_LED_RGB_G,
+			Shield.PIN_DIGITAL_LED_RGB_B
+	};
 
 
 	// All the leds
-	private final List<GPIOLed> leds;
+	private final List<GPIODigitalOutput> leds;
 
 	/**
 	 *
 	 */
 	public LedManager() {
 		super();
-		leds = new ArrayList<GPIOLed>();
+		leds = new ArrayList<GPIODigitalOutput>();
 
 		// Init all leds
 		for (int led : MULTI_FUNCTION_SHIELD_LED) {
-			leds.add(new GPIOLed(led));
+			leds.add(new GPIODigitalOutput(led));
 		}
 
 		new Thread(this).start();
@@ -85,7 +90,7 @@ public class LedManager implements Runnable {
 		switchAllLedsOff();
 		sleep();
 
-		GPIOLed previous = leds.get(0);
+		GPIODigitalOutput previous = leds.get(0);
 		for (int i = 0; i < leds.size(); i++) {
 			previous = toggle(previous, leds.get(i));
 		}
@@ -105,7 +110,7 @@ public class LedManager implements Runnable {
 	 */
 	private void bounce() {
 		caterpillar();
-		GPIOLed previous = leds.get(leds.size() - 1);
+		GPIODigitalOutput previous = leds.get(leds.size() - 1);
 		for (int i = leds.size() - 1; i >= 0; i--) {
 			previous = toggle(previous, leds.get(i));
 		}
@@ -120,7 +125,7 @@ public class LedManager implements Runnable {
 	 *            Led to switch on
 	 * @return The current led
 	 */
-	private GPIOLed toggle(GPIOLed previous, GPIOLed current) {
+	private GPIODigitalOutput toggle(GPIODigitalOutput previous, GPIODigitalOutput current) {
 		// Switch off previous light
 		previous.switchOff();
 		// Switch on light
@@ -144,7 +149,7 @@ public class LedManager implements Runnable {
 		sleep();
 
 		// switch of all leds on
-		for (GPIOLed led : leds) {
+		for (GPIODigitalOutput led : leds) {
 			led.switchOn();
 		}
 	}
@@ -162,7 +167,7 @@ public class LedManager implements Runnable {
 			switchAllLedsOff();
 			sleep();
 			// switch of all leds on
-			for (GPIOLed led : leds) {
+			for (GPIODigitalOutput led : leds) {
 				led.switchOn();
 			}
 			sleep();
@@ -180,9 +185,9 @@ public class LedManager implements Runnable {
 		sleep();
 
 		Random random = new Random();
-		GPIOLed previous = leds.get(0);
+		GPIODigitalOutput previous = leds.get(0);
 		for (int i = 0; i < leds.size(); i++) {
-			GPIOLed next = leds.get(random.nextInt(leds.size() - 1));
+			GPIODigitalOutput next = leds.get(random.nextInt(leds.size() - 1));
 			previous.switchOff();
 			next.switchOn();
 			previous = next;
@@ -191,7 +196,7 @@ public class LedManager implements Runnable {
 
 	private void switchAllLedsOff() {
 		// switch off all leds off
-		for (GPIOLed led : leds) {
+		for (GPIODigitalOutput led : leds) {
 			led.switchOff();
 		}
 	}

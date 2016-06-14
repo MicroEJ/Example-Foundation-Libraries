@@ -12,23 +12,24 @@ import ej.hal.gpio.GPIO.Mode;
 /**
  *
  */
-public class GPIOLed {
+public class GPIODigitalOutput extends GPIOInputOutput {
 	private static int DIGITAL_PORT = 30;
 
 	private static final boolean DIGITAL_LOW = true;
 	private static final boolean DIGITAL_HIGH = false;
 
-	private final int pin;
 	private boolean on;
 
 	/**
 	 *
 	 * @param pin
 	 */
-	public GPIOLed(int pin) {
-		super();
-		this.pin = pin;
-		GPIO.setMode(DIGITAL_PORT, pin, Mode.DIGITAL_OUTPUT);
+	public GPIODigitalOutput(int pin) {
+		super(DIGITAL_PORT, pin, Mode.DIGITAL_OUTPUT);
+	}
+
+	public int getPin() {
+		return this.pin;
 	}
 
 	public void switchOff() {
@@ -57,7 +58,6 @@ public class GPIOLed {
 	public boolean isOn() {
 		return on;
 	}
-
 
 	public static void setDigitalPort(int port) {
 		DIGITAL_PORT = port;
