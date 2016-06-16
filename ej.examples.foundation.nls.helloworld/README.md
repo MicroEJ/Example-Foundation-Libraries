@@ -11,7 +11,7 @@ This example shows how to print a string on a display.
 1. Go to **Configuration** tab
 	* Go to **Libraries -> NLS**
 		* Check Use NLS messages
-		* Set the **NLS list file** to`${project_loc:ej.examples.foundation.nls.helloworld}/src/main/resources/ej/examples/foundation/nls/helloworld/examples.fonts.list`
+		* Set the **NLS list file** to`${project_loc:ej.examples.foundation.nls.helloworld}/src/main/resources/ej/examples/foundation/nls/helloworld/examples.nls.list`
 1. Press **Apply**
 1. Press **Run**
 
@@ -30,7 +30,7 @@ This example shows how to print a string on a display.
 1. In **Configuration** tab
 	* Go to **Libraries -> NLS**
 		* Check Use NLS messages
-		* Set the **NLS list file** to`${project_loc:ej.examples.foundation.nls.helloworld}/src/main/resources/ej/examples/foundation/nls/helloworld/examples.fonts.list`
+		* Set the **NLS list file** to`${project_loc:ej.examples.foundation.nls.helloworld}/src/main/resources/ej/examples/foundation/nls/helloworld/examples.nls.list`
 1. Press **Apply**
 1. Press **Run**
 1. Copy the generated `.out` file path shown by the console
