@@ -17,18 +17,18 @@ public class AnalogInputManager implements Runnable {
 	private static final int SAMPLING_PERIOD = 20;
 	private static final int ONE_PERCENT_ANALOG_RANGE = ( Shield.ANALOG_MAX_VALUE - Shield.ANALOG_MIN_VALUE ) / 100;
 	
-	private final int[] MULTI_FUNCTION_ANALOG_SENSOR = { Shield.PIN_ANALOG_POT };
+	private static final int[] MULTI_FUNCTION_ANALOG_INPUT = { Shield.PIN_ANALOG_POT };
 
 	// All the buttons
-	private final List<GPIOAnalogInput> analogSensors;
+	private final List<GPIOAnalogInput> analogInputs;
 
 	public AnalogInputManager() {
 		super();
-		analogSensors = new ArrayList<GPIOAnalogInput>();
+		analogInputs = new ArrayList<GPIOAnalogInput>();
 
  
-		for (int analogSensor : MULTI_FUNCTION_ANALOG_SENSOR) {
-			analogSensors.add(new GPIOAnalogInput(analogSensor,ONE_PERCENT_ANALOG_RANGE));
+		for (int analogInput : MULTI_FUNCTION_ANALOG_INPUT) {
+			analogInputs.add(new GPIOAnalogInput(analogInput,ONE_PERCENT_ANALOG_RANGE));
 		}
 
 		new Thread(this).start();
@@ -46,11 +46,11 @@ public class AnalogInputManager implements Runnable {
 	public void run() {
 		do
 		{
-			for (GPIOAnalogInput analogSensor : analogSensors) {
-				analogSensor.updateValue();
-				if ( true == analogSensor.hasChangedValue() )
+			for (GPIOAnalogInput analogInput : analogInputs) {
+				analogInput.updateValue();
+				if ( true == analogInput.hasChangedValue() )
 				{
-					System.out.println("Value changed : " + analogSensor.getValue());
+					System.out.println("Value changed for sensor " + analogInput.getPin() + " : " + analogInput.getValue());
 				}
 			}
 			sleep();

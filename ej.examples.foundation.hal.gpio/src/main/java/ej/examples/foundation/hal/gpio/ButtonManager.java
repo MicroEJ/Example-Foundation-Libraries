@@ -16,7 +16,7 @@ public class ButtonManager implements Runnable {
 
 	public static final int SLEEP = 150;
 
-	private final int[] MULTI_FUNCTION_BUTTONS = { Shield.PIN_DIGITAL_BTN1, Shield.PIN_DIGITAL_BTN2 };
+	private static final int[] MULTI_FUNCTION_SHIELD_DIGITAL_BUTTONS = { Shield.PIN_DIGITAL_BTN1, Shield.PIN_DIGITAL_BTN2 };
 
 	// All the buttons
 	private final List<GPIODigitalInput> buttons;
@@ -25,7 +25,7 @@ public class ButtonManager implements Runnable {
 		super();
 		buttons = new ArrayList<GPIODigitalInput>();
 
-		for (int button : MULTI_FUNCTION_BUTTONS) {
+		for (int button : MULTI_FUNCTION_SHIELD_DIGITAL_BUTTONS) {
 			buttons.add(new GPIODigitalInput(button));
 		}
 
