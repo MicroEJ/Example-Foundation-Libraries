@@ -1,6 +1,6 @@
 # Overview
 This example shows how to use gpio.
-The pins are cabled for a YwroBot Easy Module Shield V1
+The pins are configured for a YwroBot Easy Module Shield V1
 
 # Usage
 ## Run on device
