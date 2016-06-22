@@ -1,17 +1,18 @@
 # Overview
-This example shows how to print a string on a display.
+This example shows how to print a localized string on a display.
 
 # Usage
 ## Run on MicroEJ Simulator
 1. Right Click on [ExampleNLS.java](ej.examples.foundation.nls.helloworld/src/main/java/ej/examples/foundation/nls/helloworld/ExampleNLS.java)
 1. Select **Run as -> Run Configuration** 
+1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
 1. Go to **Execution** tab
 	* Select your platform 
 1. Go to **Configuration** tab
 	* Go to **Libraries -> NLS**
-		* Check Use NLS messages
-		* Set the **NLS list file** to`${project_loc:ej.examples.foundation.nls.helloworld}/src/main/resources/ej/examples/foundation/nls/helloworld/examples.nls.list`
+		* Check **Use NLS messages**
+		* Set the **NLS list file** field to`${project_loc:ej.examples.foundation.nls.helloworld}/src/main/resources/ej/examples/foundation/nls/helloworld/examples.nls.list`
 1. Press **Apply**
 1. Press **Run**
 
@@ -29,8 +30,8 @@ This example shows how to print a string on a display.
 		2. In **Settings** field, select **Build & Deploy**
 1. In **Configuration** tab
 	* Go to **Libraries -> NLS**
-		* Check Use NLS messages
-		* Set the **NLS list file** to`${project_loc:ej.examples.foundation.nls.helloworld}/src/main/resources/ej/examples/foundation/nls/helloworld/examples.nls.list`
+		* Check **Use NLS messages**
+		* Set the **NLS list file** field to`${project_loc:ej.examples.foundation.nls.helloworld}/src/main/resources/ej/examples/foundation/nls/helloworld/examples.nls.list`
 1. Press **Apply**
 1. Press **Run**
 1. Copy the generated `.out` file path shown by the console

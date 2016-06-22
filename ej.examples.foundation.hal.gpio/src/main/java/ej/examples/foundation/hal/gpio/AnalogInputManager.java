@@ -19,7 +19,7 @@ public class AnalogInputManager implements Runnable {
 	
 	private static final int[] MULTI_FUNCTION_ANALOG_INPUT = { Shield.PIN_ANALOG_POT };
 
-	// All the buttons
+	// All the analog inputs
 	private final List<GPIOAnalogInput> analogInputs;
 
 	public AnalogInputManager() {
