@@ -14,7 +14,7 @@ import ej.microui.display.Display;
 import ej.microui.display.Image;
 
 /**
- * Use different image transformation
+ * Use different image transformations
  */
 public class ExampleTransform {
 
@@ -33,14 +33,14 @@ public class ExampleTransform {
 		// Creates the controller
 		TransformEventHandler controller = new TransformEventHandler(d.getWidth(), d.getHeight());
 
-		// Creates an ImageView (using all display area)
-		TransformDisplayable vue = new TransformDisplayable(d, controller);
+		// Creates an ImageView (using whole display area)
+		TransformDisplayable view = new TransformDisplayable(d, controller);
 
-		// Set the links between the MVC
-		model.addObserver(vue);
+		// Set the MVC links
+		model.addObserver(view);
 		controller.setModel(model);
-		controller.setVue(vue);
+		controller.setView(view);
 
-		vue.show();
+		view.show();
 	}
 }

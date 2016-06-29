@@ -17,7 +17,7 @@ public class TransformEventHandler implements EventHandler {
 
 	private final int width;
 	private final int height;
-	private TransformDisplayable vue;
+	private TransformDisplayable view;
 	private TransformModel model;
 
 	/**
@@ -56,22 +56,22 @@ public class TransformEventHandler implements EventHandler {
 	}
 
 	/**
-	 * Gets the vue.
+	 * Gets the view.
 	 *
-	 * @return the vue.
+	 * @return the view.
 	 */
 	public TransformDisplayable getVue() {
-		return vue;
+		return view;
 	}
 
 	/**
-	 * Sets the vue.
+	 * Sets the view.
 	 *
-	 * @param vue
-	 *            the vue to set.
+	 * @param view
+	 *            the view to set.
 	 */
-	public void setVue(TransformDisplayable vue) {
-		this.vue = vue;
+	public void setView(TransformDisplayable view) {
+		this.view = view;
 	}
 
 	/**

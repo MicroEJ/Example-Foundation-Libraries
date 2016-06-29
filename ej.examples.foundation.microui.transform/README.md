@@ -3,8 +3,8 @@ This example shows how to use MicroUI transform.
 
 
 # Usage
-* Press the red part of the screen to change the type of transformation
-* Press the Green and Blue parts of the screen to change the values of the transformation
+* Press the Red area of the screen to change the type of transformation
+* Press the Green and Blue areas of the screen to change the values of the transformation
 
 ## Run on MicroEJ Simulator
 1. Right Click on the project
@@ -15,8 +15,8 @@ This example shows how to use MicroUI transform.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleMVC.java](ej.examples.foundation.microui.mvc/src/main/java/ej/examples/foundation/microui/mvc/ExampleMVC.java)
-1. Select **Run as -> Run Configuration**
+1. Right Click on [ExampleTransform.java](/ej.examples.foundation.microui.transform/src/main/java/ej/examples/foundation/microui/image/ExampleTransform.java)
+1. Select **Run as -> Run Configuration...**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
 1. In **Execution** tab
