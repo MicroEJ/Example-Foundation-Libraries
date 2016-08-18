@@ -6,13 +6,13 @@ This project gathers all the basic examples of the foundation libraries. They ar
 ### EDC
 EDC contains the minimal standard runtime environment for embedded devices
 
-**Avaliable Example**:
+**Available Example**:
 * [ej.examples.foundation.edc.helloworld](ej.examples.foundation.edc.helloworld): This example prints Hello World on the standard output stream.
 
 ### BON
 BON focuses on devices with non-volatile and volatile memories. This library allows to fully control memory usage and start-up sequences on devices with limited memory resources.
 
-**Avaliable Examples**:
+**Available Examples**:
 
 * [ej.examples.foundation.bon.immortals](ej.examples.foundation.bon.immortals): This example shows how to manipulate the immortals.
 * [ej.examples.foundation.bon.immutables](ej.examples.foundation.bon.immutables): This example shows how to manipulate the immutables.
@@ -23,7 +23,7 @@ BON focuses on devices with non-volatile and volatile memories. This library all
 ### ECOM
 ECOM libraries provides a standard communication over UART
 
-**Avaliable Examples**:
+**Available Examples**:
 * [ej.examples.foundation.ecom.hotplug](ej.examples.foundation.ecom.hotplug): This example shows how to listen on plug/unplug of dynamic ComConnections and shows their properties.
 * [ej.examples.foundation.ecom.writer](ej.examples.foundation.ecom.writer): This example shows how to write some bytes to a CommConnection.
 * [ej.examples.foundation.ecom.reader](ej.examples.foundation.ecom.reader): This example shows how to read some bytes from a CommConnection.
@@ -31,7 +31,7 @@ ECOM libraries provides a standard communication over UART
 ### HAL
 HAL libraries presents an abstraction of the communication with the hardware
 
-**Avaliable Example**:
+**Available Example**:
 * [ej.examples.foundation.hal.gpio](ej.examples.foundation.hal.gpio): This example shows how to use gpio.
 
 
@@ -40,7 +40,7 @@ HAL libraries presents an abstraction of the communication with the hardware
 ### MicroUI
 MicroUI provides the minimal cornerstone for quick construction of advanced, portable and user-friendly applications for a wide and heterogeneous range of devices with just-what-is-needed resources.
 
-**Avaliable Examples**:
+**Available Examples**:
 * [ej.examples.foundation.microui.antialiased](ej.examples.foundation.microui.antialiased): This example shows how to use anti-aliased shapes.
 * [ej.examples.foundation.microui.font](ej.examples.foundation.microui.font): This example shows how to create and use a font.
 * [ej.examples.foundation.microui.helloworld](ej.examples.foundation.microui.helloworld): This example shows how to print a string on a display.
@@ -55,14 +55,14 @@ MicroUI provides the minimal cornerstone for quick construction of advanced, por
 ### MWT
 MWT is a widget toolkit designed for a wide range of devices, including embedded devices with limited processing power.
 
-**Avaliable Examples**:
+**Available Examples**:
 * [ej.examples.foundation.mwt.helloworld](ej.examples.foundation.mwt.helloworld): This example shows a simple hello world using MWT.
 * [ej.examples.foundation.mwt.mvc](ej.examples.foundation.mwt.mvc): This example shows how to create and use a MVC design pattern.
 
 ### NLS
 NLS provides tools to use localized strings.
 
-**Avaliable Example**:
+**Available Example**:
 * [ej.examples.foundation.nls.helloworld](ej.examples.foundation.nls.helloworld): This example shows how to print a localized string on a display.
 
 
@@ -71,7 +71,7 @@ NLS provides tools to use localized strings.
 ### NET
 NET is a lightweight Java library dedicated to networking application. It supports stream (TCP/IP) and datagram (UDP) socket connection API.
 
-**Avaliable Examples**:
+**Available Examples**:
 * [ej.examples.foundation.net.echo](ej.examples.foundation.net.echo): This example shows a simple echo server.
 * [ej.examples.foundation.net.helloworld](ej.examples.foundation.net.helloworld): This example shows a simple helloworld using NET.
 
@@ -80,5 +80,5 @@ NET is a lightweight Java library dedicated to networking application. It suppor
 ### FS
 FS is a library to access multiple storage devices (in and out data streams) through a simple file system API.
 
-**Avaliable Example**:
+**Available Example**:
 * [ej.examples.foundation.fs.helloworld](ej.examples.foundation.fs.helloworld): This example creates a list of folders, add some files and delete them all.
