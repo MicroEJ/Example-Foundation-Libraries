@@ -1,0 +1,11 @@
+*/bin*/
+*/*.map
+*/*.properties
+*/*.jazzignore
+*/src/.generated~/
+*/target~/
+*/.settings/org.sonar.ide.eclipse.core.prefs
+*/_*/
+# */launches/
+*/launches/*.properties
+*/ej.examples.*/

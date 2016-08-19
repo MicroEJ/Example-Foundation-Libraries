@@ -1,0 +1,11 @@
+# image uncompressed without transparency
+images/flower_A.png:RGB565
+
+# image uncompressed with transparency
+images/flower_B.png:ARGB1555
+
+# image compressed without transparency
+images/angkor.png
+
+# image compressed with transparency
+images/plane.png
