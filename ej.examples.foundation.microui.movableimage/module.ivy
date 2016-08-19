@@ -2,7 +2,7 @@
 	IVY
 	
 	Copyright 2016 IS2T. All rights reserved.
-	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+	Use of this source code is governed by a BSD-style license that can be found at http://www.is2t.com/open-source-bsd-license/.
 -->
 <ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:m="http://ant.apache.org/ivy/extra"> 
 	<info organisation="ej.examples.foundation.microui" module="movableimage" status="integration" revision="1.0.0">
