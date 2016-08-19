@@ -1,20 +1,20 @@
 # Overview
 This project gathers some basic examples of the foundation libraries. Those examples are developed as standalone applications and as such can be run by following the associated instructions (see **README.md** file of each example).
 
-Note that to run them on board :
+Note that to run them on board:
 
-* If you are using MicroEJ SDK
+* If you are using MicroEJ SDK:
  * You need a supported board (see http://developer.microej.com/index.php?resource=JPF for a list of supported boards using MicroEJ SDK evaluation version)
- * And the associated platform reference implementation binary .jpf file (retrieve it from the previous link and import it into MicroEJ SDK)
+ * And the associated platform binary .jpf file (retrieve it from the previous link and import it into MicroEJ SDK)
 
-* If you are using MicroEJ Studio
+* If you are using MicroEJ Studio:
  * You need to convert them from standalone applications to sandboxed applications.
  * Follow the [How-To convert a standalone app into a sandboxed app](https://github.com/MicroEJ/How-To/tree/master/StandaloneToSandboxed) guide.
 
 # Details
 ## Core
 ### EDC
-EDC contains the minimal standard runtime environment for embedded devices
+EDC contains the minimal standard runtime environment for embedded devices.
 
 **Available Example**:
 * [ej.examples.foundation.edc.helloworld](ej.examples.foundation.edc.helloworld): Prints Hello World on the standard output stream.
@@ -31,7 +31,7 @@ BON focuses on devices with non-volatile and volatile memories. This library all
 ## Communicate with other hardwares
 
 ### ECOM
-ECOM libraries provides a standard communication over UART
+ECOM libraries provides a standard communication over UART.
 
 **Available Examples**:
 * [ej.examples.foundation.ecom.hotplug](ej.examples.foundation.ecom.hotplug): Shows how to listen on plug/unplug of dynamic ComConnections and shows their properties.
@@ -39,7 +39,7 @@ ECOM libraries provides a standard communication over UART
 * [ej.examples.foundation.ecom.reader](ej.examples.foundation.ecom.reader): Shows how to read some bytes from a CommConnection.
 
 ### HAL
-HAL libraries presents an abstraction of the communication with the hardware
+HAL libraries presents an abstraction of the communication with the hardware.
 
 **Available Example**:
 * [ej.examples.foundation.hal.gpio](ej.examples.foundation.hal.gpio): Shows how to use gpio.
@@ -59,7 +59,7 @@ MicroUI provides the minimal cornerstone for quick construction of advanced, por
 * [ej.examples.foundation.microui.led](ej.examples.foundation.microui.led): Shows how to use the LEDs.
 * [ej.examples.foundation.microui.movableimage](ej.examples.foundation.microui.movableimage): Shows how to create and use a movable image.
 * [ej.examples.foundation.microui.mvc](ej.examples.foundation.microui.mvc): Shows how to create and use a MVC design pattern.
-* [ej.examples.foundation.microui.out](ej.examples.foundation.microui.out): Shows how to do the redirection of the standard SystemOut to the display.
+* [ej.examples.foundation.microui.out](ej.examples.foundation.microui.out): Shows how to redirect the standard SystemOut to the display.
 * [ej.examples.foundation.microui.transform](ej.examples.foundation.microui.transform): Shows how to use MicroUI transform.
 
 ### MWT
@@ -79,7 +79,7 @@ NLS provides tools to use localized strings.
 ## Communicate with the world
 
 ### NET
-NET is a lightweight Java library dedicated to networking application. It supports stream (TCP/IP) and datagram (UDP) socket connection API.
+NET is a lightweight Java library dedicated to networking applications. It supports stream (TCP/IP) and datagram (UDP) socket connection APIs.
 
 **Available Examples**:
 * [ej.examples.foundation.net.echo](ej.examples.foundation.net.echo): Shows a simple echo server.
@@ -91,4 +91,4 @@ NET is a lightweight Java library dedicated to networking application. It suppor
 FS is a library to access multiple storage devices (in and out data streams) through a simple file system API.
 
 **Available Example**:
-* [ej.examples.foundation.fs.helloworld](ej.examples.foundation.fs.helloworld): Create a list of folders, add some files and delete them all.
+* [ej.examples.foundation.fs.helloworld](ej.examples.foundation.fs.helloworld): Creates a list of folders, adds some files and deletes them all.
