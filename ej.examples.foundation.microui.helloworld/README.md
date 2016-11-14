@@ -35,3 +35,10 @@ This example shows how to print a string on a display.
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+# Source
+N/A
+
+# Restrictions
+None.
+

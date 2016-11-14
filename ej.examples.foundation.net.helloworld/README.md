@@ -42,3 +42,9 @@ This example shows a simple helloworld using NET.
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+# Source
+N/A
+
+# Restrictions
+None.

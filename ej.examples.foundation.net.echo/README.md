@@ -35,3 +35,10 @@ This example shows a simple echo server.
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+
+# Source
+N/A
+
+# Restrictions
+None.

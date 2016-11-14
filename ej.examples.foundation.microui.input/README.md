@@ -35,3 +35,9 @@ This example shows how to listen the MicroUI input events.
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+# Source
+N/A
+
+# Restrictions
+None.

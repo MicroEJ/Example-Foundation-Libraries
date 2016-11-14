@@ -2,7 +2,7 @@
  * Java
  *
  * Copyright 2014-2016 IS2T. All rights reserved
- * IS2T PROPRIETARY/CONFIDENTIAL Use is subject to license terms.
+ * Use of this source code is subject to license terms.
  */
 package ej.examples.foundation.fs.helloworld;
 

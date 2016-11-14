@@ -37,3 +37,10 @@ Note that this must not be a virtual device
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+# Source
+N/A
+
+# Restrictions
+None.
+

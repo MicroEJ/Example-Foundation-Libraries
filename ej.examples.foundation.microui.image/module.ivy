@@ -2,11 +2,11 @@
 	IVY
 	
 	Copyright 2016 IS2T. All rights reserved.
-	Use of this source code is governed by a BSD-style license that can be found at http://www.is2t.com/open-source-bsd-license/.
+	Use of this source code is subject to license terms.
 -->
 <ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:m="http://ant.apache.org/ivy/extra"> 
-	<info organisation="ej.examples.foundation.microui" module="images" status="integration" revision="1.0.0">
-		<ea:build organisation="com.is2t.easyant.buildtypes" module="build-microej-javalib" revision="1.+">
+	<info organisation="ej.examples.foundation.microui" module="images" status="integration" revision="1.0.1">
+		<ea:build organisation="com.is2t.easyant.buildtypes" module="build-microej-javalib" revision="3.+">
 		</ea:build>
 	</info>
 	<configurations defaultconfmapping="default->default;provided->provided">

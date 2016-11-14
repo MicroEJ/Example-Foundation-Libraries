@@ -36,3 +36,10 @@ This example shows how to create and use a font.
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+# Source
+N/A
+
+# Restrictions
+None.
+

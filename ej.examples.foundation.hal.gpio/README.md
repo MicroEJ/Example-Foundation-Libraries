@@ -29,3 +29,10 @@ The pins are configured for a YwroBot Easy Module Shield V1
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+# Source
+N/A
+
+# Restrictions
+None.
+
