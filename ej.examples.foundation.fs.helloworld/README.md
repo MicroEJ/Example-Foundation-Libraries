@@ -35,3 +35,9 @@ This example creates a list of folders, add some files and delete them all.
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+# Source
+N/A
+
+# Restrictions
+None.

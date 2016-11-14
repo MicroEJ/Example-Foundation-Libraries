@@ -54,3 +54,9 @@ This example shows how to write some bytes to a CommConnection.
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+# Source
+N/A
+
+# Restrictions
+None.

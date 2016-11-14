@@ -36,3 +36,9 @@ This example shows how to use anti-aliased shapes.
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+# Source
+N/A
+
+# Restrictions
+None.

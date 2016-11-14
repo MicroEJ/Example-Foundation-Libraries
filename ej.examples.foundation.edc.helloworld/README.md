@@ -32,3 +32,9 @@ This example prints Hello World on the standard output stream.
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+# Source
+N/A
+
+# Restrictions
+None.

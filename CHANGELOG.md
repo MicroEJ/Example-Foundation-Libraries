@@ -12,6 +12,11 @@ Bugfixes:
   - List here the bug fixes.
 -->
 
+## Revision 23.0.23 (2016-11-08)
+Features:
+   - Change reversion count (Sum of all subprojects reversion).
+   - Update projects to compile with microej-lib 3.+.
+
 ## Revision 1.0.0 (2016-05-25)
 ### Addition:
 ej.examples.foundation.microui.antialiased

@@ -39,3 +39,9 @@ This example shows how to use MicroUI transform.
 
 ## Dependencies
 _All dependencies are retrieved transitively by Ivy resolver_.
+
+# Source
+N/A
+
+# Restrictions
+None.
