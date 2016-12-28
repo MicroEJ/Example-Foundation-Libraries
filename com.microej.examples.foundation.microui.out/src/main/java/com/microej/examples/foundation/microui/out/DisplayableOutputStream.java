@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.microui.out;
+package com.microej.example.foundation.microui.out;
 
 import ej.microui.display.Display;
 import ej.microui.display.Displayable;

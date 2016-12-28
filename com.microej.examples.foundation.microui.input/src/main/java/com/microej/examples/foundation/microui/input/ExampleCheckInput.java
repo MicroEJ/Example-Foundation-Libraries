@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.microui.input;
+package com.microej.example.foundation.microui.input;
 
 import ej.microui.MicroUI;
 import ej.microui.event.EventGenerator;

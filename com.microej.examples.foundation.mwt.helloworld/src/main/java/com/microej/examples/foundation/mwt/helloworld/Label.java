@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.mwt.helloworld;
+package com.microej.example.foundation.mwt.helloworld;
 
 import ej.microui.display.Colors;
 import ej.microui.display.Font;

@@ -11,7 +11,7 @@ This example creates a list of folders, add some files and delete them all.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleFileSystem.java](/com.microej.examples.foundation.fs.helloworld/src/main/java/com.microej.examples/foundation/fs/helloworld/ExampleFileSystem.java)
+1. Right Click on [ExampleFileSystem.java](/com.microej.example.foundation.fs.helloworld/src/main/java/com.microej.example/foundation/fs/helloworld/ExampleFileSystem.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

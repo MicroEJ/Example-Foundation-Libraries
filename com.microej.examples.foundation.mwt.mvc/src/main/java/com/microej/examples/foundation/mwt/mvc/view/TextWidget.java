@@ -5,9 +5,9 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.mwt.mvc.view;
+package com.microej.example.foundation.mwt.mvc.view;
 
-import com.microej.examples.foundation.mwt.mvc.model.PercentageModel;
+import com.microej.example.foundation.mwt.mvc.model.PercentageModel;
 import ej.microui.display.GraphicsContext;
 
 

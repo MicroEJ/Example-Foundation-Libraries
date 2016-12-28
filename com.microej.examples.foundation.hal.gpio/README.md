@@ -5,7 +5,7 @@ The pins are configured for a YwroBot Easy Module Shield V1
 # Usage
 ## Run on device
 ### Build
-1. Right Click on [ExampleGPIO.java](com.microej.examples.foundation.hal.gpio/src/main/java/com.microej.examples/foundation/hal/gpio/ExampleGPIO.java)
+1. Right Click on [ExampleGPIO.java](com.microej.example.foundation.hal.gpio/src/main/java/com.microej.example/foundation/hal/gpio/ExampleGPIO.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

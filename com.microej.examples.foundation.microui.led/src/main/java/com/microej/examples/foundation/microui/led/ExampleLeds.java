@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.microui.led;
+package com.microej.example.foundation.microui.led;
 
 import java.util.Random;
 

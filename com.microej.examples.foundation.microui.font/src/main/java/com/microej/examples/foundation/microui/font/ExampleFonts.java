@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.microui.font;
+package com.microej.example.foundation.microui.font;
 
 import ej.microui.MicroUI;
 import ej.microui.display.Display;

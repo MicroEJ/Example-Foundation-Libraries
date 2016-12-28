@@ -3,7 +3,7 @@ This example shows how to write some bytes to a CommConnection.
 
 # Usage
 ## Run on MicroEJ Simulator
-1. Right Click on [ExampleUARTWriter.java](com.microej.examples.foundation.ecom.writer/src/main/java/com.microej.examples/foundation/ecom/uartwriter/ExampleUARTWriter.java)
+1. Right Click on [ExampleUARTWriter.java](com.microej.example.foundation.ecom.writer/src/main/java/com.microej.example/foundation/ecom/uartwriter/ExampleUARTWriter.java)
 1. Select **Run as -> Run Configuration** 
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
@@ -17,15 +17,15 @@ This example shows how to write some bytes to a CommConnection.
 		* Map the UART com port (available on your platform documentation) to the application port `42`
 	* Go to **Simulator -> Com Port**
 		* Select simulation type UART <-> FILE
-		* Set the **File input mapping** field to `${project_loc:com.microej.examples.foundation.ecom.writer}/sim/filein.txt`
-		* Set the **File output mapping** field to `${project_loc:com.microej.examples.foundation.ecom.writer}/sim/fileout.txt`
+		* Set the **File input mapping** field to `${project_loc:com.microej.example.foundation.ecom.writer}/sim/filein.txt`
+		* Set the **File output mapping** field to `${project_loc:com.microej.example.foundation.ecom.writer}/sim/fileout.txt`
 1. Press **Apply**
 1. Press **Run**
 
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleUARTWriter.java](com.microej.examples.foundation.ecom.writer/src/main/java/com.microej.examples/foundation/ecom/uartwriter/ExampleUARTWriter.java)
+1. Right Click on [ExampleUARTWriter.java](com.microej.example.foundation.ecom.writer/src/main/java/com.microej.example/foundation/ecom/uartwriter/ExampleUARTWriter.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

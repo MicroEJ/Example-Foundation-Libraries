@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.net.helloworld;
+package com.microej.example.foundation.net.helloworld;
 
 import java.io.IOException;
 import java.io.OutputStream;

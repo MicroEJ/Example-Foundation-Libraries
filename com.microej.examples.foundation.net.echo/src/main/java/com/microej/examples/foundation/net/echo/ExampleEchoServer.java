@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.net.echo;
+package com.microej.example.foundation.net.echo;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,8 +18,8 @@ import java.util.logging.Logger;
 /**
  * This example open a server on {@link NetEcho
 
-import com.is2t.examples.netembedded.logger.INetLogger;
-import com.is2t.examples.netembedded.logger.NetSysoutLogger;ges to the client.
+import com.is2t.example.netembedded.logger.INetLogger;
+import com.is2t.example.netembedded.logger.NetSysoutLogger;ges to the client.
  * Example stopped when the client close the connection and print all client messages.
  */
 public class ExampleEchoServer implements NetEchoConstants{

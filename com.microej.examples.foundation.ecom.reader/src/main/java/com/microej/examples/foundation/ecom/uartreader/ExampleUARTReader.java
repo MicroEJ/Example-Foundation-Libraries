@@ -4,12 +4,12 @@
  * Copyright 2016 IS2T. All rights reserved.
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.ecom.uartreader;
+package com.microej.example.foundation.ecom.uartreader;
 
 import java.io.InputStream;
 
 import ej.ecom.io.CommConnection;
-import com.microej.examples.foundation.ecom.AbstractCommTest;
+import com.microej.example.foundation.ecom.AbstractCommTest;
 
 /**
  * This example reads bytes from a comm port and redirect them on the standard Java output stream.

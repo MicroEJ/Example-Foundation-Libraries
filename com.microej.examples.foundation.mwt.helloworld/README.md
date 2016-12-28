@@ -11,7 +11,7 @@ This example shows a simple hello world using MWT.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleHelloWorld.java](com.microej.examples.foundation.mwt.helloworld/src/main/java/com.microej.examples/foundation/mwt/helloworld/ExampleHelloWorld.java)
+1. Right Click on [ExampleHelloWorld.java](com.microej.example.foundation.mwt.helloworld/src/main/java/com.microej.example/foundation/mwt/helloworld/ExampleHelloWorld.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

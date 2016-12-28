@@ -4,7 +4,7 @@
  * Copyright 2016 IS2T. All rights reserved.
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.bon.immortals;
+package com.microej.example.foundation.bon.immortals;
 
 import ej.bon.Immortals;
 

@@ -12,7 +12,7 @@ This example shows how to manipulate the immutables.
 ## Run on a device
 Note that this must not be a virtual device
 ### Build
-1. Right Click on [ExampleImmutables.java](com.microej.examples.foundation.bon.immutables/src/main/java/com.microej.examples/foundation/bon/immutables/ExampleImmutables.java)
+1. Right Click on [ExampleImmutables.java](com.microej.example.foundation.bon.immutables/src/main/java/com.microej.example/foundation/bon/immutables/ExampleImmutables.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

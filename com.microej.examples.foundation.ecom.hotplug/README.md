@@ -5,7 +5,7 @@ This example shows how to listen on plug/unplug of dynamic ComConnections and sh
 ## Run on device
 Note that this must not be a virtual device
 ### Build
-1. Right Click on [ExampleHotPlug.java](com.microej.examples.foundation.ecom.hotplug/src/main/java/com.microej.examples/foundation/ecom/hotplug/ExampleHotPlug.java)
+1. Right Click on [ExampleHotPlug.java](com.microej.example.foundation.ecom.hotplug/src/main/java/com.microej.example/foundation/ecom/hotplug/ExampleHotPlug.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

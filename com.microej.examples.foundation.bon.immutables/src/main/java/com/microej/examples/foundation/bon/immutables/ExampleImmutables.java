@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.bon.immutables;
+package com.microej.example.foundation.bon.immutables;
 
 import java.util.NoSuchElementException;
 

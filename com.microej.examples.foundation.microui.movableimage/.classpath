@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/main/resources"/>
-	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=com.microej.examples.foundation.microui.movableimage&amp;ivyXmlPath=module.ivy&amp;confs=*"/>
+	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=com.microej.example.foundation.microui.movableimage&amp;ivyXmlPath=module.ivy&amp;confs=*"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

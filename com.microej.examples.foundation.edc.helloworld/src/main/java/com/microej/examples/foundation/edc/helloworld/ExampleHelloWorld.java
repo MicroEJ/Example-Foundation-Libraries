@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.edc.helloworld;
+package com.microej.example.foundation.edc.helloworld;
 
 
 /**

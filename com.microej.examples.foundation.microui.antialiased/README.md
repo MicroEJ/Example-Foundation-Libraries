@@ -11,7 +11,7 @@ This example shows how to use anti-aliased shapes.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleAntialiased.java](com.microej.examples.foundation.microui.antialiased/src/main/java/com.microej.examples/foundation/microui/antialiased/ExampleAntialiased.java)
+1. Right Click on [ExampleAntialiased.java](com.microej.example.foundation.microui.antialiased/src/main/java/com.microej.example/foundation/microui/antialiased/ExampleAntialiased.java)
 1. Select **Run as -> Run Configuration** 
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

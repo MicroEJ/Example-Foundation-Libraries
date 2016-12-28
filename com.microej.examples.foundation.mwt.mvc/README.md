@@ -11,7 +11,7 @@ This example shows how to create and use a MVC design pattern.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleMVC.java](com.microej.examples.foundation.mwt.mvc/src/main/java/com.microej.examples/foundation/mwt/mvc/ExampleMVC.java)
+1. Right Click on [ExampleMVC.java](com.microej.example.foundation.mwt.mvc/src/main/java/com.microej.example/foundation/mwt/mvc/ExampleMVC.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

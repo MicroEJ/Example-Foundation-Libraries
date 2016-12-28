@@ -11,7 +11,7 @@ This example shows how to create and use a movable image.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleImages.java](com.microej.examples.foundation.microui.movableimage/src/main/java/com.microej.examples/foundation/microui/movableimage/ExampleImages.java)
+1. Right Click on [ExampleImages.java](com.microej.example.foundation.microui.movableimage/src/main/java/com.microej.example/foundation/microui/movableimage/ExampleImages.java)
 1. Select **Run as -> Run Configuration** 
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

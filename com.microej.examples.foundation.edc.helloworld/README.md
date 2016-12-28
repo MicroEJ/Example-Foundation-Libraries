@@ -11,7 +11,7 @@ This example prints Hello World on the standard output stream.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleHelloWorld.java](com.microej.examples.foundation.edc.helloworld/src/main/java/com.microej.examples/foundation/edc/helloworld/ExampleHelloWorld.java)
+1. Right Click on [ExampleHelloWorld.java](com.microej.example.foundation.edc.helloworld/src/main/java/com.microej.example/foundation/edc/helloworld/ExampleHelloWorld.java)
 1. Select **Run as -> Run Configuration** 
 1. Click on **New launch configuration** icon
 1. Select **Execute on Device**

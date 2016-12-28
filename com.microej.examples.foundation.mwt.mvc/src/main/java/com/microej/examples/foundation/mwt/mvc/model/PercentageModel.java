@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.mwt.mvc.model;
+package com.microej.example.foundation.mwt.mvc.model;
 
 import java.util.Observable;
 import java.util.Random;

@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.net.echo;
+package com.microej.example.foundation.net.echo;
 
 /**
  * NetEcho example settings 

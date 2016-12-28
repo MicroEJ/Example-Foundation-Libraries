@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.microui.movableimage;
+package com.microej.example.foundation.microui.movableimage;
 
 import java.util.TimerTask;
 import java.util.Vector;

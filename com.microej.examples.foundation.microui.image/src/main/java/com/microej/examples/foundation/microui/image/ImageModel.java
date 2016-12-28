@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package com.microej.examples.foundation.microui.image;
+package com.microej.example.foundation.microui.image;
 
 import java.util.Observable;
 

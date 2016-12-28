@@ -11,7 +11,7 @@ This example shows a simple echo server.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleEchoServer.java](com.microej.examples.foundation.net.echo/src/main/java/com.microej.examples/foundation/net/echo/ExampleEchoServer.java)
+1. Right Click on [ExampleEchoServer.java](com.microej.example.foundation.net.echo/src/main/java/com.microej.example/foundation/net/echo/ExampleEchoServer.java)
 1. Select **Run as -> Run Configuration** 
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
