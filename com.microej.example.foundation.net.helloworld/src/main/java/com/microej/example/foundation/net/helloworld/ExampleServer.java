@@ -2,7 +2,7 @@
  * Java
  *
  * Copyright 2014-2015 IS2T. All rights reserved.
- * 
+ *
  * Use of this source code is subject to license terms.
  */
 package com.microej.example.foundation.net.helloworld;
@@ -18,13 +18,13 @@ import java.util.logging.Logger;
  * This example opens a client socket, send a "Hello World!" message to a server and close the connection.
  * The server reads the client message and close the remote socket.
  */
-public class exampleerver implements HelloWorldConstants{
+public class ExampleServer implements HelloWorldConstants {
 
 	private static final long WAIT_FOR_CONNECTION = 5000;
 	/**
 	 * Application logger.
 	 */
-	private static Logger Logger = java.util.logging.Logger.getLogger(exampleerver.class.getSimpleName());
+	private static Logger Logger = java.util.logging.Logger.getLogger(ExampleServer.class.getSimpleName());
 
 	/**
 	 * Server main entry point.
