@@ -10,9 +10,9 @@ Features:
 
 ## Revision 1.0.0 (2016-05-25)
 ### Addition:
-ej.examples.foundation.microui.antialiased
-ej.examples.foundation.microui.movableimage
-ej.examples.foundation.hal.gpio
+ej.example.foundation.microui.antialiased
+ej.example.foundation.microui.movableimage
+ej.example.foundation.hal.gpio
 
 Deletion
 MicroUI -> MyFiltersSample
