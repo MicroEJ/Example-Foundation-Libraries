@@ -71,7 +71,9 @@ public class AbstractCommTest {
 
 	/**
 	 * Closes the given input stream.
-	 * @param out the input stream to close.
+	 * 
+	 * @param in
+	 *            the input stream to close.
 	 * @return true if the input stream has been closed.
 	 */
 	public boolean closeInputStream(InputStream in){
