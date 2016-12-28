@@ -1,16 +1,3 @@
-<!--
-	Markdown
--->
-<!--
-Changelog template:
-
-## Revision (YYYY-mm-dd)
-Features:
-  - List here the new features.
-  
-Bugfixes:
-  - List here the bug fixes.
--->
 
 ## Revision 23.0.23 (2016-11-08)
 Features:
