@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.microui.mvc;
+package com.microej.examples.foundation.microui.mvc;
 
 import ej.microui.event.controller.DispatchEventHandler;
 import ej.microui.event.generator.Command;

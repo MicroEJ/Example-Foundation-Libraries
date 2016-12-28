@@ -4,7 +4,7 @@
  * Copyright 2016 IS2T. All rights reserved.
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.microui.image;
+package com.microej.examples.foundation.microui.image;
 
 import ej.microui.event.Event;
 import ej.microui.event.generator.Pointer;

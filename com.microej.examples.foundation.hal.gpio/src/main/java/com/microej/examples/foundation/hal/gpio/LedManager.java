@@ -4,7 +4,7 @@
  * Copyright 2016 IS2T. All rights reserved.
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.hal.gpio;
+package com.microej.examples.foundation.hal.gpio;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,7 +4,7 @@
  * Copyright 2016 IS2T. All rights reserved.
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.ecom.hotplug;
+package com.microej.examples.foundation.ecom.hotplug;
 
 import ej.ecom.Device;
 import ej.ecom.HardwareDescriptor;

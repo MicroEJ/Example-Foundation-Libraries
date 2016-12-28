@@ -5,10 +5,10 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.mwt.mvc.controller;
+package com.microej.examples.foundation.mwt.mvc.controller;
 
-import ej.examples.foundation.mwt.mvc.model.PercentageModel;
-import ej.examples.foundation.mwt.mvc.view.CompositeView;
+import com.microej.examples.foundation.mwt.mvc.model.PercentageModel;
+import com.microej.examples.foundation.mwt.mvc.view.CompositeView;
 import ej.microui.event.Event;
 import ej.microui.event.generator.Buttons;
 import ej.microui.event.generator.Command;

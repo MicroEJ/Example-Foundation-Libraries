@@ -4,12 +4,12 @@
  * Copyright 2016 IS2T. All rights reserved.
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.ecom.uartwriter;
+package com.microej.examples.foundation.ecom.uartwriter;
 
 import java.io.OutputStream;
 
 import ej.ecom.io.CommConnection;
-import ej.examples.foundation.ecom.AbstractCommTest;
+import com.microej.examples.foundation.ecom.AbstractCommTest;
 
 /**
  * This example repeatedly outputs the string {@link #OUTPUT_STRING} through a comm connection output stream.

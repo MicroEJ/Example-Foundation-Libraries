@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.net.echo;
+package com.microej.examples.foundation.net.echo;
 
 import java.io.IOException;
 import java.io.InputStream;

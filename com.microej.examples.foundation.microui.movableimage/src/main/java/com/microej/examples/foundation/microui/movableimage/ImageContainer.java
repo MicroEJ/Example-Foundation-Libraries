@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.microui.movableimage;
+package com.microej.examples.foundation.microui.movableimage;
 
 import ej.microui.display.GraphicsContext;
 import ej.microui.display.Image;

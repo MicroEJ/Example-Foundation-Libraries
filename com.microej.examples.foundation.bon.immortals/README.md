@@ -12,7 +12,7 @@ This example shows how to manipulate the immortals.
 ## Run on a device
 Note that this must not be a virtual device
 ### Build
-1. Right Click on [ExampleImmortals.java](ej.examples.foundation.bon.immortals/src/main/java/ej/examples/foundation/bon/immortals/ExampleImmortals.java)
+1. Right Click on [ExampleImmortals.java](com.microej.examples.foundation.bon.immortals/src/main/java/com.microej.examples/foundation/bon/immortals/ExampleImmortals.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

@@ -11,7 +11,7 @@ This example shows how to print a string on a display.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleHelloWorld.java](ej.examples.foundation.microui.helloworld/src/main/java/ej/examples/foundation/microui/helloworld/ExampleHelloWorld.java)
+1. Right Click on [ExampleHelloWorld.java](com.microej.examples.foundation.microui.helloworld/src/main/java/com.microej.examples/foundation/microui/helloworld/ExampleHelloWorld.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

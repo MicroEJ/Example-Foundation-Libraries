@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.nls.helloworld;
+package com.microej.examples.foundation.nls.helloworld;
 
 import ej.microui.MicroUI;
 import ej.microui.display.Colors;

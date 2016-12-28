@@ -5,12 +5,12 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.mwt.mvc.view;
+package com.microej.examples.foundation.mwt.mvc.view;
 
 import java.util.Observable;
 import java.util.Observer;
 
-import ej.examples.foundation.mwt.mvc.model.PercentageModel;
+import com.microej.examples.foundation.mwt.mvc.model.PercentageModel;
 import ej.microui.display.Colors;
 import ej.microui.display.GraphicsContext;
 import ej.mwt.Widget;

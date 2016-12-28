@@ -5,16 +5,16 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.mwt.mvc;
+package com.microej.examples.foundation.mwt.mvc;
 
 import java.io.IOException;
 
-import ej.examples.foundation.mwt.mvc.controller.PercentageController;
-import ej.examples.foundation.mwt.mvc.model.PercentageModel;
-import ej.examples.foundation.mwt.mvc.view.BarWidget;
-import ej.examples.foundation.mwt.mvc.view.CompositeView;
-import ej.examples.foundation.mwt.mvc.view.PieWidget;
-import ej.examples.foundation.mwt.mvc.view.TextWidget;
+import com.microej.examples.foundation.mwt.mvc.controller.PercentageController;
+import com.microej.examples.foundation.mwt.mvc.model.PercentageModel;
+import com.microej.examples.foundation.mwt.mvc.view.BarWidget;
+import com.microej.examples.foundation.mwt.mvc.view.CompositeView;
+import com.microej.examples.foundation.mwt.mvc.view.PieWidget;
+import com.microej.examples.foundation.mwt.mvc.view.TextWidget;
 import ej.microui.MicroUI;
 import ej.microui.display.Display;
 import ej.microui.display.FlyingImage;

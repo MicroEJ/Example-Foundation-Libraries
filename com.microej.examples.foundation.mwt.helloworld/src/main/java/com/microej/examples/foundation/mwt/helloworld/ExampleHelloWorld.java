@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.mwt.helloworld;
+package com.microej.examples.foundation.mwt.helloworld;
 
 import ej.microui.MicroUI;
 import ej.mwt.Desktop;

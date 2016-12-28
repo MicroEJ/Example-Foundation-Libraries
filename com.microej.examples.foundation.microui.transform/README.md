@@ -15,7 +15,7 @@ This example shows how to use MicroUI transform.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleTransform.java](/ej.examples.foundation.microui.transform/src/main/java/ej/examples/foundation/microui/image/ExampleTransform.java)
+1. Right Click on [ExampleTransform.java](/com.microej.examples.foundation.microui.transform/src/main/java/com.microej.examples/foundation/microui/image/ExampleTransform.java)
 1. Select **Run as -> Run Configuration...**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

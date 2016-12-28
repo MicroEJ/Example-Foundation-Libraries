@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.microui.mvc;
+package com.microej.examples.foundation.microui.mvc;
 
 import java.util.Observable;
 import java.util.Observer;

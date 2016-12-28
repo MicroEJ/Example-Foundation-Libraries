@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.nls.helloworld;
+package com.microej.examples.foundation.nls.helloworld;
 
 /**
  * Interface that list the existing messages for the header "HelloWorld".

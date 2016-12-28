@@ -5,7 +5,7 @@
  * 
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.microui.out;
+package com.microej.examples.foundation.microui.out;
 
 import java.io.IOException;
 import java.io.OutputStream;

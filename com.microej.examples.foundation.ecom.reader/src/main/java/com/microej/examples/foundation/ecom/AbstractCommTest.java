@@ -4,7 +4,7 @@
  * Copyright 2016 IS2T. All rights reserved.
  * Use of this source code is subject to license terms.
  */
-package ej.examples.foundation.ecom;
+package com.microej.examples.foundation.ecom;
 
 import java.io.InputStream;
 import java.io.OutputStream;

@@ -11,7 +11,7 @@ This example shows how to use the LEDs.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleLeds.java](ej.examples.foundation.microui.led/src/main/java/ej/examples/foundation/microui/led/ExampleLeds.java)
+1. Right Click on [ExampleLeds.java](com.microej.examples.foundation.microui.led/src/main/java/com.microej.examples/foundation/microui/led/ExampleLeds.java)
 1. Select **Run as -> Run Configuration** 
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
