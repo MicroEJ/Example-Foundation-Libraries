@@ -11,7 +11,7 @@ This example shows how to create and use a font.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleFonts.java](com.microej.example.foundation.microui.font/src/main/java/com.microej.example/foundation/microui/font/ExampleFonts.java)
+1. Right Click on [ExampleFonts.java](src/main/java/com/microej/example/foundation/microui/font/ExampleFonts.java)
 1. Select **Run as -> Run Configuration** 
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

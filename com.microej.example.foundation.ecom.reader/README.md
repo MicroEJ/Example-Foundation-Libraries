@@ -3,7 +3,7 @@ This example shows how to read some bytes from a CommConnection.
 
 # Usage
 ## Run on MicroEJ Simulator
-1. Right Click on [ExampleUARTReader.java](com.microej.example.foundation.ecom.reader/src/main/java/com.microej.example/foundation/ecom/uartreader/ExampleUARTReader.java)
+1. Right Click on [ExampleUARTReader.java](src/main/java/com/microej/example/foundation/ecom/uartreader/ExampleUARTReader.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
@@ -25,7 +25,7 @@ This example shows how to read some bytes from a CommConnection.
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleUARTReader.java](com.microej.example.foundation.ecom.reader/src/main/java/com.microej.example/foundation/ecom/uartreader/ExampleUARTReader.java)
+1. Right Click on [ExampleUARTReader.java](src/main/java/com/microej/example/foundation/ecom/uartreader/ExampleUARTReader.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon

@@ -3,7 +3,7 @@ This example shows how to print a localized string on a display.
 
 # Usage
 ## Run on MicroEJ Simulator
-1. Right Click on [ExampleNLS.java](com.microej.example.foundation.nls.helloworld/src/main/java/com.microej.example/foundation/nls/helloworld/ExampleNLS.java)
+1. Right Click on [ExampleNLS.java](src/main/java/com/microej/example/foundation/nls/helloworld/ExampleNLS.java)
 1. Select **Run as -> Run Configuration** 
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
@@ -12,14 +12,14 @@ This example shows how to print a localized string on a display.
 1. Go to **Configuration** tab
 	* Go to **Libraries -> NLS**
 		* Check **Use NLS messages**
-		* Set the **NLS list file** field to`${project_loc:com.microej.example.foundation.nls.helloworld}/src/main/resources/com.microej.example/foundation/nls/helloworld/example.nls.list`
+		* Set the **NLS list file** field to`${project_loc:com.microej.example.foundation.nls.helloworld}/src/main/resources/com/microej/example/foundation/nls/helloworld/example.nls.list`
 1. Press **Apply**
 1. Press **Run**
 
 
 ## Run on device
 ### Build
-1. Right Click on [ExampleNLS.java](com.microej.example.foundation.nls.helloworld/src/main/java/com.microej.example/foundation/nls/helloworld/ExampleNLS.java)
+1. Right Click on [ExampleNLS.java](src/main/java/com/microej/example/foundation/nls/helloworld/ExampleNLS.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
@@ -31,7 +31,7 @@ This example shows how to print a localized string on a display.
 1. In **Configuration** tab
 	* Go to **Libraries -> NLS**
 		* Check **Use NLS messages**
-		* Set the **NLS list file** field to`${project_loc:com.microej.example.foundation.nls.helloworld}/src/main/resources/com.microej.example/foundation/nls/helloworld/example.nls.list`
+		* Set the **NLS list file** field to`${project_loc:com.microej.example.foundation.nls.helloworld}/src/main/resources/com/microej/example/foundation/nls/helloworld/example.nls.list`
 1. Press **Apply**
 1. Press **Run**
 1. Copy the generated `.out` file path shown by the console

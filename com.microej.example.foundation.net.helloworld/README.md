@@ -3,12 +3,12 @@ This example shows a simple helloworld using NET.
 
 # Usage
 ## Configuration
-1. Set the `HOST` in [HelloWorldConstants.java](com.microej.example.foundation.net.helloworld/src/main/java/com.microej.example/foundation/net/helloworld/HelloWorldConstants.java)
+1. Set the `HOST` in [HelloWorldConstants.java](src/main/java/com/microej/example/foundation/net/helloworld/HelloWorldConstants.java)
 
 ## Run on MicroEJ Simulator
 1. Right Click on 
-	* [exampleerver.java](com.microej.example.foundation.net.helloworld/src/main/java/com.microej.example/foundation/net/helloworld/exampleerver.java)
-	* OR [ExampleClient.java](com.microej.example.foundation.net.helloworld/src/main/java/com.microej.example/foundation/net/helloworld/ExampleClient.java)
+	* [exampleerver.java](src/main/java/com/microej/example/foundation/net/helloworld/exampleerver.java)
+	* OR [ExampleClient.java](src/main/java/com/microej/example/foundation/net/helloworld/ExampleClient.java)
 1. Select **Run as -> MicroEJ Application**
 1. Select your platform 
 1. Press **Ok**
@@ -17,8 +17,8 @@ This example shows a simple helloworld using NET.
 ## Run on device
 ### Build
 1. Right Click on 
-	* [exampleerver.java](com.microej.example.foundation.net.helloworld/src/main/java/com.microej.example/foundation/net/helloworld/exampleerver.java)
-	* OR [ExampleClient.java](com.microej.example.foundation.net.helloworld/src/main/java/com.microej.example/foundation/net/helloworld/ExampleClient.java)
+	* [exampleerver.java](src/main/java/com/microej/example/foundation/net/helloworld/exampleerver.java)
+	* OR [ExampleClient.java](src/main/java/com/microej/example/foundation/net/helloworld/ExampleClient.java)
 1. Select **Run as -> Run Configuration** 
 1. Select **MicroEJ Application** configuration kind
 1. Click on **New launch configuration** icon
