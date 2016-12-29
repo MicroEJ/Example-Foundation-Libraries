@@ -1,27 +1,18 @@
-<!--
-	Markdown
--->
-<!--
-Changelog template:
-
-## Revision (YYYY-mm-dd)
+## Revision 46.0.0 (2016-12-28)
 Features:
-  - List here the new features.
-  
-Bugfixes:
-  - List here the bug fixes.
--->
-
+   - Change organization.
+   - Add module.ant to build with any license.
+   
 ## Revision 23.0.23 (2016-11-08)
 Features:
-   - Change reversion count (Sum of all subprojects reversion).
+   - Change reversion count (Sum of all subprojects reversions).
    - Update projects to compile with microej-lib 3.+.
 
 ## Revision 1.0.0 (2016-05-25)
 ### Addition:
-ej.examples.foundation.microui.antialiased
-ej.examples.foundation.microui.movableimage
-ej.examples.foundation.hal.gpio
+ej.example.foundation.microui.antialiased
+ej.example.foundation.microui.movableimage
+ej.example.foundation.hal.gpio
 
 Deletion
 MicroUI -> MyFiltersSample
