@@ -5,7 +5,7 @@ Features:
    
 ## Revision 23.0.23 (2016-11-08)
 Features:
-   - Change reversion count (Sum of all subprojects reversions).
+   - Change revision numbering (Sum of all subprojects revisions).
    - Update projects to compile with microej-lib 3.+.
 
 ## Revision 1.0.0 (2016-05-25)
@@ -14,7 +14,7 @@ ej.example.foundation.microui.antialiased
 ej.example.foundation.microui.movableimage
 ej.example.foundation.hal.gpio
 
-Deletion
+### Deletion:
 MicroUI -> MyFiltersSample
 MicroUI -> MyBrushSample
 MicroUI -> MyLayersSample
