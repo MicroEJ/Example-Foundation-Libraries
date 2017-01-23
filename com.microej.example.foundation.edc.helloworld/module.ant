@@ -1,0 +1,16 @@
+﻿<!-- 
+	ANT 
+	
+	Copyright 2016 IS2T. All rights reserved.
+	Use of this source code is subject to license terms.
+-->
+<project xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:ea="antlib:org.apache.easyant" name="license.specific">
+	
+    <target name="add-license" extensionOf="augment-authorized-license-path" >
+		<!-- Add the license -->
+		<ea:path pathid="licenses.authorized.path" overwrite="append">
+			<path location="${project.ivy.file}/../LICENSE.txt"/>
+		</ea:path>
+    </target>
+
+</project>

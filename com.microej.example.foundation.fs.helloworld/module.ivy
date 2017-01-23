@@ -1,0 +1,40 @@
+<!--
+	IVY
+	
+	Copyright 2016 IS2T. All rights reserved.
+	Use of this source code is subject to license terms.
+-->
+<ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:m="http://ant.apache.org/ivy/extra"> 
+	<info organisation="com.microej.example.foundation.fs" module="helloworld" status="integration" revision="2.0.0">
+		        <ea:build organisation="com.is2t.easyant.buildtypes" module="build-microej-javalib" revision="3.+">
+        </ea:build>
+    </info>
+    
+    <configurations defaultconfmapping="default->default;provided->provided">
+		<conf name="default" visibility="public" description="Runtime dependencies to other artifacts"/>
+		<conf name="provided" visibility="public" description="Compile-time dependencies to APIs provided by the platform"/>
+		<conf name="documentation" visibility="public" description="Documentation related to the artifact (javadoc, PDF)"/>
+		<conf name="source" visibility="public" description="Source code"/>
+		<conf name="dist" visibility="public" description="Contains extra files like README.md, licenses"/>
+ 		<conf name="test" visibility="private" description="Dependencies for test execution. It is not required for normal use of the application, and is only available for the test compilation and execution phases."/>
+ 		<conf name="microej.launch.standalone" visibility="private" description="Dependencies for standalone application. It is not required for normal use of the application, and is only available when launching the main entry point on a standalone MicroEJ launch."/>
+	</configurations>
+    
+    <publications>
+    	<!-- keep this empty if no specific artifact to publish -->
+		<!-- must be here in order to avoid all configurations for the default artifact -->
+    </publications>
+    
+    <dependencies>
+    	<!-- 
+			Put MicroEJ API dependencies to the "provided->*" configuration
+			Other regular runtime dependencies are in the "default" configuration  
+		-->
+		<dependency org="ej.api" name="edc" rev="[1.2.0,2.0.0[" conf="provided->*" />
+		<dependency org="ej.api" name="fs" rev="[2.0.0,3.0.0[" conf="provided->*" />
+		
+		 <!-- 
+        	Additionnal dependencies only used by MicroEJ standalone application launches
+        --> 
+	</dependencies>
+</ivy-module>
