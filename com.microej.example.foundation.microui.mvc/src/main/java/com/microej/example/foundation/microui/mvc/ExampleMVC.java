@@ -9,6 +9,9 @@ package com.microej.example.foundation.microui.mvc;
 
 import java.io.IOException;
 
+import ej.bon.Timer;
+import ej.bon.TimerTask;
+import ej.components.dependencyinjection.ServiceLoaderFactory;
 import ej.microui.MicroUI;
 import ej.microui.display.Display;
 import ej.microui.display.FlyingImage;
@@ -41,6 +44,18 @@ public class ExampleMVC {
 
 		// show the displayable
 		displayable.show();
+		
+		// mock
+		TimerTask task = new  TimerTask() {
+
+			@Override
+			public void run() {
+				double percent = (Math.random() * 100.);
+				percentage.set((int)Math.floor(percent));
+			}
+		};
+		Timer timer = ServiceLoaderFactory.getServiceLoader().getService(Timer.class, Timer.class);
+		timer.scheduleAtFixedRate(task, 1000L, 1000L);
 	}
 
 	private static void preparePointer(Display display) {

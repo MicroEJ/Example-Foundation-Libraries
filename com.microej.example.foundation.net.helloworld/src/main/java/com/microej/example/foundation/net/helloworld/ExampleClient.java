@@ -34,7 +34,7 @@ public class ExampleClient implements HelloWorldConstants{
 		// Display all messages.
 		Logger.setLevel(Level.ALL);
 		try {
-			Logger.info("Wainting for connection to be setup...");
+			Logger.info("Waiting for connection to be setup...");
 			// Wait for the connection to be up. Would be better to use a
 			// connectivity manager (eg ej.library.iot.connectivity).
 			Thread.sleep(WAIT_FOR_CONNECTION);
