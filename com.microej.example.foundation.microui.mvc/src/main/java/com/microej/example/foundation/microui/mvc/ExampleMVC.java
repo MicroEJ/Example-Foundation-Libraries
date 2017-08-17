@@ -55,7 +55,7 @@ public class ExampleMVC {
 			}
 		};
 		Timer timer = ServiceLoaderFactory.getServiceLoader().getService(Timer.class, Timer.class);
-		timer.scheduleAtFixedRate(task, 1000L, 1000L);
+		timer.schedule(task, 1000L, 1000L);
 	}
 
 	private static void preparePointer(Display display) {
