@@ -12,7 +12,7 @@ This example shows how to print a localized string on a display.
 1. Go to **Configuration** tab
 	* Go to **Libraries -> NLS**
 		* Check **Use NLS messages**
-		* Set the **NLS list file** field to`${project_loc:com.microej.example.foundation.nls.helloworld}/src/main/resources/com/microej/example/foundation/nls/helloworld/example.nls.list`
+		* Set the **NLS list file** field to`${project_loc:com.microej.example.foundation.nls.helloworld}/src/main/resources/com/microej/example/foundation/nls/helloworld/examples.nls.list`
 1. Press **Apply**
 1. Press **Run**
 

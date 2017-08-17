@@ -27,7 +27,14 @@ public class PercentageModel extends Observable {
 		return percentage;
 	}
 	
-	private void increment(int incr) {
+	public synchronized void set(int percentage)
+	{
+		this.percentage  = percentage;
+		setChanged();
+		notifyObservers();
+	}
+	
+	private synchronized void increment(int incr) {
 		//get old value
 		int oldValue = percentage;
 		//increment value
@@ -38,7 +45,7 @@ public class PercentageModel extends Observable {
 		update(value);
 	}
 	
-	private void update(int value){
+	private synchronized void update(int value){
 		//update value and notify listeners
 		if (percentage != value) {
 			percentage = value;
