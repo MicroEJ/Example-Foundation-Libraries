@@ -1,3 +1,7 @@
+## 2.0.1 (2017-08-17)
+Features:
+  - Add a timer to generate percent every seconds.  
+
 ## 2.0.0 (2016-12-28)
 Features:
   - Change organization.
