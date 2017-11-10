@@ -1,3 +1,7 @@
+## 2.0.2 (2017-11-09)
+BugFixes:
+  - Add Timer in types.list. 
+  
 ## 2.0.1 (2017-08-17)
 Features:
   - Add a timer to generate percent every seconds.  
