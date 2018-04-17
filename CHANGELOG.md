@@ -6,7 +6,7 @@
  IS2T PROPRIETARY. Use is subject to license terms.
 -->
 
-## Revision 47.0.3 (2018-04-17)
+## Revision 47.0.0 (2018-04-17)
 Features:
    - remove MWT examples
    
