@@ -1,3 +1,15 @@
+<!--
+ Markdown
+ 
+ Copyright 2016-2018 IS2T. All rights reserved.
+ For demonstration purpose only.
+ IS2T PROPRIETARY. Use is subject to license terms.
+-->
+
+## Revision 47.0.0 (2018-04-17)
+Features:
+   - remove MWT examples
+   
 ## Revision 46.0.3 (2017-09-11)
 Features:
    - Fix samples
