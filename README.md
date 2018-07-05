@@ -61,6 +61,7 @@ MicroUI provides the minimal cornerstone for quick construction of advanced, por
 **Available Examples**:
 * [com.microej.example.foundation.microui.antialiased](com.microej.example.foundation.microui.antialiased): Shows how to use anti-aliased shapes.
 * [com.microej.example.foundation.microui.font](com.microej.example.foundation.microui.font): Shows how to create and use a font.
+* [com.microej.example.foundation.microui.gradient](com.microej.example.foundation.microui.gradient): This example shows how to draw a gradient on a display.
 * [com.microej.example.foundation.microui.helloworld](com.microej.example.foundation.microui.helloworld): Shows how to print a string on a display.
 * [com.microej.example.foundation.microui.image](com.microej.example.foundation.microui.image): Shows how to create and use images.
 * [com.microej.example.foundation.microui.input](com.microej.example.foundation.microui.input): Shows how to listen the MicroUI input events.
