@@ -1,22 +1,45 @@
+<!--
+ Markdown
+ 
+ Copyright 2016-2018 IS2T. All rights reserved.
+ For demonstration purpose only.
+ IS2T PROPRIETARY. Use is subject to license terms.
+-->
+
+## Revision 47.1.0 (2018-07-05)
+
+Features:
+   - Add com.microej.example.foundation.microui.gradient
+
+## Revision 47.0.0 (2018-04-17)
+
+Features:
+   - remove MWT examples
+   
 ## Revision 46.0.3 (2017-09-11)
+
 Features:
    - Fix samples
    
 ## Revision 46.0.2 (2017-08-17)
+
 Features:
    - Fix samples
 
 ## Revision 46.0.0 (2016-12-28)
+
 Features:
    - Change organization.
    - Add module.ant to build with any license.
    
 ## Revision 23.0.23 (2016-11-08)
+
 Features:
    - Change revision numbering (Sum of all subprojects revisions).
    - Update projects to compile with microej-lib 3.+.
 
 ## Revision 1.0.0 (2016-05-25)
+
 ### Addition:
 ej.example.foundation.microui.antialiased
 ej.example.foundation.microui.movableimage
@@ -29,5 +52,6 @@ MicroUI -> MyLayersSample
 UI -> Transition
 
 ## 0.1.0 (2016-05-25)
+
 MicroEj 3.1:
 Initial version
