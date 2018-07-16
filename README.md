@@ -1,1 +1,1 @@
-Java API for Bluetooth LE
+Work in progress.

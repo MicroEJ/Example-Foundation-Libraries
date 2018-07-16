@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ej.bluetooth"/>
+	<classpathentry kind="var" path="EDC-1.2"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
