@@ -9,8 +9,8 @@ import ej.bluetooth.gatt.data.BluetoothServiceType;
 public class CurrentTimeService {
 
 	public static final String SERVICE_UUID = "00001805-0000-1000-8000-00805f9b34fb";
-	public static final String CURRENT_TIME_UUID = "000002a2b-0000-1000-8000-00805f9b34fb";
-	public static final String LOCAL_TIME_INFO_UUID = "000002a0f-0000-1000-8000-00805f9b34fb";
+	public static final String CURRENT_TIME_UUID = "00002a2b-0000-1000-8000-00805f9b34fb";
+	public static final String LOCAL_TIME_INFO_UUID = "00002a0f-0000-1000-8000-00805f9b34fb";
 
 	private CurrentTimeService() {
 		// private constructor
