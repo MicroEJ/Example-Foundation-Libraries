@@ -1,8 +1,5 @@
 package com.microej.demo.bluetooth.central;
 
-import com.microej.demo.bluetooth.profiles.cts.CurrentTimeCallbacks;
-import com.microej.demo.bluetooth.profiles.cts.CurrentTimeService;
-
 import ej.bluetooth.gap.BluetoothAdapter;
 import ej.bluetooth.gap.BluetoothDevice;
 import ej.bluetooth.gap.BluetoothPayload;
@@ -27,7 +24,7 @@ public class Main implements BluetoothScanCallbacks {
 		// adapter.setAppearance(BluetoothAppearance.GENERIC_PHONE);
 		// adapter.setIOCapability(BluetoothIOCapability.KEYBOARD_DISPLAY);
 
-		adapter.addProfile(CurrentTimeService.createService(), new CurrentTimeCallbacks());
+		// adapter.addProfile(CurrentTimeService.createService(), new CurrentTimeCallbacks());
 
 		this.deviceFound = false;
 
