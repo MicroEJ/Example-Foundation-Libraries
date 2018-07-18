@@ -43,7 +43,7 @@ public class Main implements BluetoothScanCallbacks {
 	public void onScanResult(BluetoothDevice device, BluetoothPayload advData) {
 		System.out.println("Scanned device addr: " + device.getAddress());
 
-		if (!this.deviceFound && device.getAddress().equals(PERIPHERAL_ADDR)) {
+		if (!this.deviceFound && device.getAddress().toString().equals(PERIPHERAL_ADDR)) {
 			this.deviceFound = true;
 			device.getAdapter().stopScanning();
 			device.connect(new DeviceCallbacks());
