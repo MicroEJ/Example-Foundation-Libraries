@@ -11,7 +11,7 @@ public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault {
 	public void onConnected(final BluetoothDevice device) {
 		System.out.println("Connected");
 
-		// device.discoverServices(new ClientCallbacks());
+		device.discoverServices(new ClientCallbacks());
 
 		TimerTask task = new TimerTask() {
 			@Override
