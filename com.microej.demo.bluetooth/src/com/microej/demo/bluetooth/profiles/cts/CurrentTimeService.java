@@ -17,23 +17,21 @@ public class CurrentTimeService {
 	}
 
 	public static BluetoothService createService() {
-		return new BluetoothService.Builder(SERVICE_UUID, BluetoothServiceType.PRIMARY) //
-				.addCharacteristic(createCurrentTime()) //
-				.addCharacteristic(createLocalTimeInfo()) //
-				.build();
+		BluetoothService service = new BluetoothService(SERVICE_UUID, BluetoothServiceType.PRIMARY);
+		service.addCharacteristic(createCurrentTime());
+		service.addCharacteristic(createLocalTimeInfo());
+		return service;
 	}
 
 	private static BluetoothCharacteristic createCurrentTime() {
-		return new BluetoothCharacteristic.Builder(CURRENT_TIME_UUID, //
-				BluetoothProperty.READ | BluetoothProperty.NOTIFY, //
-				BluetoothPermission.READ) //
-				.build();
+		int prop = BluetoothProperty.READ | BluetoothProperty.NOTIFY;
+		int perm = BluetoothPermission.READ;
+		return new BluetoothCharacteristic(CURRENT_TIME_UUID, prop, perm);
 	}
 
 	private static BluetoothCharacteristic createLocalTimeInfo() {
-		return new BluetoothCharacteristic.Builder(LOCAL_TIME_INFO_UUID, //
-				BluetoothProperty.READ, //
-				BluetoothPermission.READ) //
-				.build();
+		int prop = BluetoothProperty.READ;
+		int perm = BluetoothPermission.READ;
+		return new BluetoothCharacteristic(LOCAL_TIME_INFO_UUID, prop, perm);
 	}
 }

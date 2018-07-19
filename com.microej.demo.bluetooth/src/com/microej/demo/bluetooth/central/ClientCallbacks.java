@@ -28,7 +28,7 @@ public class ClientCallbacks extends BluetoothClientCallbacksDefault {
 		BluetoothCharacteristic spsRx = spsService.findCharacteristic(SerialPortService.RX_UUID);
 
 		if (spsTx != null && spsRx != null) {
-			BluetoothDescriptor spsTxCCC = spsTx.findDescriptor(DefaultServices.CCC);
+			BluetoothDescriptor spsTxCCC = spsTx.findDescriptor(DefaultServices.CCC_UUID);
 			client.writeDescriptor(spsTxCCC, new byte[] { 0x00, 0x01 });
 		}
 	}
