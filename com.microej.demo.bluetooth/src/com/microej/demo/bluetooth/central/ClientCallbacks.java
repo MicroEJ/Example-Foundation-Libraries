@@ -13,13 +13,22 @@ import ej.bluetooth.gatt.data.BluetoothStatus;
 public class ClientCallbacks extends BluetoothClientCallbacksDefault {
 
 	@Override
-	public void onServicesDiscovered(BluetoothClient client, BluetoothService[] services) {
-		System.out.println("services: " + services.length);
-
-		for (BluetoothService service : services) {
-			if (service.getUuid().equals(SerialPortService.SERVICE_UUID)) {
-				initializeSps(client, service);
+	public void onServicesDiscovered(BluetoothClient client) {
+		for (BluetoothService service : client.getServices()) {
+			System.out.println("[SERVICE] " + service.getUuid());
+			for (BluetoothCharacteristic characteristic : service.getCharacteristics()) {
+				System.out.println("\t[CHAR] " + characteristic.getUuid());
+				for (BluetoothDescriptor descriptor : characteristic.getDescriptors()) {
+					System.out.println("\t\t[DESC] " + descriptor.getUuid());
+				}
 			}
+		}
+
+		BluetoothService spsService = client.findService(SerialPortService.SERVICE_UUID);
+		if (spsService == null) {
+			System.out.println("Error: could not find SPS service");
+		} else {
+			initializeSps(client, spsService);
 		}
 	}
 
