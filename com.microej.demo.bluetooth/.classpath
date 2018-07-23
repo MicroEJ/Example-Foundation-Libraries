@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/ej.bluetooth"/>
-	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=com.microej.demo.bluetooth&amp;ivyXmlPath=module.ivy&amp;confs=*"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>
