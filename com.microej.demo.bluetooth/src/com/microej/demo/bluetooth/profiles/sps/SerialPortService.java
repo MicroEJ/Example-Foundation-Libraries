@@ -19,26 +19,26 @@ public class SerialPortService {
 	}
 
 	public static BluetoothService createService() {
-		return new BluetoothService.Builder(SERVICE_UUID, BluetoothServiceType.PRIMARY) //
-				.addCharacteristic(createSpsTx()) //
-				.addCharacteristic(createSpsRx()) //
-				.build();
+		BluetoothService service = new BluetoothService(SERVICE_UUID, BluetoothServiceType.PRIMARY);
+		service.addCharacteristic(createSpsTx());
+		service.addCharacteristic(createSpsRx());
+		return service;
 	}
 
 	private static BluetoothCharacteristic createSpsTx() {
-		return new BluetoothCharacteristic.Builder(TX_UUID, //
-				BluetoothProperty.NOTIFY,
-				BluetoothPermission.NONE) //
-				.addDescriptor(DefaultServices.createCCC()) //
-				.addDescriptor(DefaultServices.createCUD()) //
-				.build();
+		int prop = BluetoothProperty.NOTIFY;
+		int perm = BluetoothPermission.NONE;
+		BluetoothCharacteristic tx = new BluetoothCharacteristic(TX_UUID, prop, perm);
+		tx.addDescriptor(DefaultServices.createCCC());
+		tx.addDescriptor(DefaultServices.createCUD());
+		return tx;
 	}
 
 	private static BluetoothCharacteristic createSpsRx() {
-		return new BluetoothCharacteristic.Builder(RX_UUID, //
-				BluetoothProperty.WRITE_NO_RESPONSE, //
-				BluetoothPermission.WRITE) //
-				.addDescriptor(DefaultServices.createCUD()) //
-				.build();
+		int prop = BluetoothProperty.WRITE_NO_RESPONSE;
+		int perm = BluetoothPermission.WRITE;
+		BluetoothCharacteristic tx = new BluetoothCharacteristic(RX_UUID, prop, perm);
+		tx.addDescriptor(DefaultServices.createCUD());
+		return tx;
 	}
 }
