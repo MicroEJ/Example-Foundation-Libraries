@@ -7,8 +7,7 @@
 
 <ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:m="http://ant.apache.org/ivy/extra"> 
     <info organisation="com.microej.example.bluetooth" module="data" status="integration" revision="0.1.0">
-        <ea:build organisation="com.is2t.easyant.buildtypes" module="build-microej-javalib" revision="+">
-        </ea:build>
+        <ea:build organisation="com.is2t.easyant.buildtypes" module="build-microej-javalib" revision="4.+"/>
     </info>
 
     <configurations defaultconfmapping="default->default;provided->provided">
@@ -26,6 +25,6 @@
     <dependencies>
 		<dependency org="ej.api" name="edc" rev="[1.2.0-RC,2.0.0-RC[" conf="provided->*"/>
 		<dependency org="ej.api" name="bon" rev="[1.3.0-RC,2.0.0-RC[" conf="provided->*"/>
-		<dependency org="ej.api" name="bluetooth" rev="[0.1.0-RC,1.0.0-RC[" conf="provided->*"/>
+		<dependency org="ej.api" name="bluetooth" rev="[0.1.0-RC,1.0.0-RC["/>
     </dependencies>
 </ivy-module>
