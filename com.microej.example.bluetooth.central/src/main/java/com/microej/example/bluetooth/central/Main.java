@@ -8,6 +8,8 @@ package com.microej.example.bluetooth.central;
 
 import com.microej.example.bluetooth.data.cts.CurrentTimeCallbacks;
 import com.microej.example.bluetooth.data.cts.CurrentTimeService;
+import com.microej.example.bluetooth.data.sps.SerialPortCallbacks;
+import com.microej.example.bluetooth.data.sps.SerialPortService;
 
 import ej.bluetooth.gap.BluetoothAdapter;
 import ej.bluetooth.gap.BluetoothDevice;
@@ -34,6 +36,7 @@ public class Main implements BluetoothScanCallbacks {
 		// adapter.setIOCapability(BluetoothIOCapability.KEYBOARD_DISPLAY);
 
 		adapter.addProfile(CurrentTimeService.createService(), new CurrentTimeCallbacks());
+		adapter.addProfile(SerialPortService.createService(), new SerialPortCallbacks());
 
 		this.deviceFound = false;
 
@@ -45,7 +48,9 @@ public class Main implements BluetoothScanCallbacks {
 			e.printStackTrace();
 		}
 
-		adapter.stopScanning();
+		if (!this.deviceFound) {
+			adapter.stopScanning();
+		}
 	}
 
 	@Override
