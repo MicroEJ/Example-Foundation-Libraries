@@ -16,9 +16,9 @@ import ej.bluetooth.gatt.data.BluetoothServiceType;
 
 public class SerialPortService {
 
-	public static final String SERVICE_UUID = null;
-	public static final String TX_UUID = null;
-	public static final String RX_UUID = null;
+	public static final String SERVICE_UUID = "0783b03e-8535-b5a0-7140-a304d2495cb7";
+	public static final String TX_UUID = "0783b03e-8535-b5a0-7140-a304d2495cb8";
+	public static final String RX_UUID = "0783b03e-8535-b5a0-7140-a304d2495cba";
 
 	private SerialPortService() {
 		// private constructor
