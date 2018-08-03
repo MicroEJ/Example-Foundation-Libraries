@@ -15,21 +15,27 @@ import ej.bluetooth.gatt.server.BluetoothProfileCallbacksDefault;
 public class CurrentTimeCallbacks extends BluetoothProfileCallbacksDefault {
 
 	@Override
-	public void onReadCharacteristicRequest(BluetoothProfile profile, BluetoothDevice device,
+	public boolean onReadCharacteristicRequest(BluetoothProfile profile, BluetoothDevice device,
 			BluetoothCharacteristic characteristic) {
 		String charUuid = characteristic.getUuid();
 		if (charUuid.equals(CurrentTimeService.CURRENT_TIME_UUID)) {
-			profile.sendReadCharacteristicResponse(device, characteristic, BluetoothStatus.OK, makeCurrentTime());
+			return profile.sendReadCharacteristicResponse(device, characteristic, BluetoothStatus.OK,
+					makeCurrentTime());
 		} else if (charUuid.equals(CurrentTimeService.LOCAL_TIME_INFO_UUID)) {
-			profile.sendReadCharacteristicResponse(device, characteristic, BluetoothStatus.OK, makeLocalTimeInfo());
+			return profile.sendReadCharacteristicResponse(device, characteristic, BluetoothStatus.OK,
+					makeLocalTimeInfo());
 		}
+
+		return super.onReadCharacteristicRequest(profile, device, characteristic);
 	}
 
 	private static byte[] makeCurrentTime() {
-		return new byte[0];
+		return "CurrentTime".getBytes();
+		// return new byte[0];
 	}
 
 	private static byte[] makeLocalTimeInfo() {
-		return new byte[0];
+		return "LocalTimeInfo".getBytes();
+		// return new byte[0];
 	}
 }
