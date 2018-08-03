@@ -32,12 +32,16 @@ public class CurrentTimeService {
 	private static BluetoothCharacteristic createCurrentTime() {
 		int prop = BluetoothProperty.READ | BluetoothProperty.NOTIFY;
 		int perm = BluetoothPermission.READ;
-		return new BluetoothCharacteristic(CURRENT_TIME_UUID, prop, perm);
+		BluetoothCharacteristic characteristic = new BluetoothCharacteristic(CURRENT_TIME_UUID, prop, perm);
+		characteristic.setCallbacks(new CurrentTimeCallbacks());
+		return characteristic;
 	}
 
 	private static BluetoothCharacteristic createLocalTimeInfo() {
 		int prop = BluetoothProperty.READ;
 		int perm = BluetoothPermission.READ;
-		return new BluetoothCharacteristic(LOCAL_TIME_INFO_UUID, prop, perm);
+		BluetoothCharacteristic characteristic = new BluetoothCharacteristic(LOCAL_TIME_INFO_UUID, prop, perm);
+		characteristic.setCallbacks(new LocalTimeInfoCallbacks());
+		return characteristic;
 	}
 }
