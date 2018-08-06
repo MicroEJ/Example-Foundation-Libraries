@@ -18,8 +18,10 @@ public class DefaultServices {
 		// private constructor
 	}
 
-	public static BluetoothDescriptor createCUD() {
-		return new BluetoothDescriptor(CUD_UUID, BluetoothPermission.READ);
+	public static BluetoothDescriptor createCUD(String description) {
+		BluetoothDescriptor descriptor = new BluetoothDescriptor(CUD_UUID, BluetoothPermission.READ);
+		descriptor.setCallbacks(new StaticDescriptorCallbacks(description.getBytes()));
+		return descriptor;
 	}
 
 	public static BluetoothDescriptor createCCC() {

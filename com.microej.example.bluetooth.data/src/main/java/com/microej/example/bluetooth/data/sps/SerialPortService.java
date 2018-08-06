@@ -20,6 +20,9 @@ public class SerialPortService {
 	public static final String TX_UUID = "0783b03e-8535-b5a0-7140-a304d2495cb8";
 	public static final String RX_UUID = "0783b03e-8535-b5a0-7140-a304d2495cba";
 
+	private static final String TX_CUD = "TX data";
+	private static final String RX_CUD = "RX data";
+
 	private SerialPortService() {
 		// private constructor
 	}
@@ -36,7 +39,7 @@ public class SerialPortService {
 		int perm = BluetoothPermission.NONE;
 		BluetoothCharacteristic tx = new BluetoothCharacteristic(TX_UUID, prop, perm);
 		tx.addDescriptor(DefaultServices.createCCC());
-		tx.addDescriptor(DefaultServices.createCUD());
+		tx.addDescriptor(DefaultServices.createCUD(TX_CUD));
 		return tx;
 	}
 
@@ -44,7 +47,7 @@ public class SerialPortService {
 		int prop = BluetoothProperty.WRITE_NO_RESPONSE;
 		int perm = BluetoothPermission.WRITE;
 		BluetoothCharacteristic tx = new BluetoothCharacteristic(RX_UUID, prop, perm);
-		tx.addDescriptor(DefaultServices.createCUD());
+		tx.addDescriptor(DefaultServices.createCUD(RX_CUD));
 		return tx;
 	}
 }

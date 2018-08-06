@@ -11,15 +11,15 @@ import ej.bluetooth.gatt.data.BluetoothCharacteristic;
 import ej.bluetooth.gatt.data.BluetoothStatus;
 import ej.bluetooth.gatt.server.BluetoothCharacteristicCallbacks;
 
-public class CurrentTimeCallbacks implements BluetoothCharacteristicCallbacks {
+public class LocalTimeInfoCallbacks implements BluetoothCharacteristicCallbacks {
 
 	@Override
 	public void onReadRequest(BluetoothCharacteristic characteristic, BluetoothDevice device) {
-		characteristic.sendReadResponse(device, BluetoothStatus.OK, makeCurrentTime());
+		characteristic.sendReadResponse(device, BluetoothStatus.OK, makeLocalTimeInfo());
 	}
 
-	private static byte[] makeCurrentTime() {
+	private static byte[] makeLocalTimeInfo() {
 		// TODO: actual implementation
-		return "CurrentTime".getBytes();
+		return "LocalTimeInfo".getBytes();
 	}
 }
