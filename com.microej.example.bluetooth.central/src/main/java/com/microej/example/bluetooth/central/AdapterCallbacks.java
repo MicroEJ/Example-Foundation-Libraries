@@ -7,9 +7,9 @@
 package com.microej.example.bluetooth.central;
 
 import ej.bluetooth.gap.BluetoothAdapter;
-import ej.bluetooth.gap.BluetoothAdapterCallbacksDefault;
 import ej.bluetooth.gap.BluetoothDevice;
 import ej.bluetooth.gap.BluetoothPayload;
+import ej.bluetooth.gap.callbacks.BluetoothAdapterCallbacksDefault;
 
 public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
 

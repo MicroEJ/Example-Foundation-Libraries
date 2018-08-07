@@ -6,8 +6,8 @@
  */
 package com.microej.example.bluetooth.data;
 
-import ej.bluetooth.gatt.data.BluetoothDescriptor;
-import ej.bluetooth.gatt.data.BluetoothPermission;
+import ej.bluetooth.gatt.BluetoothDescriptor;
+import ej.bluetooth.gatt.BluetoothPermission;
 
 public class DefaultServices {
 

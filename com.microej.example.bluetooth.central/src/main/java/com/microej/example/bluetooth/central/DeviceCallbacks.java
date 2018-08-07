@@ -11,10 +11,10 @@ import com.microej.example.bluetooth.data.sps.client.SerialPortClient;
 import com.microej.example.bluetooth.data.sps.client.SerialPortListener;
 
 import ej.bluetooth.gap.BluetoothDevice;
-import ej.bluetooth.gap.BluetoothDeviceCallbacksDefault;
-import ej.bluetooth.gatt.data.BluetoothCharacteristic;
-import ej.bluetooth.gatt.data.BluetoothDescriptor;
-import ej.bluetooth.gatt.data.BluetoothService;
+import ej.bluetooth.gap.callbacks.BluetoothDeviceCallbacksDefault;
+import ej.bluetooth.gatt.BluetoothCharacteristic;
+import ej.bluetooth.gatt.BluetoothDescriptor;
+import ej.bluetooth.gatt.BluetoothService;
 
 public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements SerialPortListener {
 
