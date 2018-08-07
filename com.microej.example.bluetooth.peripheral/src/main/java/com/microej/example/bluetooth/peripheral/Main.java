@@ -6,7 +6,7 @@
  */
 package com.microej.example.bluetooth.peripheral;
 
-import com.microej.example.bluetooth.data.sps.SerialPortService;
+import com.microej.example.bluetooth.data.sps.server.SerialPortServer;
 
 import ej.bluetooth.gap.BluetoothAdapter;
 
@@ -16,7 +16,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
-		adapter.addService(SerialPortService.createService());
+
+		SerialPortServer serialPortServer = new SerialPortServer();
+		adapter.addService(serialPortServer.getService());
 
 		System.out.println("Start advertising");
 		adapter.startAdvertising(new AdatperCallbacks(), new DeviceCallbacks(), null);
