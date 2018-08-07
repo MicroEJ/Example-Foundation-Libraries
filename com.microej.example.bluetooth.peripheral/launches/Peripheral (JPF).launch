@@ -46,10 +46,10 @@
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationJPFConfigurationTabCSTART_com.is2t.microej.workbench.std.launch.ext.TextFieldOption_CENDs3.hil.port" value="8001"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationJPFConfigurationTabCSTART_com.is2t.microej.workbench.std.launch.ext.TextFieldOption_CENDs3.hil.timeout" value="10"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationJPFConfigurationTabCSTART_com.is2t.microej.workbench.std.launch.ext.TextFieldOption_CENDs3.slow" value="0"/>
-<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationMainClass" value="com.microej.example.bluetooth.central.Main"/>
+<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationMainClass" value="com.microej.example.bluetooth.peripheral.Main"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationMicroJVM" value="MICROJVM"/>
 <listAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationOptionPropertiesFiles"/>
-<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationOutputDir" value="C:\Users\apoudret\Documents\dev\Bluetooth-Examples\com.microej.example.bluetooth.central"/>
+<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationOutputDir" value="C:\Users\apoudret\Documents\dev\Bluetooth-Examples\com.microej.example.bluetooth.peripheral"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformArchitecture" value="CM0"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformBaseline" value="14"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformEdition" value="STD"/>
@@ -60,12 +60,12 @@
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformProvider" value="MicroEJ"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformToolchain" value="CM0_GCC48"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformVersion" value="0.1.0-RC201808061854"/>
-<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationProject" value="com.microej.example.bluetooth.central"/>
+<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationProject" value="com.microej.example.bluetooth.peripheral"/>
 <listAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationRequiredTypes"/>
 <listAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationResources"/>
 <booleanAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationVerbose" value="false"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/com.microej.example.bluetooth.central/src/com/microej/example/bluetooth/central/Main.java"/>
+<listEntry value="/com.microej.example.bluetooth.peripheral/src/com/microej/example/bluetooth/peripheral/Main.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
@@ -76,7 +76,7 @@
 <booleanAttribute key="org.eclipse.jdt.launching.ALLOW_TERMINATE" value="true"/>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.microej.example.bluetooth.central.Main"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="com.microej.example.bluetooth.central"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.microej.example.bluetooth.peripheral.Main"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="com.microej.example.bluetooth.peripheral"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx1024M&#13;&#10;-Dtoolchain.dir=&quot;C:\DiaSemi\SmartSnippetsStudio\GCC\4_9-2015q3&quot;"/>
 </launchConfiguration>

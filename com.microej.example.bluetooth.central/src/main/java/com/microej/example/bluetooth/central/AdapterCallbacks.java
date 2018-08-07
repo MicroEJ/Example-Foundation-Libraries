@@ -11,12 +11,12 @@ import ej.bluetooth.gap.BluetoothAdapterCallbacksDefault;
 import ej.bluetooth.gap.BluetoothDevice;
 import ej.bluetooth.gap.BluetoothPayload;
 
-public class ScanCallbacks extends BluetoothAdapterCallbacksDefault {
+public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
 
 	private final String peripheralAddr;
 	private boolean deviceFound;
 
-	public ScanCallbacks(String peripheralAddr) {
+	public AdapterCallbacks(String peripheralAddr) {
 		this.peripheralAddr = peripheralAddr;
 		this.deviceFound = false;
 	}

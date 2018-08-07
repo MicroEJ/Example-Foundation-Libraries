@@ -15,6 +15,7 @@
 
 	<dirset id="submodule.dirs.id" dir="${workspace.dir}">
 		<include name="com.microej.example.bluetooth.central"/>
+		<include name="com.microej.example.bluetooth.peripheral"/>
 	</dirset>
 
 	<pathconvert property="submodule.dirs.initial" refid="local.submodule.dirs.id" pathsep=",">
