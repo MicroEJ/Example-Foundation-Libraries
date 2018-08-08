@@ -6,20 +6,55 @@
  */
 package com.microej.example.bluetooth.peripheral;
 
-import ej.bluetooth.gap.BluetoothDevice;
-import ej.bluetooth.gap.BluetoothDeviceCallbacksDefault;
+import com.microej.example.bluetooth.data.cts.CurrentTimeService;
+import com.microej.example.bluetooth.data.cts.client.CurrentTimeClient;
+import com.microej.example.bluetooth.data.cts.client.CurrentTimeListener;
 
-public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault {
+import ej.bluetooth.gap.BluetoothDevice;
+import ej.bluetooth.gap.callbacks.BluetoothDeviceCallbacksDefault;
+import ej.bluetooth.gatt.BluetoothCharacteristic;
+import ej.bluetooth.gatt.BluetoothDescriptor;
+import ej.bluetooth.gatt.BluetoothService;
+
+public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements CurrentTimeListener {
+
+	private CurrentTimeClient currentTimeClient;
 
 	@Override
-	public void onConnected(final BluetoothDevice device) {
+	public void onConnected(BluetoothDevice device) {
 		System.out.println("Connected");
 
-		device.discoverServices(new ClientCallbacks());
+		device.discoverServices();
 	}
 
 	@Override
 	public void onDisconnected(BluetoothDevice device) {
 		System.out.println("Disconnected");
+	}
+
+	@Override
+	public void onServicesDiscovered(BluetoothDevice device) {
+		for (BluetoothService service : device.getServices()) {
+			System.out.println("[SERVICE] " + service.getUuid());
+			for (BluetoothCharacteristic characteristic : service.getCharacteristics()) {
+				System.out.println("\t[CHAR] " + characteristic.getUuid());
+				for (BluetoothDescriptor descriptor : characteristic.getDescriptors()) {
+					System.out.println("\t\t[DESC] " + descriptor.getUuid());
+				}
+			}
+		}
+
+		BluetoothService ctsService = device.findService(CurrentTimeService.SERVICE_UUID);
+		if (ctsService == null) {
+			System.out.println("Error: could not find CTS service");
+		} else {
+			this.currentTimeClient = new CurrentTimeClient(ctsService, this);
+			this.currentTimeClient.requestTime();
+		}
+	}
+
+	@Override
+	public void onTimeUpdate(long timestamp, long offset) {
+		System.out.println("DeviceCallbacks.onTimeUpdate() timestamp=" + timestamp + " offset=" + offset);
 	}
 }

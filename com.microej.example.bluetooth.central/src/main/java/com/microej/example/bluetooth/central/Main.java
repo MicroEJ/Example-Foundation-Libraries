@@ -6,7 +6,7 @@
  */
 package com.microej.example.bluetooth.central;
 
-import com.microej.example.bluetooth.data.cts.CurrentTimeService;
+import com.microej.example.bluetooth.data.cts.server.CurrentTimeServer;
 
 import ej.bluetooth.gap.BluetoothAdapter;
 
@@ -18,7 +18,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
-		adapter.addService(CurrentTimeService.createService());
+
+		CurrentTimeServer currentTimeServer = new CurrentTimeServer();
+		adapter.addService(currentTimeServer.getService());
 
 		System.out.println("Start scanning");
 		adapter.startScanning(new AdapterCallbacks(PERIPHERAL_ADDR));

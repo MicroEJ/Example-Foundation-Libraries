@@ -6,8 +6,8 @@
  */
 package com.microej.example.bluetooth.data;
 
-import ej.bluetooth.gatt.data.BluetoothDescriptor;
-import ej.bluetooth.gatt.data.BluetoothPermission;
+import ej.bluetooth.gatt.BluetoothDescriptor;
+import ej.bluetooth.gatt.BluetoothPermission;
 
 public class DefaultServices {
 
@@ -19,9 +19,7 @@ public class DefaultServices {
 	}
 
 	public static BluetoothDescriptor createCUD(String description) {
-		BluetoothDescriptor descriptor = new BluetoothDescriptor(CUD_UUID, BluetoothPermission.READ);
-		descriptor.setCallbacks(new StaticDescriptorCallbacks(description.getBytes()));
-		return descriptor;
+		return new BluetoothDescriptor(CUD_UUID, BluetoothPermission.READ);
 	}
 
 	public static BluetoothDescriptor createCCC() {

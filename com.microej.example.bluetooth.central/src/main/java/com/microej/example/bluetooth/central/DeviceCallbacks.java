@@ -6,20 +6,55 @@
  */
 package com.microej.example.bluetooth.central;
 
-import ej.bluetooth.gap.BluetoothDevice;
-import ej.bluetooth.gap.BluetoothDeviceCallbacksDefault;
+import com.microej.example.bluetooth.data.sps.SerialPortService;
+import com.microej.example.bluetooth.data.sps.client.SerialPortClient;
+import com.microej.example.bluetooth.data.sps.client.SerialPortListener;
 
-public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault {
+import ej.bluetooth.gap.BluetoothDevice;
+import ej.bluetooth.gap.callbacks.BluetoothDeviceCallbacksDefault;
+import ej.bluetooth.gatt.BluetoothCharacteristic;
+import ej.bluetooth.gatt.BluetoothDescriptor;
+import ej.bluetooth.gatt.BluetoothService;
+
+public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements SerialPortListener {
+
+	private SerialPortClient serialPortClient;
 
 	@Override
-	public void onConnected(final BluetoothDevice device) {
+	public void onConnected(BluetoothDevice device) {
 		System.out.println("Connected");
 
-		device.discoverServices(new ClientCallbacks());
+		device.discoverServices();
 	}
 
 	@Override
 	public void onDisconnected(BluetoothDevice device) {
 		System.out.println("Disconnected");
+	}
+
+	@Override
+	public void onServicesDiscovered(BluetoothDevice device) {
+		for (BluetoothService service : device.getServices()) {
+			System.out.println("[SERVICE] " + service.getUuid());
+			for (BluetoothCharacteristic characteristic : service.getCharacteristics()) {
+				System.out.println("\t[CHAR] " + characteristic.getUuid());
+				for (BluetoothDescriptor descriptor : characteristic.getDescriptors()) {
+					System.out.println("\t\t[DESC] " + descriptor.getUuid());
+				}
+			}
+		}
+
+		BluetoothService spsService = device.findService(SerialPortService.SERVICE_UUID);
+		if (spsService == null) {
+			System.out.println("Error: could not find SPS service");
+		} else {
+			this.serialPortClient = new SerialPortClient(spsService, this);
+			this.serialPortClient.sendData("hello".getBytes());
+		}
+	}
+
+	@Override
+	public void onDataReceived(byte[] data) {
+		System.out.println("DeviceCallbacks.onDataReceived()");
 	}
 }
