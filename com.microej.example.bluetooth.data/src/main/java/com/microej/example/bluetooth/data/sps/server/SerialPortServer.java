@@ -7,6 +7,7 @@
 package com.microej.example.bluetooth.data.sps.server;
 
 import com.microej.example.bluetooth.data.DefaultServices;
+import com.microej.example.bluetooth.data.ServerStorage;
 import com.microej.example.bluetooth.data.sps.SerialPortService;
 
 import ej.bluetooth.gap.BluetoothDevice;
@@ -28,9 +29,9 @@ public class SerialPortServer extends BluetoothServerCallbacksDefault {
 	private final BluetoothDescriptor rxCUD;
 	private final BluetoothDescriptor txCCC;
 
-	private final byte[] txCCCValue;
+	private final SerialPortListener listener;
 
-	public SerialPortServer() {
+	public SerialPortServer(SerialPortListener listener) {
 		this.service = SerialPortBuilder.createService();
 		this.service.setServerCallbacks(this);
 
@@ -40,11 +41,33 @@ public class SerialPortServer extends BluetoothServerCallbacksDefault {
 		this.rxCUD = this.rxChar.findDescriptor(DefaultServices.CUD_UUID);
 		this.txCCC = this.txChar.findDescriptor(DefaultServices.CCC_UUID);
 
-		this.txCCCValue = new byte[] { 0x00, 0x00 };
+		this.listener = listener;
 	}
 
 	public BluetoothService getService() {
 		return this.service;
+	}
+
+	public void sendData(BluetoothDevice device, byte[] data) {
+		byte[] txCCCValue = ServerStorage.get(device, this.txCCC);
+		if (txCCCValue != null && DefaultServices.checkNotificationsEnabled(txCCCValue)) {
+			this.txChar.sendNotification(device, data, false);
+		}
+	}
+
+	@Override
+	public void onNotificationSent(BluetoothCharacteristic characteristic, BluetoothDevice device, boolean success) {
+		this.listener.onDataSent(device, success);
+	}
+
+	@Override
+	public void onWriteRequest(BluetoothCharacteristic characteristic, BluetoothDevice device, byte[] value) {
+		if (characteristic == this.rxChar) {
+			characteristic.sendWriteResponse(device, BluetoothStatus.OK);
+			this.listener.onDataReceived(device, value);
+		} else {
+			super.onWriteRequest(characteristic, device, value);
+		}
 	}
 
 	@Override
@@ -54,23 +77,27 @@ public class SerialPortServer extends BluetoothServerCallbacksDefault {
 		} else if (descriptor == this.rxCUD) {
 			descriptor.sendReadResponse(device, BluetoothStatus.OK, RX_CUD.getBytes());
 		} else if (descriptor == this.txCCC) {
-			descriptor.sendReadResponse(device, BluetoothStatus.OK, this.txCCCValue);
+			byte[] txCCCValue = ServerStorage.get(device, this.txCCC);
+			if (txCCCValue == null) {
+				txCCCValue = new byte[] { 0, 0 };
+			}
+			descriptor.sendReadResponse(device, BluetoothStatus.OK, txCCCValue);
 		} else {
 			super.onReadRequest(descriptor, device);
 		}
 	}
 
 	@Override
-	public void onWriteRequest(BluetoothDescriptor descriptor, BluetoothDevice device, byte[] data) {
+	public void onWriteRequest(BluetoothDescriptor descriptor, BluetoothDevice device, byte[] value) {
 		if (descriptor == this.txCCC) {
-			if (data.length == 2) {
-				System.arraycopy(data, 0, this.txCCCValue, 0, 2);
+			if (value.length == 2) {
+				ServerStorage.set(device, this.txCCC, value);
 				descriptor.sendWriteResponse(device, BluetoothStatus.OK);
 			} else {
 				descriptor.sendWriteResponse(device, BluetoothStatus.INVALID_VALUE_LENGTH);
 			}
 		} else {
-			super.onWriteRequest(descriptor, device, data);
+			super.onWriteRequest(descriptor, device, value);
 		}
 	}
 }

@@ -10,7 +10,6 @@ import com.microej.example.bluetooth.data.DefaultServices;
 import com.microej.example.bluetooth.data.sps.SerialPortService;
 
 import ej.bluetooth.gatt.BluetoothCharacteristic;
-import ej.bluetooth.gatt.BluetoothDescriptor;
 import ej.bluetooth.gatt.BluetoothService;
 import ej.bluetooth.gatt.BluetoothStatus;
 import ej.bluetooth.gatt.callbacks.BluetoothClientCallbacksDefault;
@@ -30,15 +29,11 @@ public class SerialPortClient extends BluetoothClientCallbacksDefault {
 			throw new IllegalArgumentException();
 		}
 
-		BluetoothDescriptor txCCC = this.txChar.findDescriptor(DefaultServices.CCC_UUID);
-		if (txCCC == null) {
-			throw new IllegalArgumentException();
-		}
-
 		this.listener = listener;
 
 		service.setClientCallbacks(this);
-		txCCC.sendWriteRequest(new byte[] { 0x00, 0x01 });
+
+		DefaultServices.enableCharacteristicNotifications(this.txChar);
 	}
 
 	public void sendData(byte[] data) {
@@ -51,9 +46,8 @@ public class SerialPortClient extends BluetoothClientCallbacksDefault {
 	}
 
 	@Override
-	public void onNotification(BluetoothCharacteristic characteristic, byte[] value) {
+	public void onNotificationReceived(BluetoothCharacteristic characteristic, byte[] value) {
 		if (characteristic == this.txChar) {
-			System.out.println("tx: " + value.length);
 			this.listener.onDataReceived(value);
 		}
 	}
