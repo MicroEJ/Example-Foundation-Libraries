@@ -21,7 +21,7 @@ public class Main {
 		adapter.addService(serialPortServer.getService());
 
 		System.out.println("Start advertising");
-		adapter.startAdvertising(new AdatperCallbacks(), new DeviceCallbacks(), null);
+		adapter.startAdvertising(new AdapterCallbacks(), new DeviceCallbacks(), null);
 
 		try {
 			Thread.sleep(STOP_ADVERTISING_DELAY);

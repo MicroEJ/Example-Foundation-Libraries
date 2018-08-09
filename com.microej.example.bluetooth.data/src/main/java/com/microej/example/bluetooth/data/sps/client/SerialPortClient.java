@@ -17,14 +17,12 @@ import ej.bluetooth.gatt.callbacks.BluetoothClientCallbacksDefault;
 
 public class SerialPortClient extends BluetoothClientCallbacksDefault {
 
-	private final BluetoothService service;
 	private final BluetoothCharacteristic txChar;
 	private final BluetoothCharacteristic rxChar;
 
 	private final SerialPortListener listener;
 
 	public SerialPortClient(BluetoothService service, SerialPortListener listener) {
-		this.service = service;
 		this.txChar = service.findCharacteristic(SerialPortService.TX_UUID);
 		this.rxChar = service.findCharacteristic(SerialPortService.RX_UUID);
 
@@ -40,11 +38,16 @@ public class SerialPortClient extends BluetoothClientCallbacksDefault {
 		this.listener = listener;
 
 		service.setClientCallbacks(this);
-		service.writeDescriptor(txCCC, new byte[] { 0x00, 0x01 });
+		txCCC.sendWriteRequest(new byte[] { 0x00, 0x01 });
 	}
 
 	public void sendData(byte[] data) {
-		this.service.writeCharacteristic(this.rxChar, data);
+		this.rxChar.sendWriteRequest(data);
+	}
+
+	@Override
+	public void onWriteCompleted(BluetoothCharacteristic characteristic, BluetoothStatus status) {
+		this.listener.onDataSent();
 	}
 
 	@Override
@@ -53,10 +56,5 @@ public class SerialPortClient extends BluetoothClientCallbacksDefault {
 			System.out.println("tx: " + value.length);
 			this.listener.onDataReceived(value);
 		}
-	}
-
-	@Override
-	public void onWriteResponse(BluetoothDescriptor descriptor, BluetoothStatus status) {
-		// TODO
 	}
 }

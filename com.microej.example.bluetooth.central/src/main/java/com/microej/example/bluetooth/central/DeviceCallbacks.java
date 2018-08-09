@@ -18,6 +18,9 @@ import ej.bluetooth.gatt.BluetoothService;
 
 public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements SerialPortListener {
 
+	private static final byte[] INITIAL_DATA = //
+			new byte[] { 0x42, 0x00, 0x05, 0x00, 0x03, (byte) 0xF9, (byte) 0xF7, 0x06, 0x27 };
+
 	private SerialPortClient serialPortClient;
 
 	@Override
@@ -49,8 +52,13 @@ public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements 
 			System.out.println("Error: could not find SPS service");
 		} else {
 			this.serialPortClient = new SerialPortClient(spsService, this);
-			this.serialPortClient.sendData("hello".getBytes());
+			this.serialPortClient.sendData(INITIAL_DATA);
 		}
+	}
+
+	@Override
+	public void onDataSent() {
+		System.out.println("DeviceCallbacks.onDataSent()");
 	}
 
 	@Override

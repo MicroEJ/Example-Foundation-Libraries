@@ -14,26 +14,31 @@ import ej.bluetooth.gap.callbacks.BluetoothAdapterCallbacksDefault;
 public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
 
 	private final String peripheralAddr;
-	private boolean deviceFound;
+	private BluetoothDevice device;
 
 	public AdapterCallbacks(String peripheralAddr) {
 		this.peripheralAddr = peripheralAddr;
-		this.deviceFound = false;
+		this.device = null;
 	}
 
 	@Override
 	public void onScanResult(BluetoothAdapter adapter, BluetoothDevice device, BluetoothPayload payload) {
 		System.out.println("Scanned device addr: " + device.getAddress());
 
-		if (!this.deviceFound && device.getAddress().toString().equals(this.peripheralAddr)) {
-			this.deviceFound = true;
-			device.getAdapter().stopScanning();
-			device.connect(new DeviceCallbacks());
+		if (this.device == null && device.getAddress().toString().equals(this.peripheralAddr)) {
+			this.device = device;
+			adapter.stopScanning();
 		}
 	}
 
 	@Override
 	public void onScanComplete(BluetoothAdapter adapter) {
 		System.out.println("Scan complete");
+
+		if (this.device != null) {
+			if (this.device.connect(new DeviceCallbacks())) {
+				System.out.println("Connecting...");
+			}
+		}
 	}
 }

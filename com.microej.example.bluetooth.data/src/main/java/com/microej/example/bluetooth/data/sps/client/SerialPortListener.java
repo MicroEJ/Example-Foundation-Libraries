@@ -8,5 +8,7 @@ package com.microej.example.bluetooth.data.sps.client;
 
 public interface SerialPortListener {
 
+	void onDataSent();
+
 	void onDataReceived(byte[] data);
 }
