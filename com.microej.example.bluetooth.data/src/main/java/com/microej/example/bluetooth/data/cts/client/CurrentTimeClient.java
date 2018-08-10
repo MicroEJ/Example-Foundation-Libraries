@@ -10,7 +10,6 @@ import com.microej.example.bluetooth.data.cts.CurrentTimeService;
 
 import ej.bluetooth.gatt.BluetoothCharacteristic;
 import ej.bluetooth.gatt.BluetoothService;
-import ej.bluetooth.gatt.BluetoothStatus;
 import ej.bluetooth.gatt.callbacks.BluetoothClientCallbacksDefault;
 
 public class CurrentTimeClient extends BluetoothClientCallbacksDefault {
@@ -39,7 +38,7 @@ public class CurrentTimeClient extends BluetoothClientCallbacksDefault {
 	}
 
 	@Override
-	public void onReadCompleted(BluetoothCharacteristic characteristic, BluetoothStatus status, byte[] value) {
+	public void onReadCompleted(BluetoothCharacteristic characteristic, int status, byte[] value) {
 		if (characteristic == this.currentTimeChar) {
 			this.listener.onTimeUpdate(1, 0);
 		} else if (characteristic == this.localTimeInfoChar) {

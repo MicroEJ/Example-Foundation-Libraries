@@ -11,7 +11,6 @@ import com.microej.example.bluetooth.data.sps.SerialPortService;
 
 import ej.bluetooth.gatt.BluetoothCharacteristic;
 import ej.bluetooth.gatt.BluetoothService;
-import ej.bluetooth.gatt.BluetoothStatus;
 import ej.bluetooth.gatt.callbacks.BluetoothClientCallbacksDefault;
 
 public class SerialPortClient extends BluetoothClientCallbacksDefault {
@@ -41,7 +40,7 @@ public class SerialPortClient extends BluetoothClientCallbacksDefault {
 	}
 
 	@Override
-	public void onWriteCompleted(BluetoothCharacteristic characteristic, BluetoothStatus status) {
+	public void onWriteCompleted(BluetoothCharacteristic characteristic, int status) {
 		this.listener.onDataSent();
 	}
 
