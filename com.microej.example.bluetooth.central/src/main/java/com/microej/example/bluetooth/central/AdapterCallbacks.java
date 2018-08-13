@@ -23,9 +23,10 @@ public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
 
 	@Override
 	public void onScanResult(BluetoothAdapter adapter, BluetoothDevice device, BluetoothPayload payload) {
-		System.out.println("Scanned device addr: " + device.getAddress());
+		String deviceAddr = device.getAddress();
+		System.out.println("Scanned device addr: " + deviceAddr);
 
-		if (this.device == null && device.getAddress().toString().equals(this.peripheralAddr)) {
+		if (this.device == null && deviceAddr.equals(this.peripheralAddr)) {
 			this.device = device;
 			adapter.stopScanning();
 		}
