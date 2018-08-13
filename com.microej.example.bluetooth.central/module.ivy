@@ -29,7 +29,7 @@
     <dependencies>
 		<dependency org="ej.api" name="edc" rev="[1.2.0-RC,2.0.0-RC[" conf="provided->*"/>
 		<dependency org="ej.api" name="bon" rev="[1.3.0-RC,2.0.0-RC[" conf="provided->*"/>
-		<dependency org="ej.api" name="bluetooth" rev="[0.1.0-RC,1.0.0-RC["/>
+		<dependency org="ej.api" name="bluetooth" rev="[1.0.0-RC,2.0.0-RC[" conf="provided->*"/>
 
 		<dependency org="com.microej.example.bluetooth" name="data" rev="[0.1.0-RC,1.0.0-RC["/>
 
