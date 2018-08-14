@@ -9,8 +9,8 @@ package com.microej.example.bluetooth.data.cts.server;
 import com.microej.example.bluetooth.data.cts.CurrentTimeService;
 
 import ej.bluetooth.gatt.BluetoothCharacteristic;
-import ej.bluetooth.gatt.BluetoothPermission;
-import ej.bluetooth.gatt.BluetoothProperty;
+import ej.bluetooth.gatt.BluetoothPermissions;
+import ej.bluetooth.gatt.BluetoothProperties;
 import ej.bluetooth.gatt.BluetoothService;
 import ej.bluetooth.gatt.BluetoothServiceType;
 import ej.bluetooth.gatt.callbacks.BluetoothServerCallbacksDefault;
@@ -31,15 +31,15 @@ public class CurrentTimeBuilder extends BluetoothServerCallbacksDefault {
 
 	private static BluetoothCharacteristic createCurrentTime() {
 		String uuid = CurrentTimeService.CURRENT_TIME_UUID;
-		int prop = BluetoothProperty.READ | BluetoothProperty.NOTIFY;
-		int perm = BluetoothPermission.READ;
+		int prop = BluetoothProperties.READ | BluetoothProperties.NOTIFY;
+		int perm = BluetoothPermissions.READ;
 		return new BluetoothCharacteristic(uuid, prop, perm);
 	}
 
 	private static BluetoothCharacteristic createLocalTimeInfo() {
 		String uuid = CurrentTimeService.LOCAL_TIME_INFO_UUID;
-		int prop = BluetoothProperty.READ;
-		int perm = BluetoothPermission.READ;
+		int prop = BluetoothProperties.READ;
+		int perm = BluetoothPermissions.READ;
 		return new BluetoothCharacteristic(uuid, prop, perm);
 	}
 }

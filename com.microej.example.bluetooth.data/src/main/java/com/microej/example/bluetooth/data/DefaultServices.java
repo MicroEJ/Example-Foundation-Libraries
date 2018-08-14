@@ -8,8 +8,8 @@ package com.microej.example.bluetooth.data;
 
 import ej.bluetooth.gatt.BluetoothCharacteristic;
 import ej.bluetooth.gatt.BluetoothDescriptor;
-import ej.bluetooth.gatt.BluetoothPermission;
-import ej.bluetooth.gatt.BluetoothProperty;
+import ej.bluetooth.gatt.BluetoothPermissions;
+import ej.bluetooth.gatt.BluetoothProperties;
 
 public class DefaultServices {
 
@@ -24,11 +24,11 @@ public class DefaultServices {
 	}
 
 	public static BluetoothDescriptor createCUD() {
-		return new BluetoothDescriptor(CUD_UUID, BluetoothPermission.READ);
+		return new BluetoothDescriptor(CUD_UUID, BluetoothPermissions.READ);
 	}
 
 	public static BluetoothDescriptor createCCC() {
-		return new BluetoothDescriptor(CCC_UUID, BluetoothPermission.READ_WRITE);
+		return new BluetoothDescriptor(CCC_UUID, BluetoothPermissions.READ_WRITE);
 	}
 
 	public static boolean checkNotificationsEnabled(byte[] value) {
@@ -48,9 +48,9 @@ public class DefaultServices {
 		int properties = characteristic.getProperties();
 
 		byte flags = 0;
-		if ((properties & BluetoothProperty.NOTIFY) != 0) {
+		if ((properties & BluetoothProperties.NOTIFY) != 0) {
 			flags |= NOTIFICATIONS_ENABLED;
-		} else if ((properties & BluetoothProperty.INDICATE) != 0) {
+		} else if ((properties & BluetoothProperties.INDICATE) != 0) {
 			flags |= INDICATIONS_ENABLED;
 		} else {
 			return false;

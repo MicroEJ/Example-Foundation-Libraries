@@ -10,8 +10,8 @@ import com.microej.example.bluetooth.data.DefaultServices;
 import com.microej.example.bluetooth.data.sps.SerialPortService;
 
 import ej.bluetooth.gatt.BluetoothCharacteristic;
-import ej.bluetooth.gatt.BluetoothPermission;
-import ej.bluetooth.gatt.BluetoothProperty;
+import ej.bluetooth.gatt.BluetoothPermissions;
+import ej.bluetooth.gatt.BluetoothProperties;
 import ej.bluetooth.gatt.BluetoothService;
 import ej.bluetooth.gatt.BluetoothServiceType;
 
@@ -31,8 +31,8 @@ public class SerialPortBuilder {
 
 	private static BluetoothCharacteristic createSpsTx() {
 		String uuid = SerialPortService.TX_UUID;
-		int prop = BluetoothProperty.NOTIFY;
-		int perm = BluetoothPermission.NONE;
+		int prop = BluetoothProperties.NOTIFY;
+		int perm = BluetoothPermissions.NONE;
 		BluetoothCharacteristic tx = new BluetoothCharacteristic(uuid, prop, perm);
 		tx.addDescriptor(DefaultServices.createCUD());
 		tx.addDescriptor(DefaultServices.createCCC());
@@ -41,8 +41,8 @@ public class SerialPortBuilder {
 
 	private static BluetoothCharacteristic createSpsRx() {
 		String uuid = SerialPortService.RX_UUID;
-		int prop = BluetoothProperty.WRITE_NO_RESPONSE;
-		int perm = BluetoothPermission.WRITE;
+		int prop = BluetoothProperties.WRITE_NO_RESPONSE;
+		int perm = BluetoothPermissions.WRITE;
 		BluetoothCharacteristic tx = new BluetoothCharacteristic(uuid, prop, perm);
 		tx.addDescriptor(DefaultServices.createCUD());
 		return tx;
