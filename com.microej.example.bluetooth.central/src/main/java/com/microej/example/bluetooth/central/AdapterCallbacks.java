@@ -33,7 +33,7 @@ public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
 	}
 
 	@Override
-	public void onScanComplete(BluetoothAdapter adapter) {
+	public void onScanCompleted(BluetoothAdapter adapter) {
 		System.out.println("Scan complete");
 
 		if (this.device != null) {

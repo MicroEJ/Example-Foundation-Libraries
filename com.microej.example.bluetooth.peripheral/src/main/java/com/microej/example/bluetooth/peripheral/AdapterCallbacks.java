@@ -12,7 +12,7 @@ import ej.bluetooth.gap.callbacks.BluetoothAdapterCallbacksDefault;
 public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
 
 	@Override
-	public void onAdvertiseComplete(BluetoothAdapter adapter) {
+	public void onAdvertiseCompleted(BluetoothAdapter adapter) {
 		System.out.println("Advertise complete");
 	}
 }

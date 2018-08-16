@@ -36,6 +36,17 @@ public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements 
 	}
 
 	@Override
+	public void onPairCompleted(BluetoothDevice device, boolean success) {
+		System.out.println("Pair completed: " + success);
+	}
+
+	@Override
+	public void onPasskeyRequest(BluetoothDevice device) {
+		System.out.println("Passkey request");
+		device.passkeyReply(true, 0);
+	}
+
+	@Override
 	public void onServicesDiscovered(BluetoothDevice device) {
 		for (BluetoothService service : device.getServices()) {
 			System.out.println("[SERVICE] " + service.getUuid());
@@ -54,6 +65,8 @@ public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements 
 			this.serialPortClient = new SerialPortClient(spsService, this);
 			this.serialPortClient.sendData(INITIAL_DATA);
 		}
+
+		device.pair(true);
 	}
 
 	@Override

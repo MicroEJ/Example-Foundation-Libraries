@@ -50,7 +50,7 @@ public class SerialPortServer extends BluetoothServerCallbacksDefault {
 
 	public void sendData(BluetoothDevice device, byte[] data) {
 		byte[] txCCCValue = ServerStorage.get(device, this.txCCC);
-		if (txCCCValue != null && DefaultServices.checkNotificationsEnabled(txCCCValue)) {
+		if (txCCCValue != null && DefaultServices.checkCccNotifications(txCCCValue)) {
 			this.txChar.sendNotification(device, data, false);
 		}
 	}
