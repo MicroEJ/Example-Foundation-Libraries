@@ -33,6 +33,21 @@ public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements 
 	}
 
 	@Override
+	public void onPairRequest(BluetoothDevice device, boolean createBond) {
+		device.pairReply(true, createBond);
+	}
+
+	@Override
+	public void onPairCompleted(BluetoothDevice device, boolean success) {
+		System.out.println("Pair completed: " + success);
+	}
+
+	@Override
+	public void onPasskeyGenerated(BluetoothDevice device, int passkey) {
+		System.out.println("Passkey generated: " + passkey);
+	}
+
+	@Override
 	public void onServicesDiscovered(BluetoothDevice device) {
 		for (BluetoothService service : device.getServices()) {
 			System.out.println("[SERVICE] " + service.getUuid());

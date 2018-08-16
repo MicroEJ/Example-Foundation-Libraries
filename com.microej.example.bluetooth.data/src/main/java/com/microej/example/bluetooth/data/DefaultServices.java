@@ -6,10 +6,8 @@
  */
 package com.microej.example.bluetooth.data;
 
-import ej.bluetooth.gatt.BluetoothCharacteristic;
 import ej.bluetooth.gatt.BluetoothDescriptor;
 import ej.bluetooth.gatt.BluetoothPermissions;
-import ej.bluetooth.gatt.BluetoothProperties;
 
 public class DefaultServices {
 
@@ -31,7 +29,7 @@ public class DefaultServices {
 		return new BluetoothDescriptor(CCC_UUID, BluetoothPermissions.READ_WRITE);
 	}
 
-	public static boolean checkNotificationsEnabled(byte[] value) {
+	public static boolean checkCccNotifications(byte[] value) {
 		if (value.length != 2) {
 			throw new IllegalArgumentException();
 		}
@@ -39,36 +37,14 @@ public class DefaultServices {
 		return (value[0] & NOTIFICATIONS_ENABLED) != 0;
 	}
 
-	public static boolean enableCharacteristicNotifications(BluetoothCharacteristic characteristic) {
-		BluetoothDescriptor descriptor = characteristic.findDescriptor(DefaultServices.CCC_UUID);
-		if (descriptor == null) {
-			return false;
-		}
-
-		int properties = characteristic.getProperties();
-
+	public static byte[] makeCccValue(boolean notifications, boolean indications) {
 		byte flags = 0;
-		if ((properties & BluetoothProperties.NOTIFY) != 0) {
+		if (notifications) {
 			flags |= NOTIFICATIONS_ENABLED;
-		} else if ((properties & BluetoothProperties.INDICATE) != 0) {
+		} else if (indications) {
 			flags |= INDICATIONS_ENABLED;
-		} else {
-			return false;
 		}
 
-		byte[] value = new byte[] { flags, 0 };
-		descriptor.sendWriteRequest(value);
-		return true;
-	}
-
-	public static boolean disableCharacteristicNotifications(BluetoothCharacteristic characteristic) {
-		BluetoothDescriptor descriptor = characteristic.findDescriptor(DefaultServices.CCC_UUID);
-		if (descriptor == null) {
-			return false;
-		}
-
-		byte[] value = new byte[] { 0, 0 };
-		descriptor.sendWriteRequest(value);
-		return true;
+		return new byte[] { flags, 0 };
 	}
 }
