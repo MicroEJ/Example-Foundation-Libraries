@@ -6,10 +6,9 @@
  */
 package com.microej.example.bluetooth.central;
 
-import ej.bluetooth.gap.BluetoothAdapter;
-import ej.bluetooth.gap.BluetoothDevice;
-import ej.bluetooth.gap.BluetoothPayload;
-import ej.bluetooth.gap.callbacks.BluetoothAdapterCallbacksDefault;
+import ej.bluetooth.BluetoothAdapter;
+import ej.bluetooth.BluetoothDevice;
+import ej.bluetooth.callbacks.BluetoothAdapterCallbacksDefault;
 
 public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
 
@@ -22,7 +21,7 @@ public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
 	}
 
 	@Override
-	public void onScanResult(BluetoothAdapter adapter, BluetoothDevice device, BluetoothPayload payload) {
+	public void onScanResult(BluetoothAdapter adapter, BluetoothDevice device, byte[] payload) {
 		String deviceAddr = device.getAddress();
 		System.out.println("Scanned device addr: " + deviceAddr);
 

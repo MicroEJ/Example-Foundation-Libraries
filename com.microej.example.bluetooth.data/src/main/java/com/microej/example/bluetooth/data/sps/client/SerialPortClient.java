@@ -9,10 +9,10 @@ package com.microej.example.bluetooth.data.sps.client;
 import com.microej.example.bluetooth.data.DefaultServices;
 import com.microej.example.bluetooth.data.sps.SerialPortService;
 
-import ej.bluetooth.gatt.BluetoothCharacteristic;
-import ej.bluetooth.gatt.BluetoothDescriptor;
-import ej.bluetooth.gatt.BluetoothService;
-import ej.bluetooth.gatt.callbacks.BluetoothClientCallbacksDefault;
+import ej.bluetooth.BluetoothCharacteristic;
+import ej.bluetooth.BluetoothDescriptor;
+import ej.bluetooth.BluetoothService;
+import ej.bluetooth.callbacks.BluetoothClientCallbacksDefault;
 
 public class SerialPortClient extends BluetoothClientCallbacksDefault {
 

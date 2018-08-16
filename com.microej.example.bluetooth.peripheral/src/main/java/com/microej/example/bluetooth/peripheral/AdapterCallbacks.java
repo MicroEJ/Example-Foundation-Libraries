@@ -6,8 +6,8 @@
  */
 package com.microej.example.bluetooth.peripheral;
 
-import ej.bluetooth.gap.BluetoothAdapter;
-import ej.bluetooth.gap.callbacks.BluetoothAdapterCallbacksDefault;
+import ej.bluetooth.BluetoothAdapter;
+import ej.bluetooth.callbacks.BluetoothAdapterCallbacksDefault;
 
 public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
 

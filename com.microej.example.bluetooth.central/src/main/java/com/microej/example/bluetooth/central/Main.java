@@ -8,7 +8,7 @@ package com.microej.example.bluetooth.central;
 
 import com.microej.example.bluetooth.data.cts.server.CurrentTimeServer;
 
-import ej.bluetooth.gap.BluetoothAdapter;
+import ej.bluetooth.BluetoothAdapter;
 
 public class Main {
 

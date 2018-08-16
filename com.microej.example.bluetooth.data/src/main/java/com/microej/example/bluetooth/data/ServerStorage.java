@@ -9,7 +9,7 @@ package com.microej.example.bluetooth.data;
 import java.util.HashMap;
 import java.util.Map;
 
-import ej.bluetooth.gap.BluetoothDevice;
+import ej.bluetooth.BluetoothDevice;
 
 public class ServerStorage {
 

@@ -6,7 +6,7 @@
  */
 package com.microej.example.bluetooth.data.sps.server;
 
-import ej.bluetooth.gap.BluetoothDevice;
+import ej.bluetooth.BluetoothDevice;
 
 public interface SerialPortListener {
 
