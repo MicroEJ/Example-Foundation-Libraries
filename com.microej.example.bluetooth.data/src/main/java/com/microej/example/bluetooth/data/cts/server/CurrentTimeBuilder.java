@@ -8,12 +8,12 @@ package com.microej.example.bluetooth.data.cts.server;
 
 import com.microej.example.bluetooth.data.cts.CurrentTimeService;
 
-import ej.bluetooth.gatt.BluetoothCharacteristic;
-import ej.bluetooth.gatt.BluetoothPermissions;
-import ej.bluetooth.gatt.BluetoothProperties;
-import ej.bluetooth.gatt.BluetoothService;
-import ej.bluetooth.gatt.BluetoothServiceType;
-import ej.bluetooth.gatt.callbacks.BluetoothServerCallbacksDefault;
+import ej.bluetooth.BluetoothCharacteristic;
+import ej.bluetooth.BluetoothPermissions;
+import ej.bluetooth.BluetoothProperties;
+import ej.bluetooth.BluetoothService;
+import ej.bluetooth.BluetoothServiceType;
+import ej.bluetooth.callbacks.BluetoothServerCallbacksDefault;
 
 public class CurrentTimeBuilder extends BluetoothServerCallbacksDefault {
 

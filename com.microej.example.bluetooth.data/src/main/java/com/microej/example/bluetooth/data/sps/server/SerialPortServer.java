@@ -10,12 +10,12 @@ import com.microej.example.bluetooth.data.DefaultServices;
 import com.microej.example.bluetooth.data.ServerStorage;
 import com.microej.example.bluetooth.data.sps.SerialPortService;
 
-import ej.bluetooth.gap.BluetoothDevice;
-import ej.bluetooth.gatt.BluetoothCharacteristic;
-import ej.bluetooth.gatt.BluetoothDescriptor;
-import ej.bluetooth.gatt.BluetoothService;
-import ej.bluetooth.gatt.BluetoothStatus;
-import ej.bluetooth.gatt.callbacks.BluetoothServerCallbacksDefault;
+import ej.bluetooth.BluetoothCharacteristic;
+import ej.bluetooth.BluetoothDescriptor;
+import ej.bluetooth.BluetoothDevice;
+import ej.bluetooth.BluetoothService;
+import ej.bluetooth.BluetoothStatus;
+import ej.bluetooth.callbacks.BluetoothServerCallbacksDefault;
 
 public class SerialPortServer extends BluetoothServerCallbacksDefault {
 

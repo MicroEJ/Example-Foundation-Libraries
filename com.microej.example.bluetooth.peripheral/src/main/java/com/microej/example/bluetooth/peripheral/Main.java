@@ -9,8 +9,8 @@ package com.microej.example.bluetooth.peripheral;
 import com.microej.example.bluetooth.data.sps.server.SerialPortListener;
 import com.microej.example.bluetooth.data.sps.server.SerialPortServer;
 
-import ej.bluetooth.gap.BluetoothAdapter;
-import ej.bluetooth.gap.BluetoothDevice;
+import ej.bluetooth.BluetoothAdapter;
+import ej.bluetooth.BluetoothDevice;
 
 public class Main implements SerialPortListener {
 

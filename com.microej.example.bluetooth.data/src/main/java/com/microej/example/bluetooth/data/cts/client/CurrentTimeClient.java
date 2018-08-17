@@ -8,9 +8,9 @@ package com.microej.example.bluetooth.data.cts.client;
 
 import com.microej.example.bluetooth.data.cts.CurrentTimeService;
 
-import ej.bluetooth.gatt.BluetoothCharacteristic;
-import ej.bluetooth.gatt.BluetoothService;
-import ej.bluetooth.gatt.callbacks.BluetoothClientCallbacksDefault;
+import ej.bluetooth.BluetoothCharacteristic;
+import ej.bluetooth.BluetoothService;
+import ej.bluetooth.callbacks.BluetoothClientCallbacksDefault;
 
 public class CurrentTimeClient extends BluetoothClientCallbacksDefault {
 
