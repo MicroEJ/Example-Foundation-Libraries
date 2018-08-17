@@ -14,9 +14,9 @@ import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothDescriptor;
 import ej.bluetooth.BluetoothDevice;
 import ej.bluetooth.BluetoothService;
-import ej.bluetooth.callbacks.BluetoothDeviceCallbacksDefault;
+import ej.bluetooth.callbacks.impl.DefaultConnectionCallbacks;
 
-public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements SerialPortListener {
+public class ConnectionCallbacks extends DefaultConnectionCallbacks implements SerialPortListener {
 
 	private static final byte[] INITIAL_DATA = //
 			new byte[] { 0x42, 0x00, 0x05, 0x00, 0x03, (byte) 0xF9, (byte) 0xF7, 0x06, 0x27 };
@@ -71,11 +71,11 @@ public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements 
 
 	@Override
 	public void onDataSent() {
-		System.out.println("DeviceCallbacks.onDataSent()");
+		System.out.println("onDataSent()");
 	}
 
 	@Override
 	public void onDataReceived(byte[] data) {
-		System.out.println("DeviceCallbacks.onDataReceived()");
+		System.out.println("onDataReceived()");
 	}
 }

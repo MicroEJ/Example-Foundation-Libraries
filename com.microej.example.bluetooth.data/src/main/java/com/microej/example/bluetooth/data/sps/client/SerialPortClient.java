@@ -12,9 +12,9 @@ import com.microej.example.bluetooth.data.sps.SerialPortService;
 import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothDescriptor;
 import ej.bluetooth.BluetoothService;
-import ej.bluetooth.callbacks.BluetoothClientCallbacksDefault;
+import ej.bluetooth.callbacks.impl.DefaultClientCallbacks;
 
-public class SerialPortClient extends BluetoothClientCallbacksDefault {
+public class SerialPortClient extends DefaultClientCallbacks {
 
 	private final BluetoothCharacteristic txChar;
 	private final BluetoothCharacteristic rxChar;

@@ -14,9 +14,9 @@ import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothDescriptor;
 import ej.bluetooth.BluetoothDevice;
 import ej.bluetooth.BluetoothService;
-import ej.bluetooth.callbacks.BluetoothDeviceCallbacksDefault;
+import ej.bluetooth.callbacks.impl.DefaultConnectionCallbacks;
 
-public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements CurrentTimeListener {
+public class ConnectionCallbacks extends DefaultConnectionCallbacks implements CurrentTimeListener {
 
 	private CurrentTimeClient currentTimeClient;
 
@@ -70,6 +70,6 @@ public class DeviceCallbacks extends BluetoothDeviceCallbacksDefault implements 
 
 	@Override
 	public void onTimeUpdate(long timestamp, long offset) {
-		System.out.println("DeviceCallbacks.onTimeUpdate() timestamp=" + timestamp + " offset=" + offset);
+		System.out.println("onTimeUpdate() timestamp=" + timestamp + " offset=" + offset);
 	}
 }

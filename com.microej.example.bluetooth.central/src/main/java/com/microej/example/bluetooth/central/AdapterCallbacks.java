@@ -8,9 +8,9 @@ package com.microej.example.bluetooth.central;
 
 import ej.bluetooth.BluetoothAdapter;
 import ej.bluetooth.BluetoothDevice;
-import ej.bluetooth.callbacks.BluetoothAdapterCallbacksDefault;
+import ej.bluetooth.callbacks.impl.DefaultAdapterCallbacks;
 
-public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
+public class AdapterCallbacks extends DefaultAdapterCallbacks {
 
 	private final String peripheralAddr;
 	private BluetoothDevice device;
@@ -36,7 +36,7 @@ public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
 		System.out.println("Scan complete");
 
 		if (this.device != null) {
-			if (this.device.connect(new DeviceCallbacks())) {
+			if (this.device.connect(new ConnectionCallbacks())) {
 				System.out.println("Connecting...");
 			}
 		}

@@ -12,9 +12,9 @@ import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothDevice;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.BluetoothStatus;
-import ej.bluetooth.callbacks.BluetoothServerCallbacksDefault;
+import ej.bluetooth.callbacks.impl.DefaultServerCallbacks;
 
-public class CurrentTimeServer extends BluetoothServerCallbacksDefault {
+public class CurrentTimeServer extends DefaultServerCallbacks {
 
 	private final BluetoothService service;
 	private final BluetoothCharacteristic currentTimeChar;

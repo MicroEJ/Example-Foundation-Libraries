@@ -7,9 +7,9 @@
 package com.microej.example.bluetooth.peripheral;
 
 import ej.bluetooth.BluetoothAdapter;
-import ej.bluetooth.callbacks.BluetoothAdapterCallbacksDefault;
+import ej.bluetooth.callbacks.impl.DefaultAdapterCallbacks;
 
-public class AdapterCallbacks extends BluetoothAdapterCallbacksDefault {
+public class AdapterCallbacks extends DefaultAdapterCallbacks {
 
 	@Override
 	public void onAdvertiseCompleted(BluetoothAdapter adapter) {

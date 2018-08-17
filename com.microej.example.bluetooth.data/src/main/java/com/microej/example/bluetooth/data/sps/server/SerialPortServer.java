@@ -15,9 +15,9 @@ import ej.bluetooth.BluetoothDescriptor;
 import ej.bluetooth.BluetoothDevice;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.BluetoothStatus;
-import ej.bluetooth.callbacks.BluetoothServerCallbacksDefault;
+import ej.bluetooth.callbacks.impl.DefaultServerCallbacks;
 
-public class SerialPortServer extends BluetoothServerCallbacksDefault {
+public class SerialPortServer extends DefaultServerCallbacks {
 
 	private static final String TX_CUD = "TX data";
 	private static final String RX_CUD = "RX data";
