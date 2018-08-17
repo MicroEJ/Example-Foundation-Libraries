@@ -30,7 +30,7 @@ public class Main implements SerialPortListener {
 		adapter.addService(this.serialPortServer.getService());
 
 		System.out.println("Start advertising");
-		adapter.startAdvertising(new AdapterCallbacks(), new DeviceCallbacks(), null);
+		adapter.startAdvertising(new AppAdvertisementCallbacks(), new AppConnectionCallbacks(), null);
 
 		try {
 			Thread.sleep(STOP_ADVERTISING_DELAY);

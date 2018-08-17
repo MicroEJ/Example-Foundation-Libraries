@@ -23,7 +23,7 @@ public class Main {
 		adapter.addService(currentTimeServer.getService());
 
 		System.out.println("Start scanning");
-		adapter.startScanning(new AdapterCallbacks(PERIPHERAL_ADDR));
+		adapter.startScanning(new AppScanCallbacks(PERIPHERAL_ADDR));
 
 		try {
 			Thread.sleep(STOP_SCANNING_DELAY);

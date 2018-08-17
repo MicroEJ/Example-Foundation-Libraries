@@ -13,9 +13,9 @@ import ej.bluetooth.BluetoothPermissions;
 import ej.bluetooth.BluetoothProperties;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.BluetoothServiceType;
-import ej.bluetooth.callbacks.BluetoothServerCallbacksDefault;
+import ej.bluetooth.callbacks.impl.DefaultServerCallbacks;
 
-public class CurrentTimeBuilder extends BluetoothServerCallbacksDefault {
+public class CurrentTimeBuilder extends DefaultServerCallbacks {
 
 	private CurrentTimeBuilder() {
 		// private constructor
