@@ -9,6 +9,7 @@ package com.microej.example.bluetooth.central;
 import com.microej.example.bluetooth.data.cts.server.CurrentTimeServer;
 
 import ej.bluetooth.BluetoothAdapter;
+import ej.bon.Util;
 
 public class Main {
 
@@ -17,6 +18,8 @@ public class Main {
 	private static final String PERIPHERAL_ADDR = "80:EA:22:65:DB:CD";
 
 	public static void main(String[] args) {
+		Util.setCurrentTimeMillis(1234567890 * 1000L);
+
 		BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
 
 		CurrentTimeServer currentTimeServer = new CurrentTimeServer();

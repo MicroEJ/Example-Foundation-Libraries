@@ -69,7 +69,12 @@ public class AppConnectionCallbacks extends DefaultConnectionCallbacks implement
 	}
 
 	@Override
-	public void onTimeUpdate(long timestamp, long offset) {
-		System.out.println("onTimeUpdate() timestamp=" + timestamp + " offset=" + offset);
+	public void onCurrentTimeUpdate(long currentTime) {
+		System.out.println("onCurrentTimeUpdate() currentTime=" + currentTime);
+	}
+
+	@Override
+	public void onLocalTimeUpdate(long localTimeOffset) {
+		System.out.println("onCurrentTimeUpdate() localTimeOffset=" + localTimeOffset);
 	}
 }
