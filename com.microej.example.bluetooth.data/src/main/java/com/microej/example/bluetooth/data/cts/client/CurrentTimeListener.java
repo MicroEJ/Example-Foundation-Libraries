@@ -8,5 +8,7 @@ package com.microej.example.bluetooth.data.cts.client;
 
 public interface CurrentTimeListener {
 
-	void onTimeUpdate(long timestamp, long offset);
+	void onCurrentTimeUpdate(long currentTime);
+
+	void onLocalTimeUpdate(long localTimeOffset);
 }
