@@ -12,7 +12,7 @@ import ej.bluetooth.callbacks.AdvertisementCallbacks;
 public class AppAdvertisementCallbacks implements AdvertisementCallbacks {
 
 	@Override
-	public void onAdvertiseCompleted(BluetoothAdapter adapter) {
-		System.out.println("Advertise complete");
+	public void onAdvertisementCompleted(BluetoothAdapter adapter) {
+		System.out.println("Advertisement complete");
 	}
 }
