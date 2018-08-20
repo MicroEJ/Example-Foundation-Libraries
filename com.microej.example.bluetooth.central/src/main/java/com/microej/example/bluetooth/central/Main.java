@@ -13,9 +13,9 @@ import ej.bon.Util;
 
 public class Main {
 
-	private static final int STOP_SCANNING_DELAY = 15000;
+	private static final int STOP_SCANNING_DELAY = 10000;
 
-	private static final String PERIPHERAL_ADDR = "80:EA:22:65:DB:CD";
+	private static final String PERIPHERAL_ADDR = "80:EA:18:A0:4A:10";
 
 	public static void main(String[] args) {
 		Util.setCurrentTimeMillis(1234567890 * 1000L);
