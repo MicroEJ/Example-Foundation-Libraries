@@ -6,6 +6,7 @@
  */
 package com.microej.example.bluetooth.peripheral;
 
+import com.microej.example.bluetooth.data.BluetoothPayload;
 import com.microej.example.bluetooth.data.sps.server.SerialPortListener;
 import com.microej.example.bluetooth.data.sps.server.SerialPortServer;
 
@@ -15,6 +16,10 @@ import ej.bluetooth.BluetoothDevice;
 public class Main implements SerialPortListener {
 
 	private static final int STOP_ADVERTISING_DELAY = 15000;
+
+	private static final byte[] PAYLOAD = new byte[] { 9, (byte) BluetoothPayload.MANUFACTURER_DATA, (byte) 0xFF,
+			(byte) 0xFF, 0x00, 0x10, 0x12, 0x34, 0x56, 0x78, 7, BluetoothPayload.COMPLETE_LOCAL_NAME, 'A', 'c', 't',
+			'i', 'v', 'o' };
 
 	private final SerialPortServer serialPortServer;
 
@@ -30,7 +35,7 @@ public class Main implements SerialPortListener {
 		adapter.addService(this.serialPortServer.getService());
 
 		System.out.println("Start advertising");
-		adapter.startAdvertising(new AppAdvertisementCallbacks(), new AppConnectionCallbacks(), null);
+		adapter.startAdvertising(new AppAdvertisementCallbacks(), new AppConnectionCallbacks(), PAYLOAD);
 
 		try {
 			Thread.sleep(STOP_ADVERTISING_DELAY);

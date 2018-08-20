@@ -6,6 +6,8 @@
  */
 package com.microej.example.bluetooth.central;
 
+import com.microej.example.bluetooth.data.BluetoothPayload;
+
 import ej.bluetooth.BluetoothAdapter;
 import ej.bluetooth.BluetoothDevice;
 import ej.bluetooth.callbacks.ScanCallbacks;
@@ -21,13 +23,25 @@ public class AppScanCallbacks implements ScanCallbacks {
 	}
 
 	@Override
-	public void onScanResult(BluetoothAdapter adapter, BluetoothDevice device, byte[] payload) {
+	public void onScanResult(BluetoothAdapter adapter, BluetoothDevice device, byte[] payload, int rssi) {
 		String deviceAddr = device.getAddress();
-		System.out.println("Scanned device addr: " + deviceAddr);
+		System.out.println("Scanned device: address=" + deviceAddr + " RSSI=" + rssi);
+
+		String localName = BluetoothPayload.parseString(payload, BluetoothPayload.COMPLETE_LOCAL_NAME);
+		if (localName == null) {
+			localName = BluetoothPayload.parseString(payload, BluetoothPayload.SHORTENED_LOCAL_NAME);
+		}
+		if (localName != null) {
+			System.out.println("\tLocal name: '" + localName + "'");
+		}
+
+		Byte txPowerLevel = BluetoothPayload.parseByte(payload, BluetoothPayload.TX_POWER_LEVEL);
+		if (txPowerLevel != null) {
+			System.out.println("\tTX power level: " + txPowerLevel);
+		}
 
 		if (this.device == null && deviceAddr.equals(this.peripheralAddr)) {
 			this.device = device;
-			adapter.stopScanning();
 		}
 	}
 
