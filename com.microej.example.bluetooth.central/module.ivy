@@ -23,7 +23,6 @@
 	</configurations>
 
     <publications>
-		<artifact name="application" ext="bin"/>
     </publications>
 
     <dependencies>
@@ -33,6 +32,6 @@
 
 		<dependency org="com.microej.example.bluetooth" name="data" rev="[0.1.0-RC,1.0.0-RC["/>
 
-		<dependency org="com.microej.platform" name="DA14681" rev="[0.1.0-RC,1.0.0-RC[" conf="platform->platformDev" transitive="false"/>
+		<dependency org="com.microej.platform" name="DA14681" rev="[1.0.0-RC,2.0.0-RC[" conf="platform->platformDev" transitive="false"/>
     </dependencies>
 </ivy-module>
