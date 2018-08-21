@@ -23,7 +23,6 @@
 	</configurations>
 
     <publications>
-		<artifact name="application" ext="bin"/>
     </publications>
 
     <dependencies>
