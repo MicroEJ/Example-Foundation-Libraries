@@ -48,7 +48,9 @@
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationJPFConfigurationTabCSTART_com.is2t.microej.workbench.std.launch.ext.TextFieldOption_CENDs3.slow" value="0"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationMainClass" value="com.microej.example.bluetooth.peripheral.Main"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationMicroJVM" value="MICROJVM"/>
-<listAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationOptionPropertiesFiles"/>
+<listAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationOptionPropertiesFiles">
+<listEntry value="${project_loc:com.microej.example.bluetooth.peripheral}/build/common.properties"/>
+</listAttribute>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationOutputDir" value="${project_loc:com.microej.example.bluetooth.peripheral}"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformArchitecture" value="CM0"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformBaseline" value="14"/>
