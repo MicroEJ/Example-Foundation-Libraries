@@ -15,7 +15,7 @@ public class Main {
 
 	private static final int STOP_SCANNING_DELAY = 10000;
 
-	private static final String PERIPHERAL_ADDR = "80:EA:18:A0:4A:10";
+	private static final String PERIPHERAL_ADDR = "80:EA:D0:65:71:AB";
 
 	public static void main(String[] args) {
 		Util.setCurrentTimeMillis(1234567890 * 1000L);

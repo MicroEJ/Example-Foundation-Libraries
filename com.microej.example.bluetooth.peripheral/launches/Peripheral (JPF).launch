@@ -58,10 +58,10 @@
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformHPN" value="DA14681"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformLevel" value="dev"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformLicenseTag" value="IS2T_J8F5C"/>
-<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformName" value="Bluetooth"/>
+<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformName" value="SingleApp"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformProvider" value="MicroEJ"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformToolchain" value="CM0_GCC48"/>
-<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformVersion" value="0.1.0-RC201808201150"/>
+<stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationPlatformVersion" value="1.0.0-RC201808281826"/>
 <stringAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationProject" value="com.microej.example.bluetooth.peripheral"/>
 <listAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationRequiredTypes"/>
 <listAttribute key="com.is2t.microej.workbench.stdMicroEJLaunchConfigurationResources"/>
@@ -80,5 +80,5 @@
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.microej.example.bluetooth.peripheral.Main"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="com.microej.example.bluetooth.peripheral"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx1024M&#13;&#10;-Dtoolchain.dir=&quot;C:\DiaSemi\SmartSnippetsStudio\GCC\4_9-2015q3&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx1024M&#13;&#10;-Dtoolchain.linker.exe=&quot;C:\DiaSemi\SmartSnippetsStudio\GCC\4_9-2015q3\bin\arm-none-eabi-ld.exe&quot;"/>
 </launchConfiguration>
