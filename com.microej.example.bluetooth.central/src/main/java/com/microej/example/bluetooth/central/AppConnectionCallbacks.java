@@ -51,7 +51,8 @@ public class AppConnectionCallbacks extends DefaultConnectionCallbacks implement
 		for (BluetoothService service : device.getServices()) {
 			System.out.println("[SERVICE] " + service.getUuid());
 			for (BluetoothCharacteristic characteristic : service.getCharacteristics()) {
-				System.out.println("\t[CHAR] " + characteristic.getUuid());
+				String propertiesString = Integer.toHexString(characteristic.getProperties());
+				System.out.println("\t[CHAR] " + characteristic.getUuid() + " P=0x" + propertiesString);
 				for (BluetoothDescriptor descriptor : characteristic.getDescriptors()) {
 					System.out.println("\t\t[DESC] " + descriptor.getUuid());
 				}
