@@ -14,6 +14,9 @@ public class DefaultServices {
 	public static final String CUD_UUID = "00002901-0000-1000-8000-00805f9b34fb";
 	public static final String CCC_UUID = "00002902-0000-1000-8000-00805f9b34fb";
 
+	public static final int EXTENDED_RELIABLE_WRITE = 0x01;
+	public static final int EXTENDED_WRITABLE_AUXILIARIES = 0x02;
+
 	private static final byte NOTIFICATIONS_ENABLED = 0x01;
 	private static final byte INDICATIONS_ENABLED = 0x02;
 
@@ -26,7 +29,7 @@ public class DefaultServices {
 	}
 
 	public static BluetoothDescriptor createCCC() {
-		return new BluetoothDescriptor(CCC_UUID, BluetoothPermissions.READ_WRITE);
+		return new BluetoothDescriptor(CCC_UUID, BluetoothPermissions.RW);
 	}
 
 	public static boolean checkCccNotifications(byte[] value) {

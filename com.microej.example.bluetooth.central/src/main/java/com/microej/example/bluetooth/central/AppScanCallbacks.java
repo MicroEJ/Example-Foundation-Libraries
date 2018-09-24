@@ -42,6 +42,7 @@ public class AppScanCallbacks implements ScanCallbacks {
 
 		if (this.device == null && deviceAddr.equals(this.peripheralAddr)) {
 			this.device = device;
+			adapter.stopScanning();
 		}
 	}
 
