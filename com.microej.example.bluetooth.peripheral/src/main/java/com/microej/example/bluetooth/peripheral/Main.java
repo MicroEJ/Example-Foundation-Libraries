@@ -18,8 +18,8 @@ public class Main implements SerialPortListener {
 	private static final int STOP_ADVERTISING_DELAY = 15000;
 
 	private static final byte[] PAYLOAD = new byte[] { 9, (byte) BluetoothPayload.MANUFACTURER_DATA, (byte) 0xFF,
-			(byte) 0xFF, 0x00, 0x10, 0x12, 0x34, 0x56, 0x78, 7, BluetoothPayload.COMPLETE_LOCAL_NAME, 'A', 'c', 't',
-			'i', 'v', 'o' };
+			(byte) 0xFF, 0x00, 0x10, 0x12, 0x34, 0x56, 0x78, 8, BluetoothPayload.COMPLETE_LOCAL_NAME, 'E', 'x', 'a',
+			'm', 'p', 'l', 'e' };
 
 	private final SerialPortServer serialPortServer;
 
