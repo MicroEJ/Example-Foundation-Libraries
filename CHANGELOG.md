@@ -1,10 +1,19 @@
 <!--
  Markdown
- 
+
  Copyright 2016-2018 IS2T. All rights reserved.
  For demonstration purpose only.
  IS2T PROPRIETARY. Use is subject to license terms.
 -->
+
+## Revision 48.0.0 (2018-10-08)
+
+Features:
+   - Remove NLS
+
+ Bug fixes:
+  - Fix api minors.
+
 
 ## Revision 47.1.0 (2018-07-05)
 
@@ -15,12 +24,12 @@ Features:
 
 Features:
    - remove MWT examples
-   
+
 ## Revision 46.0.3 (2017-09-11)
 
 Features:
    - Fix samples
-   
+
 ## Revision 46.0.2 (2017-08-17)
 
 Features:
@@ -31,7 +40,7 @@ Features:
 Features:
    - Change organization.
    - Add module.ant to build with any license.
-   
+
 ## Revision 23.0.23 (2016-11-08)
 
 Features:

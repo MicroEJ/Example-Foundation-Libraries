@@ -38,3 +38,9 @@ N/A
 
 # Restrictions
 None.
+ 
+<!--
+	Copyright 2016-2018 IS2T. All rights reserved.
+    For demonstration purpose only.
+    IS2T PROPRIETARY. Use is subject to license terms.
+-->

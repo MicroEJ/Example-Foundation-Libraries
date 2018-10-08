@@ -1,9 +1,9 @@
 /*
  * Java
  *
- * Copyright 2016 IS2T. All rights reserved.
- * 
- * Use of this source code is subject to license terms.
+ * Copyright 2016-2018 IS2T. All rights reserved.
+ * For demonstration purpose only.
+ * IS2T PROPRIETARY. Use is subject to license terms.
  */
 package com.microej.example.foundation.microui.mvc;
 
@@ -11,7 +11,6 @@ import java.io.IOException;
 
 import ej.bon.Timer;
 import ej.bon.TimerTask;
-import ej.components.dependencyinjection.ServiceLoaderFactory;
 import ej.microui.MicroUI;
 import ej.microui.display.Display;
 import ej.microui.display.FlyingImage;
@@ -44,7 +43,7 @@ public class ExampleMVC {
 
 		// show the displayable
 		displayable.show();
-		
+
 		// mock
 		TimerTask task = new  TimerTask() {
 
@@ -54,8 +53,7 @@ public class ExampleMVC {
 				percentage.set((int)Math.floor(percent));
 			}
 		};
-		Timer timer = ServiceLoaderFactory.getServiceLoader().getService(Timer.class, Timer.class);
-		timer.schedule(task, 1000L, 1000L);
+		new Timer().schedule(task, 1000L, 1000L);
 	}
 
 	private static void preparePointer(Display display) {

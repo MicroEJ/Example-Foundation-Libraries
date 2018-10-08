@@ -1,12 +1,13 @@
 <!--
 	IVY
 	
-	Copyright 2016 IS2T. All rights reserved.
-	Use of this source code is subject to license terms.
+	Copyright 2016-2018 IS2T. All rights reserved.
+    For demonstration purpose only.
+    IS2T PROPRIETARY. Use is subject to license terms.
 -->
 <ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:m="http://ant.apache.org/ivy/extra"> 
-	<info organisation="com.microej.example.foundation.microui" module="transform" status="integration" revision="2.0.0">
-		<ea:build organisation="com.is2t.easyant.buildtypes" module="build-microej-javalib" revision="3.+">
+	<info organisation="com.microej.example.foundation.microui" module="transform" status="integration" revision="2.0.1">
+		<ea:build organisation="com.is2t.easyant.buildtypes" module="build-microej-javalib" revision="4.+">
 		</ea:build>
 	</info>
 	<configurations defaultconfmapping="default->default;provided->provided">
@@ -24,7 +25,7 @@
 	</publications>
 	
 	<dependencies>
-		<dependency org="ej.api" name="edc" rev="[1.2.0,2.0.0[" conf="provided->*" />
-		<dependency org="ej.api" name="microui" rev="[2.0.0,3.0.0[" conf="provided->*" />
+		<dependency org="ej.api" name="edc" rev="[1.2.0,1.3.0[" conf="provided->*" />
+		<dependency org="ej.api" name="microui" rev="[2.0.0,2.1.0[" conf="provided->*" />
 	</dependencies>
 </ivy-module>
