@@ -1,3 +1,9 @@
+## 2.0.3 (2018-10-08)
+
+Bug fixes:
+
+  - Fix api minors.
+  
 ## 2.0.2 (2017-11-09)
 BugFixes:
   - Add Timer in types.list. 
@@ -18,3 +24,9 @@ Features:
 ## 1.0.0
 Features:
   - Initial revision.
+ 
+<!--
+	Copyright 2016-2018 IS2T. All rights reserved.
+    For demonstration purpose only.
+    IS2T PROPRIETARY. Use is subject to license terms.
+-->

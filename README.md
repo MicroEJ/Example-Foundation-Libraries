@@ -1,6 +1,6 @@
 <!--
  Markdown
- 
+
  Copyright 2016-2018 IS2T. All rights reserved.
  For demonstration purpose only.
  IS2T PROPRIETARY. Use is subject to license terms.
@@ -70,12 +70,6 @@ MicroUI provides the minimal cornerstone for quick construction of advanced, por
 * [com.microej.example.foundation.microui.mvc](com.microej.example.foundation.microui.mvc): Shows how to create and use a MVC design pattern.
 * [com.microej.example.foundation.microui.out](com.microej.example.foundation.microui.out): Shows how to redirect the standard SystemOut to the display.
 * [com.microej.example.foundation.microui.transform](com.microej.example.foundation.microui.transform): Shows how to use MicroUI transform.
-
-### NLS
-NLS library provides tools to use localized strings.
-
-**Available Examples**:
-* [com.microej.example.foundation.nls.helloworld](com.microej.example.foundation.nls.helloworld): Shows how to print a localized string on a display.
 
 
 ## Communication with the world
