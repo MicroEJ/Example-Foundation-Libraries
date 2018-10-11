@@ -2,12 +2,11 @@
 	Ivy
 	
 	Copyright 2014-2018 IS2T. All rights reserved.
- 
-    Use of this source code is subject to license terms.
- 
+    For demonstration purpose only.
+    IS2T PROPRIETARY. Use is subject to license terms.
 -->
 <ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:m="http://ant.apache.org/ivy/extra"> 
-    <info organisation="com.microej.example.foundation.microui" module="gradient" status="integration" revision="2.0.0">
+    <info organisation="com.microej.example.foundation.microui" module="gradient" status="integration" revision="2.0.1">
 		<ea:build organisation="com.is2t.easyant.buildtypes" module="build-microej-javalib" revision="4.+">
 		</ea:build>
     </info>
@@ -32,6 +31,7 @@
 			Other regular runtime dependencies are in the "default" configuration  
 		-->
         <dependency org="ej.api" name="edc" 	rev="[1.2.0-RC0,2.0.0-RC0[" conf="provided->*" />
+		<dependency org="ej.api" name="bon" rev="[1.2.0,1.3.0[" conf="provided->*" />
         <dependency org="ej.api" name="microui" rev="[2.0.0-RC0,2.1.0-RC0[" conf="provided->*"/>
     </dependencies>
 </ivy-module>
