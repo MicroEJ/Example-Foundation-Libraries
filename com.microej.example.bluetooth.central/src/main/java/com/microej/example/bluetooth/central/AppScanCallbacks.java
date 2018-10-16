@@ -14,12 +14,12 @@ import ej.bluetooth.callbacks.ScanCallbacks;
 
 public class AppScanCallbacks implements ScanCallbacks {
 
-	private final String peripheralAddr;
-	private BluetoothDevice device;
+	private final String peripheralName;
+	private boolean deviceFound;
 
-	public AppScanCallbacks(String peripheralAddr) {
-		this.peripheralAddr = peripheralAddr;
-		this.device = null;
+	public AppScanCallbacks(String peripheralName) {
+		this.peripheralName = peripheralName;
+		this.deviceFound = false;
 	}
 
 	@Override
@@ -40,20 +40,15 @@ public class AppScanCallbacks implements ScanCallbacks {
 			System.out.println("\tTX power level: " + txPowerLevel);
 		}
 
-		if (this.device == null && deviceAddr.equals(this.peripheralAddr)) {
-			this.device = device;
-			adapter.stopScanning();
+		if (!this.deviceFound && localName != null && localName.equals(this.peripheralName)) {
+			this.deviceFound = true;
+			System.out.println("Connecting...");
+			device.connect(new AppConnectionCallbacks());
 		}
 	}
 
 	@Override
 	public void onScanCompleted(BluetoothAdapter adapter) {
 		System.out.println("Scan complete");
-
-		if (this.device != null) {
-			if (this.device.connect(new AppConnectionCallbacks())) {
-				System.out.println("Connecting...");
-			}
-		}
 	}
 }

@@ -15,7 +15,7 @@ public class Main {
 
 	private static final int STOP_SCANNING_DELAY = 10000;
 
-	private static final String PERIPHERAL_ADDR = "80:EA:D0:65:71:AB";
+	private static final String PERIPHERAL_NAME = "iD.FIT";
 
 	public static void main(String[] args) {
 		Util.setCurrentTimeMillis(1234567890 * 1000L);
@@ -26,7 +26,7 @@ public class Main {
 		adapter.addService(currentTimeServer.getService());
 
 		System.out.println("Start scanning");
-		adapter.startScanning(new AppScanCallbacks(PERIPHERAL_ADDR));
+		adapter.startScanning(new AppScanCallbacks(PERIPHERAL_NAME));
 
 		try {
 			Thread.sleep(STOP_SCANNING_DELAY);
