@@ -24,6 +24,11 @@ public class AppConnectionCallbacks extends DefaultConnectionCallbacks implement
 	private SerialPortClient serialPortClient;
 
 	@Override
+	public void onConnectFailed(BluetoothDevice device) {
+		System.out.println("Connect failed");
+	}
+
+	@Override
 	public void onConnected(BluetoothDevice device) {
 		System.out.println("Connected");
 
