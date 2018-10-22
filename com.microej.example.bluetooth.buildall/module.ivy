@@ -6,12 +6,9 @@
 -->
 
 <ivy-module version="2.0" xmlns:ea="http://www.easyant.org"> 
-	<info organisation="com.microej.example.bluetooth" module="buildall" status="integration" revision="0.21.1">
-		<ea:build organisation="com.is2t.easyant.buildtypes" module="microej-meta-build" revision="1.+">
-		</ea:build>
-		<ea:property name="metabuild.root" value=".."/> 
-		<ea:property name="skip.test" value="SET"/>
-		<ea:property name="skip.javadoc" value="SET"/>
+	<info organisation="com.microej.example.bluetooth" module="buildall" status="integration" revision="0.1.0">
+		<ea:build organisation="com.is2t.easyant.buildtypes" module="microej-meta-build" revision="1.+"/>
+		<ea:property name="metabuild.root" value=".."/>
 		<ea:property name="metabuild.submodule.initial.targets" value="clean,package"/>
 	</info>
 </ivy-module>
