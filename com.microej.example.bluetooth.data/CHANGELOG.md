@@ -6,5 +6,5 @@
 -->
 
 ## 0.1.0-RC
-Features:	
+Features:
   - Initial revision.

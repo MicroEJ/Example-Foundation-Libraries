@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-	ANT
+	XML
 
 	Copyright 2018 IS2T. All rights reserved.
 	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
 -->
 
-<project name="central" xmlns:ea="antlib:org.apache.easyant">
+<project name="central">
 	<target name="central:linker" if="toolchain.linker.exe" extensionOf="platform-launcher:custom-properties">
 		<echoProperty property="toolchain.linker.exe" value="${toolchain.linker.exe}" file="${build-and-deploy.target.properties.file}"/>
 	</target>
