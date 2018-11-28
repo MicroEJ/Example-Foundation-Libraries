@@ -32,6 +32,6 @@
 
 		<dependency org="com.microej.example.bluetooth" name="data" rev="[0.1.0-RC,1.0.0-RC["/>
 
-		<dependency org="com.microej.platform" name="DA14681" rev="[1.0.0-RC,2.0.0-RC[" conf="platform->platformDev" transitive="false"/>
+		<dependency org="com.is2t.CM0.referencePlatforms.dialog" name="DA14681-9Q15X" rev="[1.0.0-RC,2.0.0-RC[" conf="platform->platformDev" transitive="false"/>
 	</dependencies>
 </ivy-module>
