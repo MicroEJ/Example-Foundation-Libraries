@@ -72,7 +72,7 @@ public class AppConnectionCallbacks extends DefaultConnectionCallbacks implement
 			this.serialPortClient.sendData(INITIAL_DATA);
 		}
 
-		device.pair(true);
+		device.pair();
 	}
 
 	@Override

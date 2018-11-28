@@ -33,8 +33,8 @@ public class AppConnectionCallbacks extends DefaultConnectionCallbacks implement
 	}
 
 	@Override
-	public void onPairRequest(BluetoothDevice device, boolean createBond) {
-		device.pairReply(true, createBond);
+	public void onPairRequest(BluetoothDevice device) {
+		device.pairReply(true);
 	}
 
 	@Override
