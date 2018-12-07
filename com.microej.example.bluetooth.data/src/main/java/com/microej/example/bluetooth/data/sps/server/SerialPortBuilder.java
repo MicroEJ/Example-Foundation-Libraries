@@ -14,6 +14,7 @@ import ej.bluetooth.BluetoothPermissions;
 import ej.bluetooth.BluetoothProperties;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.BluetoothServiceType;
+import ej.bluetooth.BluetoothUuid;
 
 public class SerialPortBuilder {
 
@@ -22,7 +23,7 @@ public class SerialPortBuilder {
 	}
 
 	public static BluetoothService createService() {
-		String uuid = SerialPortService.SERVICE_UUID;
+		BluetoothUuid uuid = SerialPortService.SERVICE_UUID;
 		BluetoothService service = new BluetoothService(uuid, BluetoothServiceType.PRIMARY);
 		service.addCharacteristic(createSpsTx());
 		service.addCharacteristic(createSpsRx());
@@ -30,7 +31,7 @@ public class SerialPortBuilder {
 	}
 
 	private static BluetoothCharacteristic createSpsTx() {
-		String uuid = SerialPortService.TX_UUID;
+		BluetoothUuid uuid = SerialPortService.TX_UUID;
 		int prop = BluetoothProperties.NOTIFY;
 		int perm = BluetoothPermissions.NONE;
 		BluetoothCharacteristic tx = new BluetoothCharacteristic(uuid, prop, perm);
@@ -40,7 +41,7 @@ public class SerialPortBuilder {
 	}
 
 	private static BluetoothCharacteristic createSpsRx() {
-		String uuid = SerialPortService.RX_UUID;
+		BluetoothUuid uuid = SerialPortService.RX_UUID;
 		int prop = BluetoothProperties.WRITE_NO_RESPONSE;
 		int perm = BluetoothPermissions.WRITE;
 		BluetoothCharacteristic tx = new BluetoothCharacteristic(uuid, prop, perm);

@@ -6,9 +6,11 @@
  */
 package com.microej.example.bluetooth.data.sps;
 
+import ej.bluetooth.BluetoothUuid;
+
 public interface SerialPortService {
 
-	String SERVICE_UUID = "0783b03e-8535-b5a0-7140-a304d2495cb7";
-	String TX_UUID = "0783b03e-8535-b5a0-7140-a304d2495cb8";
-	String RX_UUID = "0783b03e-8535-b5a0-7140-a304d2495cba";
+	BluetoothUuid SERVICE_UUID = new BluetoothUuid("0783b03e-8535-b5a0-7140-a304d2495cb7");
+	BluetoothUuid TX_UUID = new BluetoothUuid("0783b03e-8535-b5a0-7140-a304d2495cb8");
+	BluetoothUuid RX_UUID = new BluetoothUuid("0783b03e-8535-b5a0-7140-a304d2495cba");
 }
