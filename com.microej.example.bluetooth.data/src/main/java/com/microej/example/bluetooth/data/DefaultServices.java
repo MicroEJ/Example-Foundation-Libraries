@@ -8,11 +8,12 @@ package com.microej.example.bluetooth.data;
 
 import ej.bluetooth.BluetoothDescriptor;
 import ej.bluetooth.BluetoothPermissions;
+import ej.bluetooth.BluetoothUuid;
 
 public class DefaultServices {
 
-	public static final String CUD_UUID = "00002901-0000-1000-8000-00805f9b34fb";
-	public static final String CCC_UUID = "00002902-0000-1000-8000-00805f9b34fb";
+	public static final BluetoothUuid CUD_UUID = new BluetoothUuid(0x2901);
+	public static final BluetoothUuid CCC_UUID = new BluetoothUuid(0x2902);
 
 	public static final int EXTENDED_RELIABLE_WRITE = 0x01;
 	public static final int EXTENDED_WRITABLE_AUXILIARIES = 0x02;

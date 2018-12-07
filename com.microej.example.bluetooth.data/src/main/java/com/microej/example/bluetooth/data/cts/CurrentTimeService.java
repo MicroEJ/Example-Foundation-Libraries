@@ -6,9 +6,11 @@
  */
 package com.microej.example.bluetooth.data.cts;
 
+import ej.bluetooth.BluetoothUuid;
+
 public interface CurrentTimeService {
 
-	String SERVICE_UUID = "00001805-0000-1000-8000-00805f9b34fb";
-	String CURRENT_TIME_UUID = "00002a2b-0000-1000-8000-00805f9b34fb";
-	String LOCAL_TIME_INFO_UUID = "00002a0f-0000-1000-8000-00805f9b34fb";
+	BluetoothUuid SERVICE_UUID = new BluetoothUuid(0x1805);
+	BluetoothUuid CURRENT_TIME_UUID = new BluetoothUuid(0x2A2B);
+	BluetoothUuid LOCAL_TIME_INFO_UUID = new BluetoothUuid(0x2A0F);
 }
