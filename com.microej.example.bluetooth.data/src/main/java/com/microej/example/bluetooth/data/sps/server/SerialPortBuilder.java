@@ -13,7 +13,7 @@ import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothPermissions;
 import ej.bluetooth.BluetoothProperties;
 import ej.bluetooth.BluetoothService;
-import ej.bluetooth.BluetoothServiceType;
+import ej.bluetooth.BluetoothService.Type;
 import ej.bluetooth.BluetoothUuid;
 
 public class SerialPortBuilder {
@@ -24,7 +24,7 @@ public class SerialPortBuilder {
 
 	public static BluetoothService createService() {
 		BluetoothUuid uuid = SerialPortService.SERVICE_UUID;
-		BluetoothService service = new BluetoothService(uuid, BluetoothServiceType.PRIMARY);
+		BluetoothService service = new BluetoothService(uuid, Type.PRIMARY);
 		service.addCharacteristic(createSpsTx());
 		service.addCharacteristic(createSpsRx());
 		return service;
