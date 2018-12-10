@@ -12,7 +12,7 @@ import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothPermissions;
 import ej.bluetooth.BluetoothProperties;
 import ej.bluetooth.BluetoothService;
-import ej.bluetooth.BluetoothServiceType;
+import ej.bluetooth.BluetoothService.Type;
 import ej.bluetooth.BluetoothUuid;
 import ej.bluetooth.callbacks.impl.DefaultServerCallbacks;
 
@@ -24,7 +24,7 @@ public class CurrentTimeBuilder extends DefaultServerCallbacks {
 
 	public static BluetoothService createService() {
 		BluetoothUuid uuid = CurrentTimeService.SERVICE_UUID;
-		BluetoothService service = new BluetoothService(uuid, BluetoothServiceType.PRIMARY);
+		BluetoothService service = new BluetoothService(uuid, Type.PRIMARY);
 		service.addCharacteristic(createCurrentTime());
 		service.addCharacteristic(createLocalTimeInfo());
 		return service;
