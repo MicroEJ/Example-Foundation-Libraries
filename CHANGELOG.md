@@ -1,9 +1,9 @@
 <!--
  Markdown
 
- Copyright 2016-2018 IS2T. All rights reserved.
+ Copyright 2016-2019 MicroEJ Corp. All rights reserved.
  For demonstration purpose only.
- IS2T PROPRIETARY. Use is subject to license terms.
+ MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
 -->
 
 ## Revision 48.0.0 (2018-10-08)
