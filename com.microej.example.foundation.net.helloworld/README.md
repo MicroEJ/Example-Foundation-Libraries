@@ -1,11 +1,15 @@
 # Overview
+
 This example shows a simple helloworld using NET.
 
 # Usage
+
 ## Configuration
+
 1. Set the `HOST` in [HelloWorldConstants.java](src/main/java/com/microej/example/foundation/net/helloworld/HelloWorldConstants.java)
 
 ## Run on MicroEJ Simulator
+
 1. Right Click on 
 	* [exampleerver.java](src/main/java/com/microej/example/foundation/net/helloworld/exampleerver.java)
 	* OR [ExampleClient.java](src/main/java/com/microej/example/foundation/net/helloworld/ExampleClient.java)
@@ -15,7 +19,9 @@ This example shows a simple helloworld using NET.
 
 
 ## Run on device
+
 ### Build
+
 1. Right Click on 
 	* [exampleerver.java](src/main/java/com/microej/example/foundation/net/helloworld/exampleerver.java)
 	* OR [ExampleClient.java](src/main/java/com/microej/example/foundation/net/helloworld/ExampleClient.java)
@@ -32,25 +38,30 @@ This example shows a simple helloworld using NET.
 1. Copy the generated `.out` file path shown by the console
 
 ### Flash
+
 1. Use the appropriate flashing tool.
 
 # Requirements
+
 * MicroEJ Studio or SDK 4.0 or later
 * A platform with at least:
 	* EDC-1.2 or higher
 	* NET-1.0 or higher
 
 ## Dependencies
+
 _All dependencies are retrieved transitively by Ivy resolver_.
 
 # Source
+
 N/A
 
 # Restrictions
+
 None.
  
-<!--
-	Copyright 2016-2019 MicroEJ Corp. All rights reserved.
-    For demonstration purpose only.
-    MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
--->
+---  
+_Markdown_   
+_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
+_For demonstration purpose only._   
+_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  

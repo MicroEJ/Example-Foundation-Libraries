@@ -1,12 +1,15 @@
 # Overview
+
 This example shows how to use MicroUI transform.
 
 
 # Usage
+
 * Press the Red area of the screen to change the type of transformation
 * Press the Green and Blue areas of the screen to change the values of the transformation
 
 ## Run on MicroEJ Simulator
+
 1. Right Click on the project
 1. Select **Run as -> MicroEJ Application**
 1. Select your platform 
@@ -14,7 +17,9 @@ This example shows how to use MicroUI transform.
 
 
 ## Run on device
+
 ### Build
+
 1. Right Click on [ExampleTransform.java](/com.microej.example.foundation.microui.transform/src/main/java/com/microej/example/foundation/microui/image/ExampleTransform.java)
 1. Select **Run as -> Run Configuration...**
 1. Select **MicroEJ Application** configuration kind
@@ -29,25 +34,30 @@ This example shows how to use MicroUI transform.
 1. Copy the generated `.out` file path shown by the console
 
 ### Flash
+
 1. Use the appropriate flashing tool.
 
 # Requirements
+
 * MicroEJ Studio or SDK 4.0 or later
 * A platform with at least:
 	* EDC-1.2 or higher
 	* MICROUI-2.0 or higher
 
 ## Dependencies
+
 _All dependencies are retrieved transitively by Ivy resolver_.
 
 # Source
+
 N/A
 
 # Restrictions
+
 None.
  
-<!--
-	Copyright 2016-2019 MicroEJ Corp. All rights reserved.
-    For demonstration purpose only.
-    MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
--->
+---  
+_Markdown_   
+_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
+_For demonstration purpose only._   
+_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  

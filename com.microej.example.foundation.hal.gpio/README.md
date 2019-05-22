@@ -1,10 +1,14 @@
 # Overview
+
 This example shows how to use gpio.
 The pins are configured for a YwroBot Easy Module Shield V1
 
 # Usage
+
 ## Run on device
+
 ### Build
+
 1. Right Click on [ExampleGPIO.java](src/main/java/com/microej/example/foundation/hal/gpio/ExampleGPIO.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
@@ -19,25 +23,30 @@ The pins are configured for a YwroBot Easy Module Shield V1
 1. Copy the generated `.out` file path shown by the console
 
 ### Flash
+
 1. Use the appropriate flashing tool.
 
 # Requirements
+
 * MicroEJ SDK 4.0 or later
 * A platform with at least:
 	* EDC-1.2 or higher
 	* HAL-1.0 or higher
 
 ## Dependencies
+
 _All dependencies are retrieved transitively by Ivy resolver_.
 
 # Source
+
 N/A
 
 # Restrictions
+
 None.
  
-<!--
-	Copyright 2016-2019 MicroEJ Corp. All rights reserved.
-    For demonstration purpose only.
-    MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
--->
+---  
+_Markdown_   
+_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
+_For demonstration purpose only._   
+_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  

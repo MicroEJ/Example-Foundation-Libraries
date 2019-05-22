@@ -1,8 +1,11 @@
 # Overview
+
 This example shows how to read some bytes from a CommConnection.
 
 # Usage
+
 ## Run on MicroEJ Simulator
+
 1. Right Click on [ExampleUARTReader.java](src/main/java/com/microej/example/foundation/ecom/uartreader/ExampleUARTReader.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
@@ -24,7 +27,9 @@ This example shows how to read some bytes from a CommConnection.
 
 
 ## Run on device
+
 ### Build
+
 1. Right Click on [ExampleUARTReader.java](src/main/java/com/microej/example/foundation/ecom/uartreader/ExampleUARTReader.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
@@ -39,13 +44,16 @@ This example shows how to read some bytes from a CommConnection.
 1. Copy the generated `.out` file path shown by the console
 
 ### Flash
+
 1. Use the appropriate flashing tool.
 
 ## Troubleshooting
+
 1. When executing I get the error **ECOM-COMM: Invalid connection descriptor.**
 	* The port com has not been correctly set, redo the steps **Go to Configuration tab**
 
 # Requirements
+
 * MicroEJ Studio or SDK 4.0 or later
 * A platform with at least:
 	* EDC-1.2 or higher
@@ -53,16 +61,19 @@ This example shows how to read some bytes from a CommConnection.
 	* ECOM-COMM-1.1 or higher
 
 ## Dependencies
+
 _All dependencies are retrieved transitively by Ivy resolver_.
 
 # Source
+
 N/A
 
 # Restrictions
+
 None.
  
-<!--
-	Copyright 2016-2019 MicroEJ Corp. All rights reserved.
-    For demonstration purpose only.
-    MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
--->
+---  
+_Markdown_   
+_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
+_For demonstration purpose only._   
+_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  

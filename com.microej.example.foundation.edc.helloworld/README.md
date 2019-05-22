@@ -1,8 +1,11 @@
 # Overview
+
 This example prints Hello World on the standard output stream.
 
 # Usage
+
 ## Run on MicroEJ Simulator
+
 1. Right Click on the project
 1. Select **Run as -> MicroEJ Application**
 1. Select your platform 
@@ -10,7 +13,9 @@ This example prints Hello World on the standard output stream.
 
 
 ## Run on device
+
 ### Build
+
 1. Right Click on [ExampleHelloWorld.java](src/main/java/com/microej/example/foundation/edc/helloworld/ExampleHelloWorld.java)
 1. Select **Run as -> Run Configuration** 
 1. Click on **New launch configuration** icon
@@ -23,23 +28,29 @@ This example prints Hello World on the standard output stream.
 1. Copy the generated `.out` file path
 
 ### Flash
+
 1. Use the appropriate MicroEJ tool.
 
 # Requirements
+
 * MicroEJ Studio or SDK 4.0 or later
 * A platform with at least:
 	* EDC-1.2 or higher
 
 ## Dependencies
+
 _All dependencies are retrieved transitively by Ivy resolver_.
 
 # Source
+
 N/A
 
 # Restrictions
+
 None. 
-<!--
-	Copyright 2016-2019 MicroEJ Corp. All rights reserved.
-    For demonstration purpose only.
-    MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
--->
+
+---  
+_Markdown_   
+_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
+_For demonstration purpose only._   
+_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  

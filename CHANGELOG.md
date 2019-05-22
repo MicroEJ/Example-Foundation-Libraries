@@ -1,66 +1,79 @@
-<!--
- Markdown
+# Changelog
 
- Copyright 2016-2019 MicroEJ Corp. All rights reserved.
- For demonstration purpose only.
- MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
--->
+All notable changes to this project will be documented in this file.
 
-## Revision 48.0.0 (2018-10-08)
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).## 48.0.0 - 2018-10-08
 
-Features:
-   - Remove NLS
+### Added
 
- Bug fixes:
+  - Remove NLS
+
+### Fixed
+
   - Fix api minors.
 
 
-## Revision 47.1.0 (2018-07-05)
+## 47.1.0 - 2018-07-05
 
-Features:
-   - Add com.microej.example.foundation.microui.gradient
+### Added
 
-## Revision 47.0.0 (2018-04-17)
+  - Add com.microej.example.foundation.microui.gradient
 
-Features:
-   - remove MWT examples
+## 47.0.0 - 2018-04-17
 
-## Revision 46.0.3 (2017-09-11)
+### Added
 
-Features:
-   - Fix samples
+  - remove MWT examples
 
-## Revision 46.0.2 (2017-08-17)
+## 46.0.3 - 2017-09-11
 
-Features:
-   - Fix samples
+### Added
 
-## Revision 46.0.0 (2016-12-28)
+  - Fix samples
 
-Features:
-   - Change organization.
-   - Add module.ant to build with any license.
+## 46.0.2 - 2017-08-17
 
-## Revision 23.0.23 (2016-11-08)
+### Added
 
-Features:
-   - Change revision numbering (Sum of all subprojects revisions).
-   - Update projects to compile with microej-lib 3.+.
+  - Fix samples
 
-## Revision 1.0.0 (2016-05-25)
+## 46.0.0 - 2016-12-28
 
-### Addition:
-ej.example.foundation.microui.antialiased
-ej.example.foundation.microui.movableimage
-ej.example.foundation.hal.gpio
+### Added
 
-### Deletion:
-MicroUI -> MyFiltersSample
-MicroUI -> MyBrushSample
-MicroUI -> MyLayersSample
-UI -> Transition
+  - Change organization.
+  - Add module.ant to build with any license.
 
-## 0.1.0 (2016-05-25)
+## 23.0.23 - 2016-11-08
+
+### Added
+
+  - Change revision numbering (Sum of all subprojects revisions).
+  - Update projects to compile with microej-lib 3.+.
+
+## 1.0.0 - 2016-05-25
+
+### Added
+
+  - ej.example.foundation.microui.antialiased
+  - ej.example.foundation.microui.movableimage
+  - ej.example.foundation.hal.gpio
+
+### Removed
+
+  - MicroUI -> MyFiltersSample
+  - MicroUI -> MyBrushSample
+  - MicroUI -> MyLayersSample
+  - UI -> Transition
+
+## 0.1.0 - 2016-05-25
 
 MicroEj 3.1:
-Initial version
+  - Initial version
+
+---  
+_Markdown_   
+_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
+_For demonstration purpose only._   
+_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  

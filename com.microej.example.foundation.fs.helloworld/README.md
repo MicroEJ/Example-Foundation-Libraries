@@ -1,8 +1,11 @@
 # Overview
+
 This example creates a list of folders, add some files and delete them all.
 
 # Usage
+
 ## Run on MicroEJ Simulator
+
 1. Right Click on the project
 1. Select **Run as -> MicroEJ Application**
 1. Select your platform 
@@ -10,7 +13,9 @@ This example creates a list of folders, add some files and delete them all.
 
 
 ## Run on device
+
 ### Build
+
 1. Right Click on [ExampleFileSystem.java](/com.microej.example.foundation.fs.helloworld/src/main/java/com/microej/example/foundation/fs/helloworld/ExampleFileSystem.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
@@ -25,25 +30,30 @@ This example creates a list of folders, add some files and delete them all.
 1. Copy the generated `.out` file path shown by the console
 
 ### Flash
+
 1. Use the appropriate flashing tool.
 
 # Requirements
+
 * MicroEJ Studio or SDK 4.0 or later
 * A platform with at least:
 	* EDC-1.2 or higher
 	* FS-2.0 or higher
 
 ## Dependencies
+
 _All dependencies are retrieved transitively by Ivy resolver_.
 
 # Source
+
 N/A
 
 # Restrictions
+
 None.
  
-<!--
-	Copyright 2016-2019 MicroEJ Corp. All rights reserved.
-    For demonstration purpose only.
-    MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
--->
+---  
+_Markdown_   
+_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
+_For demonstration purpose only._   
+_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  

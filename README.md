@@ -1,12 +1,5 @@
-<!--
- Markdown
-
- Copyright 2016-2019 MicroEJ Corp. All rights reserved.
- For demonstration purpose only.
- MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
--->
-
 # Overview
+
 This project gathers some basic examples of the foundation libraries. Those examples are developed as standalone applications and as such can be run by following the associated instructions (see **README.md** file of each example).
 
 Note that to run them on board:
@@ -20,14 +13,18 @@ Note that to run them on board:
  * Follow the [How-To convert a standalone app into a sandboxed app](https://github.com/MicroEJ/How-To/tree/master/StandaloneToSandboxed) guide.
 
 # Details
+
 ## Core
+
 ### EDC
+
 EDC contains the minimal standard runtime environment for embedded devices.
 
 **Available Examples**:
 * [com.microej.example.foundation.edc.helloworld](com.microej.example.foundation.edc.helloworld): Prints Hello World on the standard output stream.
 
 ### BON
+
 BON focuses on devices with non-volatile and volatile memories. This library allows to fully control memory usage and start-up sequences on devices with limited memory resources.
 
 **Available Examples**:
@@ -39,6 +36,7 @@ BON focuses on devices with non-volatile and volatile memories. This library all
 ## Communication with other hardware
 
 ### ECOM
+
 ECOM libraries provide a standard communication over UART.
 
 **Available Examples**:
@@ -47,6 +45,7 @@ ECOM libraries provide a standard communication over UART.
 * [com.microej.example.foundation.ecom.reader](com.microej.example.foundation.ecom.reader): Shows how to read some bytes from a CommConnection.
 
 ### HAL
+
 HAL libraries present an abstraction of the communication with the hardware.
 
 **Available Examples**:
@@ -56,6 +55,7 @@ HAL libraries present an abstraction of the communication with the hardware.
 ## Design a user interface
 
 ### MicroUI
+
 MicroUI provides the minimal cornerstone for quick construction of advanced, portable and user-friendly applications for a wide and heterogeneous range of devices with just-what-is-needed resources.
 
 **Available Examples**:
@@ -75,6 +75,7 @@ MicroUI provides the minimal cornerstone for quick construction of advanced, por
 ## Communication with the world
 
 ### NET
+
 NET is a lightweight Java library dedicated to networking applications. It supports stream (TCP/IP) and datagram (UDP) socket connection APIs.
 
 **Available Examples**:
@@ -84,7 +85,14 @@ NET is a lightweight Java library dedicated to networking applications. It suppo
 ## Data storage
 
 ### FS
+
 FS is a library to access multiple storage devices (in and out data streams) through a simple file system API.
 
 **Available Examples**:
 * [com.microej.example.foundation.fs.helloworld](com.microej.example.foundation.fs.helloworld): Creates a list of folders, adds some files and deletes them all.
+
+---  
+_Markdown_   
+_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
+_For demonstration purpose only._   
+_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  

@@ -1,10 +1,15 @@
 # Overview
+
 This example shows how to listen on plug/unplug of dynamic ComConnections and shows their properties.
 
 # Usage
+
 ## Run on device
+
 Note that this must not be a virtual device
+
 ### Build
+
 1. Right Click on [ExampleHotPlug.java](src/main/java/com/microej/example/foundation/ecom/hotplug/ExampleHotPlug.java)
 1. Select **Run as -> Run Configuration**
 1. Select **MicroEJ Application** configuration kind
@@ -25,9 +30,11 @@ Note that this must not be a virtual device
 1. Copy the generated `.out` file path shown by the console
 
 ### Flash
+
 1. Use the appropriate MicroEJ tool.
 
 # Requirements
+
 * MicroEJ Studio or SDK 4.0 or later
 * A platform with at least:
 	* EDC-1.2 or higher
@@ -36,17 +43,20 @@ Note that this must not be a virtual device
 
 
 ## Dependencies
+
 _All dependencies are retrieved transitively by Ivy resolver_.
 
 # Source
+
 N/A
 
 # Restrictions
+
 None.
 
  
-<!--
-	Copyright 2016-2019 MicroEJ Corp. All rights reserved.
-    For demonstration purpose only.
-    MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
--->
+---  
+_Markdown_   
+_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
+_For demonstration purpose only._   
+_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  
