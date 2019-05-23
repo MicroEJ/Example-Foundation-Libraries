@@ -10,24 +10,25 @@ Note that this must not be a virtual device
 
 ### Build
 
-1. Right Click on [ExampleHotPlug.java](src/main/java/com/microej/example/foundation/ecom/hotplug/ExampleHotPlug.java)
-1. Select **Run as -> Run Configuration**
-1. Select **MicroEJ Application** configuration kind
-1. Click on **New launch configuration** icon
-1. In **Execution** tab
-	1. In **Target** frame, in **Platform** field, select a relevant platform (but not a virtual device)
-	1. In **Execution** frame
-		1. Select **Execute on Device**
-		2. In **Settings** field, select **Build & Deploy** 
-1. In **Configuration** tab
-	* Go to **Libraries -> ECOM -> Comm Connection**
-		* Check **Enable comm connections**
-		* Map the UART com port (available on your platform documentation) to the application port `42`
-	* Go to **Target  -> Deploy -> Means**
-		* Put No deployment
-1. Press **Apply**
-1. Press **Run**
-1. Copy the generated `.out` file path shown by the console
+1. Right-click on the project
+2. Select **Run as -> Run Configuration**
+3. Right-click on **MicroEJ Application** configuration kind
+4. Click on **New**
+5. In **Execution** tab
+    1. In **Target** frame, in **Platform** field, select a relevant platform (but not a virtual device)
+    2. In **Execution** frame
+        1. Select **Execute on Device**
+        2. In **Settings** field, select **Build & Deploy** 
+6. In **Configuration** tab
+    1. Go to **Libraries -> ECOM**
+        1. Check **Enable registration event notifications**
+    1. Go to **Libraries -> ECOM -> Comm Connection**
+        1. Check **Enable comm connections**
+        2. Map the UART com port (available on your platform documentation) to the application port `42`
+        3. Check **Enable dynamic comm ports registration**
+7. Press **Apply**
+8. Press **Run**
+9. The application file (`.o` or `.out`) has been generated
 
 ### Flash
 
@@ -35,12 +36,13 @@ Note that this must not be a virtual device
 
 # Requirements
 
-* MicroEJ Studio or SDK 4.0 or later
-* A platform with at least:
-	* EDC-1.2 or higher
-	* ECOM-1.1 or higher
-	* ECOM-COMM-1.1 or higher
+This example has been tested on:
 
+* MicroEJ SDK 5.1
+* With a platform that contains:
+    * EDC-1.2
+    * ECOM-1.1
+    * ECOM-COMM-1.1
 
 ## Dependencies
 

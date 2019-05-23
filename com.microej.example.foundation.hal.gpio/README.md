@@ -9,18 +9,18 @@ The pins are configured for a YwroBot Easy Module Shield V1
 
 ### Build
 
-1. Right Click on [ExampleGPIO.java](src/main/java/com/microej/example/foundation/hal/gpio/ExampleGPIO.java)
-1. Select **Run as -> Run Configuration**
-1. Select **MicroEJ Application** configuration kind
-1. Click on **New launch configuration** icon
-1. In **Execution** tab
-	1. In **Target** frame, in **Platform** field, select a relevant platform (but not a virtual device)
-	1. In **Execution** frame
-		1. Select **Execute on Device**
-		2. In **Settings** field, select **Build & Deploy**
-1. Press **Apply**
-1. Press **Run**
-1. Copy the generated `.out` file path shown by the console
+1. Right-click on the project
+2. Select **Run as -> Run Configuration**
+3. Right-click on **MicroEJ Application** configuration kind
+4. Click on **New**
+5. In **Execution** tab
+    1. In **Target** frame, in **Platform** field, select a relevant platform (but not a virtual device)
+    2. In **Execution** frame
+        1. Select **Execute on Device**
+        2. In **Settings** field, select **Build & Deploy**
+6. Press **Apply**
+7. Press **Run**
+8. The application file (`.o` or `.out`) has been generated
 
 ### Flash
 
@@ -29,9 +29,9 @@ The pins are configured for a YwroBot Easy Module Shield V1
 # Requirements
 
 * MicroEJ SDK 4.0 or later
-* A platform with at least:
-	* EDC-1.2 or higher
-	* HAL-1.0 or higher
+* With a platform that contains:
+    * EDC-1.2
+    * HAL-1.0
 
 ## Dependencies
 

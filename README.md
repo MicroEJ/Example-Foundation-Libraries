@@ -32,7 +32,6 @@ BON focuses on devices with non-volatile and volatile memories. This library all
 * [com.microej.example.foundation.bon.immortals](com.microej.example.foundation.bon.immortals): Shows how to manipulate the immortals.
 * [com.microej.example.foundation.bon.immutables](com.microej.example.foundation.bon.immutables): Shows how to manipulate the immutables.
 
-
 ## Communication with other hardware
 
 ### ECOM
@@ -50,7 +49,6 @@ HAL libraries present an abstraction of the communication with the hardware.
 
 **Available Examples**:
 * [com.microej.example.foundation.hal.gpio](com.microej.example.foundation.hal.gpio): Shows how to use gpio.
-
 
 ## Design a user interface
 
@@ -70,7 +68,6 @@ MicroUI provides the minimal cornerstone for quick construction of advanced, por
 * [com.microej.example.foundation.microui.mvc](com.microej.example.foundation.microui.mvc): Shows how to create and use a MVC design pattern.
 * [com.microej.example.foundation.microui.out](com.microej.example.foundation.microui.out): Shows how to redirect the standard SystemOut to the display.
 * [com.microej.example.foundation.microui.transform](com.microej.example.foundation.microui.transform): Shows how to use MicroUI transform.
-
 
 ## Communication with the world
 

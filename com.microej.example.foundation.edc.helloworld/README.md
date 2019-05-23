@@ -6,26 +6,25 @@ This example prints Hello World on the standard output stream.
 
 ## Run on MicroEJ Simulator
 
-1. Right Click on the project
-1. Select **Run as -> MicroEJ Application**
-1. Select your platform 
-1. Press **Ok**
-
+1. Right-click on the project
+2. Select **Run as -> MicroEJ Application**
+3. Select your platform 
+4. Press **Ok**
 
 ## Run on device
 
 ### Build
 
-1. Right Click on [ExampleHelloWorld.java](src/main/java/com/microej/example/foundation/edc/helloworld/ExampleHelloWorld.java)
-1. Select **Run as -> Run Configuration** 
-1. Click on **New launch configuration** icon
-1. Select **Execute on Device**
-1. Select **Build & Deploy**
-1. Go to **Execution** tab
-	* Select your platform 
-1. Press **Apply**
-1. Press **Run**
-1. Copy the generated `.out` file path
+1. Right-click on the project
+2. Select **Run as -> Run Configuration** 
+3. Click on **New**
+4. Select **Execute on Device**
+5. Select **Build & Deploy**
+6. Go to **Execution** tab
+    * Select your platform 
+7. Press **Apply**
+8. Press **Run**
+9. Copy the generated `.out` file path
 
 ### Flash
 
@@ -33,9 +32,11 @@ This example prints Hello World on the standard output stream.
 
 # Requirements
 
-* MicroEJ Studio or SDK 4.0 or later
-* A platform with at least:
-	* EDC-1.2 or higher
+This example has been tested on:
+
+* MicroEJ SDK 5.1
+* With a platform that contains:
+    * EDC-1.2
 
 ## Dependencies
 
