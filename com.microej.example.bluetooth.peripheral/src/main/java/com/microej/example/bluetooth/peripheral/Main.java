@@ -1,7 +1,7 @@
 /*
  * Java
  *
- * Copyright 2018 IS2T. All rights reserved.
+ * Copyright 2018-2019 IS2T. All rights reserved.
  * IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 package com.microej.example.bluetooth.peripheral;
@@ -17,9 +17,8 @@ public class Main implements SerialPortListener {
 
 	private static final int STOP_ADVERTISING_DELAY = 15000;
 
-	private static final byte[] PAYLOAD = new byte[] { 9, (byte) BluetoothPayload.MANUFACTURER_DATA, (byte) 0xFF,
-			(byte) 0xFF, 0x00, 0x10, 0x12, 0x34, 0x56, 0x78, 8, BluetoothPayload.COMPLETE_LOCAL_NAME, 'E', 'x', 'a',
-			'm', 'p', 'l', 'e' };
+	private static final byte[] PAYLOAD = new byte[] { 2, BluetoothPayload.FLAGS, 0x06, //
+			8, BluetoothPayload.COMPLETE_LOCAL_NAME, 'E', 'x', 'a', 'm', 'p', 'l', 'e' };
 
 	private final SerialPortServer serialPortServer;
 

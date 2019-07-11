@@ -1,7 +1,7 @@
 /*
  * Java
  *
- * Copyright 2018 IS2T. All rights reserved.
+ * Copyright 2018-2019 IS2T. All rights reserved.
  * IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 package com.microej.example.bluetooth.central;
@@ -15,7 +15,7 @@ public class Main {
 
 	private static final int STOP_SCANNING_DELAY = 10000;
 
-	private static final String PERIPHERAL_NAME = "iD.FIT";
+	private static final String PERIPHERAL_NAME = "Example";
 
 	public static void main(String[] args) {
 		Util.setCurrentTimeMillis(1234567890 * 1000L);
