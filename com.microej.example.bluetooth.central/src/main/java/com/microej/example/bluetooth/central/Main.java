@@ -1,41 +1,41 @@
 /*
  * Java
  *
- * Copyright 2018-2019 IS2T. All rights reserved.
+ * Copyright 2018-2020 IS2T. All rights reserved.
  * IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 package com.microej.example.bluetooth.central;
 
-import com.microej.example.bluetooth.data.cts.server.CurrentTimeServer;
-
 import ej.bluetooth.BluetoothAdapter;
+import ej.bluetooth.BluetoothDataTypes;
+import ej.bluetooth.BluetoothScanFilter;
+import ej.bluetooth.util.services.cts.CurrentTimeServer;
 import ej.bon.Util;
 
 public class Main {
 
-	private static final int STOP_SCANNING_DELAY = 10000;
-
-	private static final String PERIPHERAL_NAME = "Example";
+	private final CurrentTimeServer currentTimeServer;
 
 	public static void main(String[] args) {
-		Util.setCurrentTimeMillis(1234567890 * 1000L);
+		Main main = new Main();
+		main.start();
+	}
 
-		BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+	public Main() {
+		this.currentTimeServer = new CurrentTimeServer();
+	}
 
-		CurrentTimeServer currentTimeServer = new CurrentTimeServer();
-		adapter.addService(currentTimeServer.getService());
+	public void start() {
+		Util.setCurrentTimeMillis(778932000 * 1000L);
+
+		BluetoothAdapter adapter = BluetoothAdapter.getAdapter();
+		adapter.enable();
+		adapter.addService(this.currentTimeServer.getService());
+
+		adapter.setConnectionListener(new CentralConnectionListener());
+		adapter.setScanFilter(BluetoothScanFilter.fieldExists(BluetoothDataTypes.COMPLETE_LOCAL_NAME));
+		adapter.startScanning();
 
 		System.out.println("Start scanning");
-		adapter.startScanning(new AppScanCallbacks(PERIPHERAL_NAME));
-
-		try {
-			Thread.sleep(STOP_SCANNING_DELAY);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
-		if (adapter.isScanning()) {
-			adapter.stopScanning();
-		}
 	}
 }

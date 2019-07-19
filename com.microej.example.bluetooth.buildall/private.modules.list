@@ -1,8 +1,6 @@
-# Copyright 2018-2019 IS2T. All rights reserved.
+# Copyright 2018-2020 IS2T. All rights reserved.
 # IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
 
 # This file lists all the modules which will be built but not published.
 # The order of the modules does not matter: the modules will be built considering the dependencies between each other.
 # The path of each module is relative to the metabuild.root property (.. by default).
-
-com.microej.example.bluetooth.data
