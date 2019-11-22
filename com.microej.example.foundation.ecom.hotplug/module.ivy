@@ -1,18 +1,25 @@
 <!--
 	IVY
 	
-	Copyright 2016-2018 IS2T. All rights reserved.
+	Copyright 2016-2019 MicroEJ Corp. All rights reserved.
     For demonstration purpose only.
-    IS2T PROPRIETARY. Use is subject to license terms.
+    MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
 -->
-<ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:m="http://ant.apache.org/ivy/extra"> 
-	<info organisation="com.microej.example.foundation.ecom" module="hotplug" status="integration" revision="2.0.1">
-		<ea:build organisation="com.is2t.easyant.buildtypes" module="build-microej-javalib" revision="4.+">
+<ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:m="http://ant.apache.org/ivy/extra" xmlns:ej="https://developer.microej.com" ej:version="2.0.0"> 
+	<info organisation="com.microej.example.foundation.ecom" module="hotplug" status="integration" revision="2.0.2">
+		<ea:build organisation="com.is2t.easyant.buildtypes" module="build-firmware-singleapp" revision="1.2.+">
+			<ea:property name="application.main.class" value="com.microej.example.foundation.ecom.hotplug.ExampleHotPlug" />
+			<!--
+				Use property 'platform-loader.target.platform.dir' to set the platform to use. or uncomment the platform dependency (see below).
+				<ea:property name="platform-loader.target.platform.dir" value="[path-to-local-platform]" />
+			-->
 		</ea:build>
 	</info>
-	<configurations defaultconfmapping="default->default;provided->provided">
+	<configurations defaultconfmapping="default->default;provided->provided;vdruntime->default">
 		<conf name="default" visibility="public" description="Runtime dependencies to other artifacts"/>
 		<conf name="provided" visibility="public" description="Compile-time dependencies to APIs provided by the platform"/>
+		<conf name="vdruntime" visibility="public" description="Dependency needed only by the the player"/>
+		<conf name="platform" visibility="public" description="Build-time dependency, specify the platform to use"/>
 		<conf name="documentation" visibility="public" description="Documentation related to the artifact (javadoc, PDF)"/>
 		<conf name="source" visibility="public" description="Source code"/>
         <conf name="dist" visibility="public" description="Contains extra files like README.md, licenses"/>
@@ -25,9 +32,14 @@
 	</publications>
 	
 	<dependencies>
-		<dependency org="ej.api" name="edc" rev="[1.2.0,1.3.0[" conf="provided->*" />
-		<dependency org="ej.api" name="bon" rev="[1.2.0,1.3.0[" conf="provided->*" />
-		<dependency org="ej.api" name="ecom" rev="[1.1.0,1.2.0[" conf="provided->*" />
-		<dependency org="ej.api" name="ecom-comm" rev="[1.1.0,1.2.0[" conf="provided->*" />
+		<dependency org="ej.api" name="edc" rev="1.2.3"/>
+		<dependency org="ej.api" name="bon" rev="1.2.3"/>
+		<dependency org="ej.api" name="ecom" rev="1.1.4"/>
+		<dependency org="ej.api" name="ecom-comm" rev="1.1.4"/>
+
+		<!-- 
+			Example of Platform dependency
+			<dependency org="xxx" name="xxx" rev="xxx" conf="platform->platformDev" transitive="false"/>
+		-->
 	</dependencies>
 </ivy-module>
