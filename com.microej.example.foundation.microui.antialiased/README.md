@@ -1,50 +1,60 @@
 # Overview
+
 This example shows how to use anti-aliased shapes.
 
 # Usage
-## Run on MicroEJ Simulator
-1. Right Click on the project
-1. Select **Run as -> MicroEJ Application**
-1. Select your platform 
-1. Press **Ok**
 
+## Run on MicroEJ Simulator
+
+1. Right-click on the project
+2. Select **Run as -> MicroEJ Application**
+3. Select your platform 
+4. Press **Ok**
 
 ## Run on device
-### Build
-1. Right Click on [ExampleAntialiased.java](src/main/java/com/microej/example/foundation/microui/antialiased/ExampleAntialiased.java)
-1. Select **Run as -> Run Configuration** 
-1. Select **MicroEJ Application** configuration kind
-1. Click on **New launch configuration** icon
-1. In **Execution** tab
-	1. In **Target** frame, in **Platform** field, select a relevant platform (but not a virtual device)
-	1. In **Execution** frame
-		1. Select **Execute on Device**
-		2. In **Settings** field, select **Build & Deploy**
-1. Press **Apply**
-1. Press **Run**
-1. Copy the generated `.out` file path
 
+### Build
+
+1. Right-click on the project
+2. Select **Run as -> Run Configuration** 
+3. Right-click on **MicroEJ Application** configuration kind
+4. Click on **New**
+5. In **Execution** tab
+    1. In **Target** frame, in **Platform** field, select a relevant platform (but not a virtual device)
+    2. In **Execution** frame
+        1. Select **Execute on Device**
+        2. In **Settings** field, select **Build & Deploy**
+6. Press **Apply**
+7. Press **Run**
+8. Copy the generated `.out` file path
 
 ### Flash
+
 1. Use the appropriate flashing tool.
 
 # Requirements
-* MicroEJ Studio or SDK 4.0 or later
-* A platform with at least:
-	* EDC-1.2 or higher
-	* MICROUI-2.0 or higher
+
+This example has been tested on:
+
+* MicroEJ SDK 5.1
+* With a platform that contains:
+    * EDC-1.2
+    * MICROUI-2.0
 
 ## Dependencies
+
 _All dependencies are retrieved transitively by Ivy resolver_.
 
 # Source
+
 N/A
 
 # Restrictions
+
 None.
  
-<!--
-	Copyright 2016-2018 IS2T. All rights reserved.
-    For demonstration purpose only.
-    IS2T PROPRIETARY. Use is subject to license terms.
--->
+---  
+_Markdown_   
+_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
+_For demonstration purpose only._   
+_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  
