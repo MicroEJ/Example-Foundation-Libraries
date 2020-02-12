@@ -31,7 +31,5 @@
 		<dependency org="ej.api" name="bluetooth" rev="2.0.0" conf="provided->*"/>
 
 		<dependency org="ej.library.iot" name="bluetooth-util" rev="1.0.0"/>
-
-		<dependency org="com.is2t.ESP32.referencePlatforms.espressif" name="ESP32WROVER-HDAHT" rev="1.4.0" conf="platform->platformDev" transitive="false"/>
 	</dependencies>
 </ivy-module>
