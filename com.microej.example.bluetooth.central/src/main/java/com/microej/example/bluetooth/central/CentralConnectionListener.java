@@ -26,12 +26,12 @@ public class CentralConnectionListener extends DefaultConnectionListener impleme
 	private boolean deviceFound;
 
 	@Override
-	public void onScanCompleted(BluetoothAdapter adapter) {
+	public void onScanCompleted() {
 		System.out.println("Scan complete");
 	}
 
 	@Override
-	public void onScanResult(BluetoothAdapter adapter, BluetoothAddress address, byte[] advertisementData, int rssi) {
+	public void onScanResult(BluetoothAddress address, byte[] advertisementData, int rssi) {
 		AdvertisementData data = AdvertisementData.parse(advertisementData);
 		String deviceName = data.getDeviceName();
 
@@ -41,12 +41,12 @@ public class CentralConnectionListener extends DefaultConnectionListener impleme
 		if (!this.deviceFound && deviceName != null && deviceName.equals(PERIPHERAL_NAME)) {
 			this.deviceFound = true;
 			System.out.println("Connecting...");
-			adapter.connect(address);
+			BluetoothAdapter.getAdapter().connect(address);
 		}
 	}
 
 	@Override
-	public void onConnectFailed(BluetoothAdapter adapter, BluetoothAddress address) {
+	public void onConnectFailed(BluetoothAddress address) {
 		System.out.println("Connect failed");
 	}
 
@@ -62,7 +62,7 @@ public class CentralConnectionListener extends DefaultConnectionListener impleme
 		System.out.println("Disconnected");
 
 		this.deviceFound = false;
-		device.getAdapter().startScanning();
+		BluetoothAdapter.getAdapter().startScanning();
 	}
 
 	@Override

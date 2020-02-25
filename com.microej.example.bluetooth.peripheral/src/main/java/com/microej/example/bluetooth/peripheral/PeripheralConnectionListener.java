@@ -19,7 +19,7 @@ import ej.bluetooth.util.services.cts.CurrentTimeListener;
 public class PeripheralConnectionListener extends DefaultConnectionListener implements CurrentTimeListener {
 
 	@Override
-	public void onAdvertisementCompleted(BluetoothAdapter adapter) {
+	public void onAdvertisementCompleted() {
 		System.out.println("Advertisement complete");
 	}
 
@@ -34,7 +34,7 @@ public class PeripheralConnectionListener extends DefaultConnectionListener impl
 	public void onDisconnected(BluetoothDevice device) {
 		System.out.println("Disconnected");
 
-		device.getAdapter().startAdvertising();
+		BluetoothAdapter.getAdapter().startAdvertising();
 	}
 
 	@Override
