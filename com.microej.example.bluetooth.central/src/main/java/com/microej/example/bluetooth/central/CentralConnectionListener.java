@@ -9,8 +9,8 @@ package com.microej.example.bluetooth.central;
 import ej.bluetooth.BluetoothAdapter;
 import ej.bluetooth.BluetoothAddress;
 import ej.bluetooth.BluetoothCharacteristic;
+import ej.bluetooth.BluetoothConnection;
 import ej.bluetooth.BluetoothDescriptor;
-import ej.bluetooth.BluetoothDevice;
 import ej.bluetooth.BluetoothObjectNotFoundException;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.listeners.impl.DefaultConnectionListener;
@@ -51,14 +51,14 @@ public class CentralConnectionListener extends DefaultConnectionListener impleme
 	}
 
 	@Override
-	public void onConnected(BluetoothDevice device) {
+	public void onConnected(BluetoothConnection connection) {
 		System.out.println("Connected");
 
-		device.discoverServices();
+		connection.discoverServices();
 	}
 
 	@Override
-	public void onDisconnected(BluetoothDevice device) {
+	public void onDisconnected(BluetoothConnection connection) {
 		System.out.println("Disconnected");
 
 		this.deviceFound = false;
@@ -66,11 +66,11 @@ public class CentralConnectionListener extends DefaultConnectionListener impleme
 	}
 
 	@Override
-	public void onServicesDiscovered(BluetoothDevice device) {
-		printDeviceServices(device);
+	public void onServicesDiscovered(BluetoothConnection connection) {
+		printDeviceServices(connection);
 
 		try {
-			SerialPortClient serialPortClient = new SerialPortClient(device, this);
+			SerialPortClient serialPortClient = new SerialPortClient(connection, this);
 			serialPortClient.sendData(INITIAL_DATA);
 		} catch (BluetoothObjectNotFoundException e) {
 			e.printStackTrace();
@@ -87,8 +87,8 @@ public class CentralConnectionListener extends DefaultConnectionListener impleme
 		System.out.println("Data received: " + new String(data));
 	}
 
-	private static void printDeviceServices(BluetoothDevice device) {
-		for (BluetoothService service : device.getServices()) {
+	private static void printDeviceServices(BluetoothConnection connection) {
+		for (BluetoothService service : connection.getServices()) {
 			System.out.println("[SERVICE] " + service.getUuid());
 			for (BluetoothCharacteristic characteristic : service.getCharacteristics()) {
 				String propertiesString = Integer.toHexString(characteristic.getProperties());
