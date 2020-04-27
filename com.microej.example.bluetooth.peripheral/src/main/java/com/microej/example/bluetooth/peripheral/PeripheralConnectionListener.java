@@ -11,13 +11,10 @@ import ej.bluetooth.BluetoothAdapter;
 import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothConnection;
 import ej.bluetooth.BluetoothDescriptor;
-import ej.bluetooth.BluetoothObjectNotFoundException;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.listeners.impl.DefaultConnectionListener;
-import ej.bluetooth.util.services.cts.CurrentTimeClient;
-import ej.bluetooth.util.services.cts.CurrentTimeListener;
 
-public class PeripheralConnectionListener extends DefaultConnectionListener implements CurrentTimeListener {
+public class PeripheralConnectionListener extends DefaultConnectionListener {
 
 	@Override
 	public void onAdvertisementCompleted() {
@@ -42,22 +39,7 @@ public class PeripheralConnectionListener extends DefaultConnectionListener impl
 	public void onServicesDiscovered(BluetoothConnection connection) {
 		printDeviceServices(connection);
 
-		try {
-			CurrentTimeClient currentTimeClient = new CurrentTimeClient(connection, this);
-			currentTimeClient.requestTime();
-		} catch (BluetoothObjectNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	@Override
-	public void onCurrentTimeUpdate(long currentTime) {
-		System.out.println("onCurrentTimeUpdate() currentTime=" + currentTime);
-	}
-
-	@Override
-	public void onLocalTimeUpdate(long localTimeOffset) {
-		System.out.println("onCurrentTimeUpdate() localTimeOffset=" + localTimeOffset);
+		PrintCurrentTimeClient.printTime(connection);
 	}
 
 	private static void printDeviceServices(BluetoothConnection connection) {

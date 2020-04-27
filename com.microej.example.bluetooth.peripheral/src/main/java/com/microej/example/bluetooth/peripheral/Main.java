@@ -8,49 +8,35 @@
 package com.microej.example.bluetooth.peripheral;
 
 import ej.bluetooth.BluetoothAdapter;
+import ej.bluetooth.listeners.ConnectionListener;
 import ej.bluetooth.util.AdvertisementData;
-import ej.bluetooth.util.services.sps.SerialPortListener;
-import ej.bluetooth.util.services.sps.SerialPortServer;
 
-public class Main implements SerialPortListener {
+public class Main {
 
 	private static final String DEVICE_NAME = "Example";
 
-	private final SerialPortServer serialPortServer;
-
 	public static void main(String[] args) {
-		Main main = new Main();
-		main.start();
-	}
-
-	public Main() {
-		this.serialPortServer = new SerialPortServer(this);
-	}
-
-	public void start() {
+		// Enable the Bluetooth stack
 		BluetoothAdapter adapter = BluetoothAdapter.getAdapter();
 		adapter.enable();
-		adapter.addService(this.serialPortServer.getService());
 
-		adapter.setConnectionListener(new PeripheralConnectionListener());
+		// Add the serial port service
+		EchoSerialPortServer echoSerialPort = new EchoSerialPortServer();
+		adapter.addService(echoSerialPort.getService());
+
+		// Listen for connection events : connected device will be discovered and if a
+		// current time service is available, use it to print the current and local
+		// times
+		ConnectionListener listener = new PeripheralConnectionListener();
+		adapter.setConnectionListener(listener);
+
+		// Start advertising
 		adapter.setAdvertisementData(createAdvertisementData());
 		adapter.startAdvertising();
-
 		System.out.println("Start advertising");
 	}
 
-	@Override
-	public void onDataSent(boolean success) {
-		System.out.println("Data sent");
-	}
-
-	@Override
-	public void onDataReceived(byte[] data) {
-		System.out.println("Data received: " + new String(data));
-		this.serialPortServer.sendData(data); // echo data
-	}
-
-	private byte[] createAdvertisementData() {
+	private static byte[] createAdvertisementData() {
 		AdvertisementData data = new AdvertisementData();
 		data.setDeviceName(DEVICE_NAME);
 		return data.serialize();

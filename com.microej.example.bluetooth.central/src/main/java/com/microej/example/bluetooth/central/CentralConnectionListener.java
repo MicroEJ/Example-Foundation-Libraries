@@ -12,17 +12,13 @@ import ej.bluetooth.BluetoothAddress;
 import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothConnection;
 import ej.bluetooth.BluetoothDescriptor;
-import ej.bluetooth.BluetoothObjectNotFoundException;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.listeners.impl.DefaultConnectionListener;
 import ej.bluetooth.util.AdvertisementData;
-import ej.bluetooth.util.services.sps.SerialPortClient;
-import ej.bluetooth.util.services.sps.SerialPortListener;
 
-public class CentralConnectionListener extends DefaultConnectionListener implements SerialPortListener {
+public class CentralConnectionListener extends DefaultConnectionListener {
 
 	private static final String PERIPHERAL_NAME = "Example";
-	private static final byte[] INITIAL_DATA = "Hello world".getBytes();
 
 	private boolean deviceFound;
 
@@ -70,22 +66,7 @@ public class CentralConnectionListener extends DefaultConnectionListener impleme
 	public void onServicesDiscovered(BluetoothConnection connection) {
 		printDeviceServices(connection);
 
-		try {
-			SerialPortClient serialPortClient = new SerialPortClient(connection, this);
-			serialPortClient.sendData(INITIAL_DATA);
-		} catch (BluetoothObjectNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	@Override
-	public void onDataSent(boolean success) {
-		System.out.println("Data sent");
-	}
-
-	@Override
-	public void onDataReceived(byte[] data) {
-		System.out.println("Data received: " + new String(data));
+		HelloWorldSerialPortClient.sendHelloWorld(connection);
 	}
 
 	private static void printDeviceServices(BluetoothConnection connection) {
