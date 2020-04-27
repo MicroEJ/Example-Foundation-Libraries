@@ -10,19 +10,11 @@ package com.microej.example.bluetooth.peripheral;
 import ej.bluetooth.BluetoothConnection;
 import ej.bluetooth.BluetoothObjectNotFoundException;
 import ej.bluetooth.util.services.cts.CurrentTimeClient;
-import ej.bluetooth.util.services.cts.CurrentTimeListener;
 
-public class PrintCurrentTimeClient implements CurrentTimeListener {
+public class PrintCurrentTimeClient extends CurrentTimeClient {
 
-	public static void printTime(BluetoothConnection connection) {
-		CurrentTimeClient currentTimeClient;
-		try {
-			currentTimeClient = new CurrentTimeClient(connection, new PrintCurrentTimeClient());
-		} catch (BluetoothObjectNotFoundException e) { // The remote device doesn't support the current time service
-			e.printStackTrace();
-			return;
-		}
-		currentTimeClient.requestTime();
+	public PrintCurrentTimeClient(BluetoothConnection connection) throws BluetoothObjectNotFoundException {
+		super(connection);
 	}
 
 	@Override

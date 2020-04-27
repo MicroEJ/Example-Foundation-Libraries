@@ -7,17 +7,9 @@
  */
 package com.microej.example.bluetooth.peripheral;
 
-import ej.bluetooth.BluetoothService;
-import ej.bluetooth.util.services.sps.SerialPortListener;
 import ej.bluetooth.util.services.sps.SerialPortServer;
 
-public class EchoSerialPortServer implements SerialPortListener {
-
-	private final SerialPortServer serialPortServer;
-
-	public EchoSerialPortServer() {
-		this.serialPortServer = new SerialPortServer(this);
-	}
+public class EchoSerialPortServer extends SerialPortServer {
 
 	@Override
 	public void onDataSent(boolean success) {
@@ -27,11 +19,7 @@ public class EchoSerialPortServer implements SerialPortListener {
 	@Override
 	public void onDataReceived(byte[] data) {
 		System.out.println("Data received: " + new String(data));
-		this.serialPortServer.sendData(data); // echo data
-	}
-
-	public BluetoothService getService() {
-		return serialPortServer.getService();
+		this.sendData(data); // echo data
 	}
 
 }

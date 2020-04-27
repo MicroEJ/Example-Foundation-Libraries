@@ -11,6 +11,7 @@ import ej.bluetooth.BluetoothAdapter;
 import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothConnection;
 import ej.bluetooth.BluetoothDescriptor;
+import ej.bluetooth.BluetoothObjectNotFoundException;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.listeners.impl.DefaultConnectionListener;
 
@@ -39,7 +40,13 @@ public class PeripheralConnectionListener extends DefaultConnectionListener {
 	public void onServicesDiscovered(BluetoothConnection connection) {
 		printDeviceServices(connection);
 
-		PrintCurrentTimeClient.printTime(connection);
+		try {
+			PrintCurrentTimeClient client = new PrintCurrentTimeClient(connection);
+			client.requestTime();
+		} catch (BluetoothObjectNotFoundException e) {
+			// The remote device doesn't support the current time service
+			e.printStackTrace();
+		}
 	}
 
 	private static void printDeviceServices(BluetoothConnection connection) {

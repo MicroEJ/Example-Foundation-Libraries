@@ -12,6 +12,7 @@ import ej.bluetooth.BluetoothAddress;
 import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothConnection;
 import ej.bluetooth.BluetoothDescriptor;
+import ej.bluetooth.BluetoothObjectNotFoundException;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.listeners.impl.DefaultConnectionListener;
 import ej.bluetooth.util.AdvertisementData;
@@ -66,7 +67,13 @@ public class CentralConnectionListener extends DefaultConnectionListener {
 	public void onServicesDiscovered(BluetoothConnection connection) {
 		printDeviceServices(connection);
 
-		HelloWorldSerialPortClient.sendHelloWorld(connection);
+		try {
+			HelloWorldSerialPortClient client = new HelloWorldSerialPortClient(connection);
+			client.sendHelloWorld();
+		} catch (BluetoothObjectNotFoundException e) {
+			// The remote device doesn't support the current time service
+			e.printStackTrace();
+		}
 	}
 
 	private static void printDeviceServices(BluetoothConnection connection) {

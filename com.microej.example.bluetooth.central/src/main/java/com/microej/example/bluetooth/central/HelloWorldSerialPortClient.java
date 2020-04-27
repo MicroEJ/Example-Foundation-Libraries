@@ -10,21 +10,17 @@ package com.microej.example.bluetooth.central;
 import ej.bluetooth.BluetoothConnection;
 import ej.bluetooth.BluetoothObjectNotFoundException;
 import ej.bluetooth.util.services.sps.SerialPortClient;
-import ej.bluetooth.util.services.sps.SerialPortListener;
 
-public class HelloWorldSerialPortClient implements SerialPortListener {
+public class HelloWorldSerialPortClient extends SerialPortClient {
 
-	private static final byte[] INITIAL_DATA = "Hello world".getBytes();
+	private static final byte[] HELLO_WORLD = "Hello world".getBytes();
 
-	public static void sendHelloWorld(BluetoothConnection connection) {
-		SerialPortClient serialPortClient;
-		try {
-			serialPortClient = new SerialPortClient(connection, new HelloWorldSerialPortClient());
-		} catch (BluetoothObjectNotFoundException e) { // The remote device doesn't support the serial port service
-			e.printStackTrace();
-			return;
-		}
-		serialPortClient.sendData(INITIAL_DATA);
+	public HelloWorldSerialPortClient(BluetoothConnection connection) throws BluetoothObjectNotFoundException {
+		super(connection);
+	}
+
+	public void sendHelloWorld() {
+		this.sendData(HELLO_WORLD);
 	}
 
 	@Override
