@@ -8,7 +8,7 @@
 
 <ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:ej="https://developer.microej.com" ej:version="2.0.0">
 	<info organisation="com.microej.example.bluetooth" module="central" status="integration" revision="1.0.0">
-		<ea:build organisation="com.is2t.easyant.buildtypes" module="build-firmware-singleapp" revision="1.+"/>
+		<ea:build organisation="com.is2t.easyant.buildtypes" module="build-microej-javalib" revision="4.+"/>
 		<ea:property name="application.main.class" value="com.microej.example.bluetooth.central.Main"/>
 	</info>
 
