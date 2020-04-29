@@ -20,7 +20,7 @@ public class HelloWorldSerialPortClient extends SerialPortClient {
 	}
 
 	public void sendHelloWorld() {
-		this.sendData(HELLO_WORLD);
+		sendData(HELLO_WORLD);
 	}
 
 	@Override

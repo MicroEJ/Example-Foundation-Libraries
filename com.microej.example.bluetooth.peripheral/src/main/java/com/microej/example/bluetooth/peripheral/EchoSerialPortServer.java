@@ -7,19 +7,19 @@
  */
 package com.microej.example.bluetooth.peripheral;
 
+import ej.bluetooth.BluetoothConnection;
 import ej.bluetooth.util.services.sps.SerialPortServer;
 
 public class EchoSerialPortServer extends SerialPortServer {
 
 	@Override
-	public void onDataSent(boolean success) {
+	protected void onDataSent(BluetoothConnection connection, boolean success) {
 		System.out.println("Data sent");
 	}
 
 	@Override
-	public void onDataReceived(byte[] data) {
+	protected void onDataReceived(BluetoothConnection connection, byte[] data) {
 		System.out.println("Data received: " + new String(data));
-		this.sendData(data); // echo data
+		sendData(connection, data); // echo data
 	}
-
 }
