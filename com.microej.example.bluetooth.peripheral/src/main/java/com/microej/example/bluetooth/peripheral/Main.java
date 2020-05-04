@@ -1,60 +1,44 @@
 /*
  * Java
  *
- * Copyright 2018-2019 IS2T. All rights reserved.
- * IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * Copyright 2018-2020 MicroEJ Corp. All rights reserved.
+ * This library is provided in source code for use, modification and test, subject to license terms.
+ * Any modification of the source code will break MicroEJ Corp. warranties on the whole library.
  */
 package com.microej.example.bluetooth.peripheral;
 
-import com.microej.example.bluetooth.data.BluetoothPayload;
-import com.microej.example.bluetooth.data.sps.server.SerialPortListener;
-import com.microej.example.bluetooth.data.sps.server.SerialPortServer;
-
 import ej.bluetooth.BluetoothAdapter;
-import ej.bluetooth.BluetoothDevice;
+import ej.bluetooth.listeners.ConnectionListener;
+import ej.bluetooth.util.AdvertisementData;
 
-public class Main implements SerialPortListener {
+public class Main {
 
-	private static final int STOP_ADVERTISING_DELAY = 15000;
+	private static final String DEVICE_NAME = "Example";
 
-	private static final byte[] PAYLOAD = new byte[] { 2, BluetoothPayload.FLAGS, 0x06, //
-			8, BluetoothPayload.COMPLETE_LOCAL_NAME, 'E', 'x', 'a', 'm', 'p', 'l', 'e' };
-
-	private final SerialPortServer serialPortServer;
-
-	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		new Main();
-	}
+		// Enable the Bluetooth stack
+		BluetoothAdapter adapter = BluetoothAdapter.getAdapter();
+		adapter.enable();
 
-	public Main() {
-		BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+		// Add the serial port service
+		EchoSerialPortServer echoSerialPort = new EchoSerialPortServer();
+		adapter.addService(echoSerialPort.getService());
 
-		this.serialPortServer = new SerialPortServer(this);
-		adapter.addService(this.serialPortServer.getService());
+		// Listen for connection events : connected device will be discovered and if a
+		// current time service is available, use it to print the current and local
+		// times
+		ConnectionListener listener = new PeripheralConnectionListener();
+		adapter.setConnectionListener(listener);
 
+		// Start advertising
+		adapter.setAdvertisementData(createAdvertisementData());
+		adapter.startAdvertising();
 		System.out.println("Start advertising");
-		adapter.startAdvertising(new AppAdvertisementCallbacks(), new AppConnectionCallbacks(), PAYLOAD);
-
-		try {
-			Thread.sleep(STOP_ADVERTISING_DELAY);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
-		if (adapter.isAdvertising()) {
-			adapter.stopAdvertising();
-		}
 	}
 
-	@Override
-	public void onDataSent(BluetoothDevice device, boolean success) {
-		System.out.println("onDataSent()");
-	}
-
-	@Override
-	public void onDataReceived(BluetoothDevice device, byte[] data) {
-		System.out.println("onDataReceived()");
-		this.serialPortServer.sendData(device, data); // echo data
+	private static byte[] createAdvertisementData() {
+		AdvertisementData data = new AdvertisementData();
+		data.setDeviceName(DEVICE_NAME);
+		return data.serialize();
 	}
 }

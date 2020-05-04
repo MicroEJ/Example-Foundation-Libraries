@@ -1,5 +1,6 @@
-# Copyright 2018-2019 IS2T. All rights reserved.
-# IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+# Copyright 2018-2020 MicroEJ Corp. All rights reserved.
+# This library is provided in source code for use, modification and test, subject to license terms.
+# Any modification of the source code will break MicroEJ Corp. warranties on the whole library.
 
 # This file lists all the modules which will be built and published.
 # The order of the modules does not matter: the modules will be built considering the dependencies between each other.
