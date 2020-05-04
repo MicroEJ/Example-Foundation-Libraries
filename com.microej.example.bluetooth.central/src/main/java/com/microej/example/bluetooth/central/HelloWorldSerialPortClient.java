@@ -8,15 +8,17 @@
 package com.microej.example.bluetooth.central;
 
 import ej.bluetooth.BluetoothConnection;
-import ej.bluetooth.BluetoothObjectNotFoundException;
+import ej.bluetooth.BluetoothService;
+import ej.bluetooth.util.AttributeNotFoundException;
 import ej.bluetooth.util.services.sps.SerialPortClient;
 
 public class HelloWorldSerialPortClient extends SerialPortClient {
 
 	private static final byte[] HELLO_WORLD = "Hello world".getBytes();
 
-	public HelloWorldSerialPortClient(BluetoothConnection connection) throws BluetoothObjectNotFoundException {
-		super(connection);
+	public HelloWorldSerialPortClient(BluetoothConnection connection, BluetoothService service)
+			throws AttributeNotFoundException {
+		super(connection, service);
 	}
 
 	public void sendHelloWorld() {

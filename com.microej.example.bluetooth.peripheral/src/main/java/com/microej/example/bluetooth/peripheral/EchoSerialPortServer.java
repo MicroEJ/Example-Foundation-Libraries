@@ -8,9 +8,15 @@
 package com.microej.example.bluetooth.peripheral;
 
 import ej.bluetooth.BluetoothConnection;
+import ej.bluetooth.BluetoothService;
+import ej.bluetooth.util.AttributeNotFoundException;
 import ej.bluetooth.util.services.sps.SerialPortServer;
 
 public class EchoSerialPortServer extends SerialPortServer {
+
+	public EchoSerialPortServer(BluetoothService service) throws AttributeNotFoundException {
+		super(service);
+	}
 
 	@Override
 	protected void onDataSent(BluetoothConnection connection, boolean success) {

@@ -7,34 +7,16 @@
  */
 package com.microej.example.bluetooth.central;
 
-import ej.bluetooth.BluetoothAdapter;
-import ej.bluetooth.BluetoothDataTypes;
-import ej.bluetooth.BluetoothScanFilter;
-import ej.bluetooth.listeners.ConnectionListener;
-import ej.bluetooth.util.services.cts.CurrentTimeServer;
 import ej.bon.Util;
 
 public class Main {
 
 	public static void main(String[] args) {
-		// Enable the Bluetooth stack
-		BluetoothAdapter adapter = BluetoothAdapter.getAdapter();
-		adapter.enable();
-
-		// Add the current time service
+		// Set current time
 		Util.setCurrentTimeMillis(778932000 * 1000L);
-		CurrentTimeServer currentTimeServer = new CurrentTimeServer();
-		adapter.addService(currentTimeServer.getService());
 
-		// Listen for connection events : connected device will be discovered and if a
-		// serial port service is available, sends a "Hello World" and dumps the
-		// response
-		ConnectionListener connectionListener = new CentralConnectionListener();
-		adapter.setConnectionListener(connectionListener);
-
-		// Start scanning for named Bluetooth devices
-		adapter.setScanFilter(BluetoothScanFilter.fieldExists(BluetoothDataTypes.COMPLETE_LOCAL_NAME));
-		adapter.startScanning();
-		System.out.println("Start scanning");
+		// Start connection manager
+		CentralConnectionManager listener = new CentralConnectionManager();
+		listener.start();
 	}
 }
