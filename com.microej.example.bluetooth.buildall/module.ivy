@@ -7,7 +7,7 @@
 -->
 
 <ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:ej="https://developer.microej.com" ej:version="2.0.0">
-	<info organisation="com.microej.example.bluetooth" module="buildall" status="integration" revision="1.0.0">
+	<info organisation="com.microej.example.bluetooth" module="buildall" status="integration" revision="2.0.0">
 		<ea:build organisation="com.is2t.easyant.buildtypes" module="microej-meta-build" revision="2.+"/>
 		<!--<ea:property name="metabuild.root" value=".."/>-->
 		<!--<ea:property name="metabuild.submodule.initial.targets" value="clean,verify"/>-->
