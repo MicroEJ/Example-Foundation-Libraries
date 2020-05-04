@@ -12,6 +12,30 @@ This example is divided into 4 files:
   - [PrintCurrentTimeClient.java](src/main/java/com/microej/example/bluetooth/peripheral/PrintCurrentTimeClient.java) is a current time client that prints the current and local time.
   - [EchoSerialPortServer.java](src/main/java/com/microej/example/bluetooth/peripheral/EchoSerialPortServer.java) is a serial port implementation that prints and echoes received messages.
 
+# Usage
+
+Add the following line to your `module.ivy`:
+
+    @MMM_DEPENDENCY_DECLARATION@
+
+# Requirements
+
+This library requires the following Foundation Libraries:
+
+    @FOUNDATION_LIBRARIES_LIST@
+
+# Dependencies
+
+_All dependencies are retrieved transitively by MicroEJ Module Manager_.
+
+# Source
+
+N/A
+
+# Restrictions
+
+None.
+
 ---
 _Copyright 2018-2020 MicroEJ Corp. All rights reserved._  
 _This library is provided in source code for use, modification and test, subject to license terms._  

@@ -12,6 +12,30 @@ This example is divided into 3 files:
     4. The `onDiscoveryResult` implementation prints the service structure and attempts to send a "Hello World" message through the serial port service.
   - [HelloWorldSerialPortClient.java](src/main/java/com/microej/example/bluetooth/central/HelloWorldSerialPortClient.java) is a serial port client that sends a "Hello World" and prints each receive messages.
 
+# Usage
+
+Add the following line to your `module.ivy`:
+
+    @MMM_DEPENDENCY_DECLARATION@
+
+# Requirements
+
+This library requires the following Foundation Libraries:
+
+    @FOUNDATION_LIBRARIES_LIST@
+
+# Dependencies
+
+_All dependencies are retrieved transitively by MicroEJ Module Manager_.
+
+# Source
+
+N/A
+
+# Restrictions
+
+None.
+
 ---
 _Copyright 2018-2020 MicroEJ Corp. All rights reserved._  
 _This library is provided in source code for use, modification and test, subject to license terms._  
