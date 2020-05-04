@@ -16,7 +16,7 @@ public class Main {
 		Util.setCurrentTimeMillis(778932000 * 1000L);
 
 		// Start connection manager
-		CentralConnectionListener listener = new CentralConnectionListener();
+		CentralConnectionManager listener = new CentralConnectionManager();
 		listener.start();
 	}
 }

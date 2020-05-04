@@ -7,19 +7,23 @@
  */
 package com.microej.example.bluetooth.peripheral;
 
+import ej.annotation.Nullable;
 import ej.bluetooth.BluetoothAdapter;
-import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothConnection;
-import ej.bluetooth.BluetoothDescriptor;
-import ej.bluetooth.BluetoothObjectNotFoundException;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.listeners.impl.DefaultConnectionListener;
 import ej.bluetooth.util.AdvertisementData;
+import ej.bluetooth.util.AttributeNotFoundException;
+import ej.bluetooth.util.GattHelper;
 import ej.bluetooth.util.services.cts.CurrentTimeConstants;
+import ej.bluetooth.util.services.sps.SerialPortConstants;
 
-public class PeripheralConnectionListener extends DefaultConnectionListener {
+public class PeripheralConnectionManager extends DefaultConnectionListener {
 
 	private static final String DEVICE_NAME = "Example";
+
+	private @Nullable EchoSerialPortServer echoSerialPortServer;
+	private @Nullable PrintCurrentTimeClient printCurrentTimeClient;
 
 	public void start() {
 		// Enable adapter
@@ -28,14 +32,32 @@ public class PeripheralConnectionListener extends DefaultConnectionListener {
 		adapter.setConnectionListener(this);
 
 		// Add the serial port service
-		EchoSerialPortServer echoSerialPort = new EchoSerialPortServer();
-		adapter.addService(echoSerialPort.getService());
+		BluetoothService serialPortService = adapter.addService(SerialPortConstants.getServiceDefinition());
+		if (serialPortService == null) {
+			System.out.println("Could not add serial port service");
+		} else {
+			try {
+				this.echoSerialPortServer = new EchoSerialPortServer(serialPortService);
+			} catch (AttributeNotFoundException e) {
+				System.out.println("Invalid serial port service");
+			}
+		}
 
 		// Start advertising
 		startAdvertising();
 	}
 
 	public void stop() {
+		if (this.printCurrentTimeClient != null) {
+			this.printCurrentTimeClient.close();
+			this.printCurrentTimeClient = null;
+		}
+
+		if (this.echoSerialPortServer != null) {
+			this.echoSerialPortServer.close();
+			this.echoSerialPortServer = null;
+		}
+
 		BluetoothAdapter.getAdapter().disable();
 	}
 
@@ -50,20 +72,24 @@ public class PeripheralConnectionListener extends DefaultConnectionListener {
 	public void onDisconnected(BluetoothConnection connection) {
 		System.out.println("Disconnected");
 
+		if (this.printCurrentTimeClient != null) {
+			this.printCurrentTimeClient.close();
+			this.printCurrentTimeClient = null;
+		}
+
 		startAdvertising();
 	}
 
 	@Override
 	public void onDiscoveryResult(BluetoothConnection connection, BluetoothService service) {
-		printService(service);
+		GattHelper.printService(service, System.out);
 
 		if (service.getUuid().equals(CurrentTimeConstants.SERVICE_UUID)) {
 			try {
-				PrintCurrentTimeClient client = new PrintCurrentTimeClient(connection, service);
-				client.requestTime();
-			} catch (BluetoothObjectNotFoundException e) {
-				// The remote device doesn't support the current time service
-				e.printStackTrace();
+				this.printCurrentTimeClient = new PrintCurrentTimeClient(connection, service);
+				this.printCurrentTimeClient.requestTime();
+			} catch (AttributeNotFoundException e) {
+				System.out.println("Invalid current time service");
 			}
 		}
 	}
@@ -73,16 +99,5 @@ public class PeripheralConnectionListener extends DefaultConnectionListener {
 		AdvertisementData data = new AdvertisementData();
 		data.setDeviceName(DEVICE_NAME);
 		BluetoothAdapter.getAdapter().startAdvertising(data.serialize());
-	}
-
-	private static void printService(BluetoothService service) {
-		System.out.println("[SERVICE] " + service.getUuid());
-		for (BluetoothCharacteristic characteristic : service.getCharacteristics()) {
-			String propertiesString = Integer.toHexString(characteristic.getProperties());
-			System.out.println("\t[CHAR] " + characteristic.getUuid() + " P=0x" + propertiesString);
-			for (BluetoothDescriptor descriptor : characteristic.getDescriptors()) {
-				System.out.println("\t\t[DESC] " + descriptor.getUuid());
-			}
-		}
 	}
 }

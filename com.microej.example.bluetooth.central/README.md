@@ -4,12 +4,13 @@ This application is an example of a Bluetooth central device using the MicroEJ B
 It shows how to implement a central device that exposes a current time service and uses a serial port service.
 
 This example is divided into 3 files:
-  - [Main.java](src/main/java/com/microej/example/bluetooth/central/Main.java) initializes the example, it shows how to enable the Bluetooth stack, setup services and listeners and start scanning for other Bluetooth devices.
-  - [CentralConnectionListener.java](src/main/java/com/microej/example/bluetooth/central/CentralConnectionListener.java) implements the flow of the application:
-    1. `onScanResult`: The scan calls this method upon new scan events. This implementation prints the scanned device information and connects to it in case its name is "Example".
-    2. `onConnected`: Upon connection, the application requests for the services discovery.
-    3. `onServicesDiscovered`: This implementation prints the services UUID and characteristics and attempts to send a "Hello World" through a serial port standard Bluetooth service.
-  - [HelloWorldSerialPortClient.java](src/main/java/com/microej/example/bluetooth/central/HelloWorldSerialPortClient.java) is a serial port client that sends a "Hello World" and prints received messages.
+  - [Main.java](src/main/java/com/microej/example/bluetooth/central/Main.java) is the entry point of the application.
+  - [CentralConnectionManager.java](src/main/java/com/microej/example/bluetooth/central/CentralConnectionManager.java) implements the flow of the application:
+    1. The `start` method enables the Bluetooth stack, sets up services and listeners, and starts scanning for nearby Bluetooth devices.
+    2. The `onScanResult` callback is executed upon new scan events. This implementation prints the scanned device information and connects to the device if its name is "Example".
+    3. The `onConnected` implementation starts discovering the services provided by the remote device.
+    4. The `onDiscoveryResult` implementation prints the service structure and attempts to send a "Hello World" message through the serial port service.
+  - [HelloWorldSerialPortClient.java](src/main/java/com/microej/example/bluetooth/central/HelloWorldSerialPortClient.java) is a serial port client that sends a "Hello World" and prints each receive messages.
 
 ---
 _Copyright 2018-2020 MicroEJ Corp. All rights reserved._  

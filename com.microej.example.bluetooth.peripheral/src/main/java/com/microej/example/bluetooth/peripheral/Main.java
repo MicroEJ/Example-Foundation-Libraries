@@ -11,7 +11,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// Start connection manager
-		PeripheralConnectionListener listener = new PeripheralConnectionListener();
+		PeripheralConnectionManager listener = new PeripheralConnectionManager();
 		listener.start();
 	}
 }

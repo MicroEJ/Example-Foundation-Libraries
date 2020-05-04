@@ -7,23 +7,27 @@
  */
 package com.microej.example.bluetooth.central;
 
+import ej.annotation.Nullable;
 import ej.bluetooth.BluetoothAdapter;
 import ej.bluetooth.BluetoothAddress;
-import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothConnection;
 import ej.bluetooth.BluetoothDataTypes;
-import ej.bluetooth.BluetoothDescriptor;
-import ej.bluetooth.BluetoothObjectNotFoundException;
 import ej.bluetooth.BluetoothScanFilter;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.listeners.impl.DefaultConnectionListener;
 import ej.bluetooth.util.AdvertisementData;
+import ej.bluetooth.util.AttributeNotFoundException;
+import ej.bluetooth.util.GattHelper;
+import ej.bluetooth.util.services.cts.CurrentTimeConstants;
 import ej.bluetooth.util.services.cts.CurrentTimeServer;
 import ej.bluetooth.util.services.sps.SerialPortConstants;
 
-public class CentralConnectionListener extends DefaultConnectionListener {
+public class CentralConnectionManager extends DefaultConnectionListener {
 
 	private static final String PERIPHERAL_NAME = "Example";
+
+	private @Nullable CurrentTimeServer currentTimeServer;
+	private @Nullable HelloWorldSerialPortClient helloWorldSerialPortClient;
 
 	private boolean deviceFound;
 
@@ -34,14 +38,32 @@ public class CentralConnectionListener extends DefaultConnectionListener {
 		adapter.setConnectionListener(this);
 
 		// Add the current time service
-		CurrentTimeServer currentTimeServer = new CurrentTimeServer();
-		adapter.addService(currentTimeServer.getService());
+		BluetoothService currentTimeService = adapter.addService(CurrentTimeConstants.getServiceDefinition());
+		if (currentTimeService == null) {
+			System.out.println("Could not add current time service");
+		} else {
+			try {
+				this.currentTimeServer = new CurrentTimeServer(currentTimeService);
+			} catch (AttributeNotFoundException e) {
+				System.out.println("Invalid current time service");
+			}
+		}
 
 		// Start scanning
 		startScanning();
 	}
 
 	public void stop() {
+		if (this.helloWorldSerialPortClient != null) {
+			this.helloWorldSerialPortClient.close();
+			this.helloWorldSerialPortClient = null;
+		}
+
+		if (this.currentTimeServer != null) {
+			this.currentTimeServer.close();
+			this.currentTimeServer = null;
+		}
+
 		BluetoothAdapter.getAdapter().disable();
 	}
 
@@ -78,20 +100,24 @@ public class CentralConnectionListener extends DefaultConnectionListener {
 	public void onDisconnected(BluetoothConnection connection) {
 		System.out.println("Disconnected");
 
+		if (this.helloWorldSerialPortClient != null) {
+			this.helloWorldSerialPortClient.close();
+			this.helloWorldSerialPortClient = null;
+		}
+
 		startScanning();
 	}
 
 	@Override
 	public void onDiscoveryResult(BluetoothConnection connection, BluetoothService service) {
-		printService(service);
+		GattHelper.printService(service, System.out);
 
 		if (service.getUuid().equals(SerialPortConstants.SERVICE_UUID)) {
 			try {
-				HelloWorldSerialPortClient client = new HelloWorldSerialPortClient(connection, service);
-				client.sendHelloWorld();
-			} catch (BluetoothObjectNotFoundException e) {
-				// The remote device doesn't support the current time service
-				e.printStackTrace();
+				this.helloWorldSerialPortClient = new HelloWorldSerialPortClient(connection, service);
+				this.helloWorldSerialPortClient.sendHelloWorld();
+			} catch (AttributeNotFoundException e) {
+				System.out.println("Invalid serial port service");
 			}
 		}
 	}
@@ -101,16 +127,5 @@ public class CentralConnectionListener extends DefaultConnectionListener {
 		this.deviceFound = false;
 		BluetoothScanFilter filter = BluetoothScanFilter.fieldExists(BluetoothDataTypes.COMPLETE_LOCAL_NAME);
 		BluetoothAdapter.getAdapter().startScanning(filter);
-	}
-
-	private static void printService(BluetoothService service) {
-		System.out.println("[SERVICE] " + service.getUuid());
-		for (BluetoothCharacteristic characteristic : service.getCharacteristics()) {
-			String propertiesString = Integer.toHexString(characteristic.getProperties());
-			System.out.println("\t[CHAR] " + characteristic.getUuid() + " P=0x" + propertiesString);
-			for (BluetoothDescriptor descriptor : characteristic.getDescriptors()) {
-				System.out.println("\t\t[DESC] " + descriptor.getUuid());
-			}
-		}
 	}
 }
