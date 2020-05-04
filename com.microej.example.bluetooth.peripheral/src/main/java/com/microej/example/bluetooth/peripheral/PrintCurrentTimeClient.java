@@ -9,12 +9,14 @@ package com.microej.example.bluetooth.peripheral;
 
 import ej.bluetooth.BluetoothConnection;
 import ej.bluetooth.BluetoothObjectNotFoundException;
+import ej.bluetooth.BluetoothService;
 import ej.bluetooth.util.services.cts.CurrentTimeClient;
 
 public class PrintCurrentTimeClient extends CurrentTimeClient {
 
-	public PrintCurrentTimeClient(BluetoothConnection connection) throws BluetoothObjectNotFoundException {
-		super(connection);
+	public PrintCurrentTimeClient(BluetoothConnection connection, BluetoothService service)
+			throws BluetoothObjectNotFoundException {
+		super(connection, service);
 	}
 
 	@Override

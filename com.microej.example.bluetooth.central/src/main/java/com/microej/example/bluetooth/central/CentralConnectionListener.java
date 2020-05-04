@@ -11,11 +11,15 @@ import ej.bluetooth.BluetoothAdapter;
 import ej.bluetooth.BluetoothAddress;
 import ej.bluetooth.BluetoothCharacteristic;
 import ej.bluetooth.BluetoothConnection;
+import ej.bluetooth.BluetoothDataTypes;
 import ej.bluetooth.BluetoothDescriptor;
 import ej.bluetooth.BluetoothObjectNotFoundException;
+import ej.bluetooth.BluetoothScanFilter;
 import ej.bluetooth.BluetoothService;
 import ej.bluetooth.listeners.impl.DefaultConnectionListener;
 import ej.bluetooth.util.AdvertisementData;
+import ej.bluetooth.util.services.cts.CurrentTimeServer;
+import ej.bluetooth.util.services.sps.SerialPortConstants;
 
 public class CentralConnectionListener extends DefaultConnectionListener {
 
@@ -23,29 +27,44 @@ public class CentralConnectionListener extends DefaultConnectionListener {
 
 	private boolean deviceFound;
 
-	@Override
-	public void onScanCompleted() {
-		System.out.println("Scan complete");
+	public void start() {
+		// Enable adapter
+		BluetoothAdapter adapter = BluetoothAdapter.getAdapter();
+		adapter.enable();
+		adapter.setConnectionListener(this);
+
+		// Add the current time service
+		CurrentTimeServer currentTimeServer = new CurrentTimeServer();
+		adapter.addService(currentTimeServer.getService());
+
+		// Start scanning
+		startScanning();
+	}
+
+	public void stop() {
+		BluetoothAdapter.getAdapter().disable();
 	}
 
 	@Override
 	public void onScanResult(BluetoothAddress address, byte[] advertisementData, int rssi) {
-		AdvertisementData data = AdvertisementData.parse(advertisementData);
-		String deviceName = data.getDeviceName();
+		if (!this.deviceFound) {
+			AdvertisementData data = AdvertisementData.parse(advertisementData);
+			String deviceName = data.getDeviceName();
+			System.out.println("Scanned device: address=" + address.toString() + " name=" + deviceName);
 
-		System.out.println("Scanned device: address=" + address.toString() + " public=" + address.isPublic() + " RSSI="
-				+ rssi + " name=" + deviceName);
-
-		if (!this.deviceFound && deviceName != null && deviceName.equals(PERIPHERAL_NAME)) {
-			this.deviceFound = true;
-			System.out.println("Connecting...");
-			BluetoothAdapter.getAdapter().connect(address);
+			if (deviceName != null && deviceName.equals(PERIPHERAL_NAME)) {
+				this.deviceFound = true;
+				System.out.println("Connecting...");
+				BluetoothAdapter.getAdapter().connect(address);
+			}
 		}
 	}
 
 	@Override
 	public void onConnectFailed(BluetoothAddress address) {
 		System.out.println("Connect failed");
+
+		startScanning();
 	}
 
 	@Override
@@ -59,32 +78,38 @@ public class CentralConnectionListener extends DefaultConnectionListener {
 	public void onDisconnected(BluetoothConnection connection) {
 		System.out.println("Disconnected");
 
-		this.deviceFound = false;
-		BluetoothAdapter.getAdapter().startScanning();
+		startScanning();
 	}
 
 	@Override
-	public void onServicesDiscovered(BluetoothConnection connection) {
-		printDeviceServices(connection);
+	public void onDiscoveryResult(BluetoothConnection connection, BluetoothService service) {
+		printService(service);
 
-		try {
-			HelloWorldSerialPortClient client = new HelloWorldSerialPortClient(connection);
-			client.sendHelloWorld();
-		} catch (BluetoothObjectNotFoundException e) {
-			// The remote device doesn't support the current time service
-			e.printStackTrace();
+		if (service.getUuid().equals(SerialPortConstants.SERVICE_UUID)) {
+			try {
+				HelloWorldSerialPortClient client = new HelloWorldSerialPortClient(connection, service);
+				client.sendHelloWorld();
+			} catch (BluetoothObjectNotFoundException e) {
+				// The remote device doesn't support the current time service
+				e.printStackTrace();
+			}
 		}
 	}
 
-	private static void printDeviceServices(BluetoothConnection connection) {
-		for (BluetoothService service : connection.getServices()) {
-			System.out.println("[SERVICE] " + service.getUuid());
-			for (BluetoothCharacteristic characteristic : service.getCharacteristics()) {
-				String propertiesString = Integer.toHexString(characteristic.getProperties());
-				System.out.println("\t[CHAR] " + characteristic.getUuid() + " P=0x" + propertiesString);
-				for (BluetoothDescriptor descriptor : characteristic.getDescriptors()) {
-					System.out.println("\t\t[DESC] " + descriptor.getUuid());
-				}
+	private void startScanning() {
+		System.out.println("Start scanning");
+		this.deviceFound = false;
+		BluetoothScanFilter filter = BluetoothScanFilter.fieldExists(BluetoothDataTypes.COMPLETE_LOCAL_NAME);
+		BluetoothAdapter.getAdapter().startScanning(filter);
+	}
+
+	private static void printService(BluetoothService service) {
+		System.out.println("[SERVICE] " + service.getUuid());
+		for (BluetoothCharacteristic characteristic : service.getCharacteristics()) {
+			String propertiesString = Integer.toHexString(characteristic.getProperties());
+			System.out.println("\t[CHAR] " + characteristic.getUuid() + " P=0x" + propertiesString);
+			for (BluetoothDescriptor descriptor : characteristic.getDescriptors()) {
+				System.out.println("\t\t[DESC] " + descriptor.getUuid());
 			}
 		}
 	}
