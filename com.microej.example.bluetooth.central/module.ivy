@@ -1,13 +1,14 @@
 <!--
 	XML
 
-	Copyright 2018-2019 IS2T. All rights reserved.
-	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+	Copyright 2018-2020 MicroEJ Corp. All rights reserved.
+	This library is provided in source code for use, modification and test, subject to license terms.
+	Any modification of the source code will break MicroEJ Corp. warranties on the whole library.
 -->
 
 <ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:ej="https://developer.microej.com" ej:version="2.0.0">
-	<info organisation="com.microej.example.bluetooth" module="central" status="integration" revision="1.0.0">
-		<ea:build organisation="com.is2t.easyant.buildtypes" module="build-firmware-singleapp" revision="1.+"/>
+	<info organisation="com.microej.example.bluetooth" module="central" status="integration" revision="2.0.0">
+		<ea:build organisation="com.is2t.easyant.buildtypes" module="build-microej-javalib" revision="4.+"/>
 		<ea:property name="application.main.class" value="com.microej.example.bluetooth.central.Main"/>
 	</info>
 
@@ -26,12 +27,10 @@
 	</publications>
 
 	<dependencies>
-		<dependency org="ej.api" name="edc" rev="1.2.3" conf="provided->*"/>
-		<dependency org="ej.api" name="bon" rev="1.3.0" conf="provided->*"/>
-		<dependency org="ej.api" name="bluetooth" rev="1.0.0" conf="provided->*"/>
+		<dependency org="ej.api" name="edc" rev="1.3.0" conf="provided->*"/>
+		<dependency org="ej.api" name="bon" rev="1.4.0" conf="provided->*"/>
+		<dependency org="ej.api" name="bluetooth" rev="2.0.0" conf="provided->*"/>
 
-		<dependency org="com.microej.example.bluetooth" name="data" rev="1.0.0"/>
-
-		<dependency org="com.is2t.CM0.referencePlatforms.dialog" name="DA14681-9Q15X" rev="1.0.0" conf="platform->platformDev" transitive="false"/>
+		<dependency org="ej.library.iot" name="bluetooth-util" rev="1.0.0"/>
 	</dependencies>
 </ivy-module>
