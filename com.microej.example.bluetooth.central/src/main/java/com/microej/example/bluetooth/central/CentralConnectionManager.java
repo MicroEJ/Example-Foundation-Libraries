@@ -17,7 +17,7 @@ import ej.bluetooth.BluetoothService;
 import ej.bluetooth.listeners.impl.DefaultConnectionListener;
 import ej.bluetooth.util.AdvertisementData;
 import ej.bluetooth.util.AttributeNotFoundException;
-import ej.bluetooth.util.GattHelper;
+import ej.bluetooth.util.ServiceHelper;
 import ej.bluetooth.util.services.cts.CurrentTimeConstants;
 import ej.bluetooth.util.services.cts.CurrentTimeServer;
 import ej.bluetooth.util.services.sps.SerialPortConstants;
@@ -110,7 +110,7 @@ public class CentralConnectionManager extends DefaultConnectionListener {
 
 	@Override
 	public void onDiscoveryResult(BluetoothConnection connection, BluetoothService service) {
-		GattHelper.printService(service, System.out);
+		ServiceHelper.printService(service, System.out);
 
 		if (service.getUuid().equals(SerialPortConstants.SERVICE_UUID)) {
 			try {
