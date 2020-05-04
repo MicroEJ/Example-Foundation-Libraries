@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	XML
+
+	Copyright 2018 IS2T. All rights reserved.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+<project name="central">
+	<target name="central:linker" if="toolchain.linker.exe" extensionOf="platform-launcher:custom-properties">
+		<echoProperty property="toolchain.linker.exe" value="${toolchain.linker.exe}" file="${build-and-deploy.target.properties.file}"/>
+	</target>
+
+	<target name="central:sysroot" if="toolchain.sysroot.dir" extensionOf="platform-launcher:custom-properties">
+		<echoProperty property="toolchain.sysroot.dir" value="${toolchain.sysroot.dir}" file="${build-and-deploy.target.properties.file}"/>
+	</target>
+</project>
