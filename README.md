@@ -50,6 +50,14 @@ HAL libraries present an abstraction of the communication with the hardware.
 **Available Examples**:
 * [com.microej.example.foundation.hal.gpio](com.microej.example.foundation.hal.gpio): Shows how to use gpio.
 
+### Bluetooth
+
+Bluetooth libraries provide an interface to communicate with other nearby hardwares using the BLE standard.
+
+**Available Examples**
+* [com.microej.example.foundation.bluetooth.central](com.microej.example.foundation.bluetooth.central): Shows how to implement a central device that exposes a current time service and uses a serial port service.
+* [com.microej.example.foundation.bluetooth.peripheral](com.microej.example.foundation.bluetooth.peripheral): Shows how to implement a peripheral device that exposes a serial port service and uses a current time service.
+
 ## Design a user interface
 
 ### MicroUI
