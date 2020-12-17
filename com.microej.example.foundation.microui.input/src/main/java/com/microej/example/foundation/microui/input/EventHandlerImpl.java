@@ -1,9 +1,6 @@
 /*
- * Java
- *
- * Copyright 2016-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2016-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.input;
 
@@ -11,71 +8,16 @@ import ej.microui.event.Event;
 import ej.microui.event.EventGenerator;
 import ej.microui.event.generator.Buttons;
 import ej.microui.event.generator.Command;
-import ej.microui.event.generator.Keyboard;
-import ej.microui.event.generator.Keypad;
 import ej.microui.event.generator.Pointer;
 import ej.microui.event.generator.States;
-import ej.microui.util.EventHandler;
 
 /**
  *
  */
-public class EventHandlerImpl implements EventHandler {
+public class EventHandlerImpl implements ej.microui.event.EventHandler {
 
 	private final long startTime = System.currentTimeMillis();;
 
-	/**
-	 * Describes the Keypad event. It is the same description as a Keyboard
-	 * event.
-	 *
-	 * @param gen
-	 *            the Keypad generator
-	 * @param data
-	 *            the Keypad data
-	 */
-	private void showKeypad(EventGenerator gen, int data) {
-		if (((Keypad) gen).getAction(data) == Keypad.KEY_VALIDATED) {
-			System.out.println("KEY_VALIDATED");
-		} else {
-			showKeyboard(gen, data);
-		}
-	}
-
-	/**
-	 * Describes the Keyboard event and prints the next received character
-	 *
-	 * @param gen
-	 *            the Keyboard generator
-	 * @param data
-	 *            the Keyboard data
-	 */
-	private void showKeyboard(EventGenerator gen, int data) {
-		System.out.print("character\t");
-		if (gen != null) {
-			int eventAction = ((Keyboard) gen).getAction(data);
-			switch (eventAction) {
-			case Keyboard.KEY_DOWN:
-				System.out.println("KEY_DOWN");
-				break;
-			case Keyboard.KEY_UP:
-				System.out.println("KEY_UP");
-				break;
-			case Keyboard.TEXT_INPUT:
-				System.out.println("TEXT_INPUT");
-				break;
-			default:
-				System.out.println("Other key action: " + eventAction);
-				break;
-			}
-
-			char c = ((Keyboard) gen).getNextChar(data);
-			System.out.println("\'" + c + "\'");
-		} else {
-			// bad event: it is a Keyboard event but there is no
-			// associated EventGenerator: we can't get the character
-			System.out.println("unknown");
-		}
-	}
 
 	/**
 	 * Describes the Pointer event: print the pointer's new position
@@ -136,7 +78,7 @@ public class EventHandlerImpl implements EventHandler {
 			System.out.print("button\t\t");
 
 			// get the button's id
-			int id = Buttons.getButtonID(data);
+			int id = Buttons.getButtonId(data);
 			System.out.print(id + " ");
 			System.out.println(state);
 		}
@@ -191,7 +133,7 @@ public class EventHandlerImpl implements EventHandler {
 	 *            the State data
 	 */
 	private void showState(int data) {
-		int stateId = States.getStateID(data);
+		int stateId = States.getStateId(data);
 		int value = States.getStateValue(data);
 		System.out.println("state\t\t" + stateId + " value: " + value);
 	}
@@ -206,7 +148,7 @@ public class EventHandlerImpl implements EventHandler {
 				+ (System.currentTimeMillis() - startTime) + "ms");
 
 		// get the generator's id from the event
-		int genId = Event.getGeneratorID(event);
+		int genId = Event.getGeneratorId(event);
 		System.out.print("EventGenerator\t" + genId + " (");
 
 		EventGenerator gen;
@@ -228,22 +170,16 @@ public class EventHandlerImpl implements EventHandler {
 
 		// according to the event's type, describe the data
 		switch (type) {
-		case Event.COMMAND:
+		case Command.EVENT_TYPE:
 			showCommand(data);
 			break;
-		case Event.BUTTON:
+		case Buttons.EVENT_TYPE:
 			showButton(data);
 			break;
-		case Event.POINTER:
+		case Pointer.EVENT_TYPE:
 			showPointer(gen, data);
 			break;
-		case Event.KEYBOARD:
-			showKeyboard(gen, data);
-			break;
-		case Event.KEYPAD:
-			showKeypad(gen, data);
-			break;
-		case Event.STATE:
+		case States.EVENT_TYPE:
 			showState(data);
 			break;
 

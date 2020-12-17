@@ -1,22 +1,18 @@
 /*
- * Java
- *
- * Copyright 2016-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2016-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.mvc;
-
-import java.io.IOException;
 
 import ej.bon.Timer;
 import ej.bon.TimerTask;
 import ej.microui.MicroUI;
 import ej.microui.display.Display;
-import ej.microui.display.FlyingImage;
-import ej.microui.display.Image;
-import ej.microui.event.EventGenerator;
-import ej.microui.event.generator.Pointer;
+
+/**
+ * This example shows how to create and use a MVC design pattern to display and
+ * animate drawings on the screen.
+ */
 
 public class ExampleMVC {
 
@@ -26,10 +22,7 @@ public class ExampleMVC {
 		MicroUI.start();
 
 		// get the default display
-		Display display = Display.getDefaultDisplay();
-
-		// the MVCDemo needs a pointer -> look for the EventGenerator "Pointer"
-		preparePointer(display);
+		Display display = Display.getDisplay();
 
 		// create models
 		PercentageModel percentage = new PercentageModel();
@@ -42,7 +35,7 @@ public class ExampleMVC {
 		displayable.setController(controller);
 
 		// show the displayable
-		displayable.show();
+		display.requestShow(displayable);
 
 		// mock
 		TimerTask task = new  TimerTask() {
@@ -56,21 +49,4 @@ public class ExampleMVC {
 		new Timer().schedule(task, 1000L, 1000L);
 	}
 
-	private static void preparePointer(Display display) {
-		Pointer gen = EventGenerator.get(Pointer.class, 0);
-		if (gen != null) {
-
-			// map pointer area on display area
-			gen.setScale(display);
-
-			// try to create an image for the cursor
-			try {
-				Image cursor = Image.createImage("/images/mouse_cursor.png");
-				gen.setFlyingImage(new FlyingImage(cursor)) ;
-			}
-			catch (IOException e) {
-				System.out.println("Cannot load cursor image.");
-			}
-		}
-	}
 }

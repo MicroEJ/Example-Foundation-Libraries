@@ -1,9 +1,6 @@
-/**
- * Java
- *
- * Copyright 2014-2019 MicroEJ Corp. All rights reserved.
- *For demonstration purpose only.
- *MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+/*
+ * Copyright 2014-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.examples.gradient;
 
@@ -12,10 +9,11 @@ import ej.microui.display.Colors;
 import ej.microui.display.Display;
 import ej.microui.display.Displayable;
 import ej.microui.display.GraphicsContext;
-import ej.microui.util.EventHandler;
+import ej.microui.display.Painter;
 
 /**
- * A displayable displaying a gradient.
+ * This example shows how to draw a gradient on a display and how to draw a
+ * button with a gradient background.
  */
 public class GradientDisplay extends Displayable {
 
@@ -23,12 +21,14 @@ public class GradientDisplay extends Displayable {
 	 * Instantiates a GradientDisplay.
 	 */
 	public GradientDisplay() {
-		super(Display.getDefaultDisplay());
+		super();
 	}
 
 	public static void main(String[] args) {
 		MicroUI.start();
-		new GradientDisplay().show();
+		Display d = Display.getDisplay();
+		GradientDisplay displayable = new GradientDisplay();
+		d.requestShow(displayable);
 	}
 
 	private static int drawGradient(GraphicsContext g, int x, int y, int width, int height, int startColor, int endColor) {
@@ -51,7 +51,7 @@ public class GradientDisplay extends Displayable {
 		do {
 			int color = gradient[(int) index];
 			g.setColor(color);
-			g.drawHorizontalLine(x, y++, width);
+			Painter.drawHorizontalLine(g, x, y++, width);
 			index += increment;
 		} while (index < length);
 
@@ -65,7 +65,7 @@ public class GradientDisplay extends Displayable {
 
 	private static int fillRemainingPart(GraphicsContext g, int x, int y, int width, int color, int exceeding) {
 		g.setColor(color);
-		g.fillRect(x, y, width + 1, exceeding);
+		Painter.fillRectangle(g, x, y, width + 1, exceeding);
 		y += exceeding;
 		return y;
 	}
@@ -84,7 +84,7 @@ public class GradientDisplay extends Displayable {
 		yShadow = drawButtonTop(g, x, yShadow, width, shadowColor, steps);
 		g.setColor(shadowColor);
 		int innerHeight = buttonHeight - 2 * steps;
-		g.fillRect(x, yShadow, width + 1, innerHeight + shadowShift);
+		Painter.fillRectangle(g, x, yShadow, width + 1, innerHeight + shadowShift);
 		yShadow += innerHeight + shadowShift;
 		drawButtonBottom(g, x, yShadow, width, shadowColor, steps);
 
@@ -115,7 +115,7 @@ public class GradientDisplay extends Displayable {
 		int shift = i;
 		int lineWidth = buttonWidth - 2 * shift;
 		g.setColor(color);
-		g.drawHorizontalLine(x + shift + 1, y, lineWidth - 2);
+		Painter.drawHorizontalLine(g, x + shift + 1, y, lineWidth - 2);
 		drawTransparentPixel(g, x + shift, y, color);
 		drawTransparentPixel(g, x + shift + lineWidth, y, color);
 		y++;
@@ -126,33 +126,33 @@ public class GradientDisplay extends Displayable {
 		int background = g.readPixel(x, y);
 		int mixedColor = ColorsHelper.getMixColor(background, color, 0.6f);
 		g.setColor(mixedColor);
-		g.drawPixel(x, y);
+		Painter.writePixel(g, x, y);
 	}
 
 	@Override
-	public void paint(GraphicsContext g) {
+	public void render(GraphicsContext g) {
 
-		int displayWidth = Display.getDefaultDisplay().getWidth();
+		int displayWidth = Display.getDisplay().getWidth();
+		int displayHeight = Display.getDisplay().getHeight();
 
 		int startColor = 0x4697fb;
 		int middleColor = Colors.WHITE;
 		int endColor = 0xed7d0f;
 
-		int heightIndex = 50;
+		int heightIndex = displayHeight / 2;
 
 		int currentY = 0;
 		// draw gradient
 		currentY = drawGradient(g, 0, currentY, displayWidth, heightIndex, startColor, middleColor);
 		currentY = drawGradient(g, 0, currentY, displayWidth, heightIndex, middleColor, endColor);
-		currentY += 5;
-		// draw gradient button
-		drawButton(g, 10, currentY, 50, 50);
 
+		// draw gradient button
+		drawButton(g, 10, heightIndex - 25, 50, 50);
 	}
 
 	@Override
-	public EventHandler getController() {
-		return null;
+	public boolean handleEvent(int event) {
+		return false;
 	}
 
 }

@@ -1,16 +1,14 @@
 /*
- * Java
- *
- * Copyright 2016-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2016-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.ecom.uartwriter;
 
 import java.io.OutputStream;
 
-import ej.ecom.io.CommConnection;
 import com.microej.example.foundation.ecom.AbstractCommTest;
+
+import ej.ecom.io.CommConnection;
 
 /**
  * This example repeatedly outputs the string {@link #OUTPUT_STRING} through a comm connection output stream.

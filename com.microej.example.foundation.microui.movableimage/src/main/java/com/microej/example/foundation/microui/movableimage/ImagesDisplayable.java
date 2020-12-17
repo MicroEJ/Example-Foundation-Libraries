@@ -1,9 +1,6 @@
 /*
- * Java
- *
- * Copyright 2014-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2014-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.movableimage;
 
@@ -13,14 +10,13 @@ import java.util.Vector;
 import ej.microui.display.Display;
 import ej.microui.display.Displayable;
 import ej.microui.display.GraphicsContext;
-import ej.microui.util.EventHandler;
 
 public class ImagesDisplayable extends Displayable {
 
 	private final Vector<ImageContainer> images;
 
 	public ImagesDisplayable(Display display, int initialCapacity) throws IOException {
-		super(display);
+		super();
 		this.images = new Vector<ImageContainer>(initialCapacity);
 	}
 
@@ -29,7 +25,7 @@ public class ImagesDisplayable extends Displayable {
 	}
 
 	@Override
-	public void paint(GraphicsContext gc) {
+	public void render(GraphicsContext gc) {
 		// add images respecting the vector order
 		Vector<ImageContainer> images = this.images;
 		int length = images.size();
@@ -39,8 +35,7 @@ public class ImagesDisplayable extends Displayable {
 	}
 
 	@Override
-	public EventHandler getController() {
-		// no controller
-		return null;
+	public boolean handleEvent(int event) {
+		return false;
 	}
 }

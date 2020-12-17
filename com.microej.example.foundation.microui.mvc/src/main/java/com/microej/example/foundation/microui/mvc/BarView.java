@@ -1,22 +1,21 @@
 /*
- * Java
- *
- * Copyright 2016-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2016-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.mvc;
 
 import ej.microui.display.GraphicsContext;
+import ej.microui.display.Painter;
 
 public class BarView extends PercentageView{
 
 	private static final int COLOR_CONTENT = 0xe86337; // orange
-	
+
 	public BarView(PercentageModel percentage) {
 		super(percentage);
 	}
 
+	@Override
 	protected void paintContent(GraphicsContext g) {
 
 		// get value of the percentage
@@ -35,10 +34,10 @@ public class BarView extends PercentageView{
 
 		// draw bar fill
 		g.setColor(COLOR_CONTENT);
-		g.fillRect(barX, barY + barHeight - fillHeight - 1, barWidth, fillHeight);
+		Painter.fillRectangle(g, barX, barY + barHeight - fillHeight - 1, barWidth, fillHeight);
 
 		// draw bar border
 		g.setColor(COLOR_DATA_BORDER);
-		g.drawRect(barX, barY, barWidth - 1, barHeight - 1);
+		Painter.drawRectangle(g, barX, barY, barWidth + 1, barHeight);
 	}
 }

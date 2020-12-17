@@ -1,15 +1,11 @@
 /*
- * Java
- *
- * Copyright 2009-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2009-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.input;
 
 import ej.microui.MicroUI;
 import ej.microui.event.EventGenerator;
-import ej.microui.event.generator.Keypad;
 
 /**
  * Decodes and prints in the console each kind of input event.
@@ -45,9 +41,6 @@ public class ExampleCheckInput {
 
 		initializeEventGenerators();
 
-		// perform special preparation for the keypad
-		prepareKeypad();
-
 		// ready to run: remember the start time and print a string
 		System.out.println();
 		System.out.println("=== Ready to check: send an input event... ===");
@@ -66,23 +59,6 @@ public class ExampleCheckInput {
 		// set the event handler for each EventGenerator
 		for (EventGenerator gen : generators) {
 			gen.setEventHandler(eventHandler);
-		}
-	}
-
-	/**
-	 * Perform special preparation for the keypad
-	 */
-	private void prepareKeypad() {
-		// first check that we are dealing with the keypad
-		if (!(EventGenerator.get(Keypad.class).length > 0)) {
-			return;
-		}
-		Keypad keypadGenerator = EventGenerator.get(Keypad.class, 0);
-		if (keypadGenerator != null) {
-			System.out.println();
-			System.out.println("Turning on low-level keypad events...");
-			keypadGenerator.onlyTextInput(false);
-			System.out.println("Keypad mode is "+keypadGenerator.getMode());
 		}
 	}
 }

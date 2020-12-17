@@ -1,9 +1,6 @@
 /*
- * Java
- *
- * Copyright 2016-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2016-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.hal.gpio;
 
@@ -17,7 +14,7 @@ public class AnalogInputManager implements Runnable {
 
 	private static final int SAMPLING_PERIOD = 20;
 	private static final int ONE_PERCENT_ANALOG_RANGE = ( Shield.ANALOG_MAX_VALUE - Shield.ANALOG_MIN_VALUE ) / 100;
-	
+
 	private static final int[] MULTI_FUNCTION_ANALOG_INPUT = { Shield.PIN_ANALOG_POT };
 
 	// All the analog inputs
@@ -27,14 +24,14 @@ public class AnalogInputManager implements Runnable {
 		super();
 		analogInputs = new ArrayList<GPIOAnalogInput>();
 
- 
+
 		for (int analogInput : MULTI_FUNCTION_ANALOG_INPUT) {
 			analogInputs.add(new GPIOAnalogInput(analogInput,ONE_PERCENT_ANALOG_RANGE));
 		}
 
 		new Thread(this).start();
 	}
-	
+
 
 	private void sleep() {
 		try {

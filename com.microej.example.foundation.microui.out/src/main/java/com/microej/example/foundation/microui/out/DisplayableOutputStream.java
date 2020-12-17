@@ -1,16 +1,14 @@
-/**
- * Java
- *
- * Copyright 2009-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+/*
+ * Copyright 2009-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.out;
 
 import ej.microui.display.Display;
 import ej.microui.display.Displayable;
+import ej.microui.display.Font;
 import ej.microui.display.GraphicsContext;
-import ej.microui.util.EventHandler;
+import ej.microui.display.Painter;
 
 /**
  * Used to render all {@link Line}s in the {@link Display}.
@@ -20,32 +18,32 @@ public class DisplayableOutputStream extends Displayable{
 	private final OutputStreamRedirection outputStreamRedirection;
 
 	public DisplayableOutputStream(Display display, OutputStreamRedirection outputStreamRedirection) {
-		super(display);
+		super();
 		this.outputStreamRedirection = outputStreamRedirection;
 	}
 
 	@Override
-	public void paint(GraphicsContext g) {
+	public void render(GraphicsContext g) {
 		Line[] lines = outputStreamRedirection.getLines();
 		int lenght = outputStreamRedirection.getLength();
 
 		// erase background
 		g.setColor(OutputStreamRedirection.COLOR_BACK);
-		g.fillRect(0, 0, g.getClipWidth(), g.getClipHeight());
+		Painter.fillRectangle(g, 0, 0, g.getClipWidth(), g.getClipHeight());
 
 		// draw lines
 		int y = 0;
 		g.setColor(OutputStreamRedirection.COLOR_FONT);
 		for(int i = -1; ++i<lenght;) {
 			Line line = lines[i];
-			g.drawChars(line.getChars(), 0, line.getLength(), OutputStreamRedirection.TEXT_OFFSET, y, GraphicsContext.TOP | GraphicsContext.LEFT);
+			String lineStr = new String(line.getChars(), 0, line.getLength());
+			Painter.drawString(g, lineStr, Font.getDefaultFont(), OutputStreamRedirection.TEXT_OFFSET, y);
 			y += line.getFont().getHeight();
 		}
 	}
 
 	@Override
-	public EventHandler getController() {
-		// Nothing to do
-		return null;
+	public boolean handleEvent(int event) {
+		return false;
 	}
 }

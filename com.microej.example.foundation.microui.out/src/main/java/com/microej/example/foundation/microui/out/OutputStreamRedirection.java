@@ -1,9 +1,6 @@
-/**
- * Java
- *
- * Copyright 2014-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+/*
+ * Copyright 2014-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.out;
 
@@ -36,10 +33,9 @@ public class OutputStreamRedirection extends OutputStream {
 
 		if (b == '\n') {
 			// force a repaint and wait the result
-			displayable.repaint();
-			displayable.getDisplay().waitForEvent();
-
-			updateLineIndex();
+			displayable.requestRender();
+			Display d = Display.getDisplay();
+			d.waitFlushCompleted();
 
 			// character added
 			return;
@@ -96,7 +92,7 @@ public class OutputStreamRedirection extends OutputStream {
 	private void initialize() {
 
 		// ensure test can run
-		Display display = Display.getDefaultDisplay();
+		Display display = Display.getDisplay();
 		if (display == null) {
 			throw new RuntimeException("Displayable output stream cannot be initialized on this platform configuration.");
 		}
@@ -118,7 +114,7 @@ public class OutputStreamRedirection extends OutputStream {
 		this.linesIndex = 0;
 
 		// show displayable
-		displayable.show();
+		display.requestShow(displayable);
 	}
 
 	public Line[] getLines() {

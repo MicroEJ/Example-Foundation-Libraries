@@ -1,20 +1,23 @@
 /*
- * Java
- *
- * Copyright 2014-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2014-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.movableimage;
 
 import java.io.IOException;
-import java.util.Timer;
 
+import ej.bon.Timer;
+import ej.bon.TimerTask;
 import ej.microui.MicroUI;
+import ej.microui.display.BufferedImage;
 import ej.microui.display.Display;
 import ej.microui.display.GraphicsContext;
 import ej.microui.display.Image;
+import ej.microui.display.Painter;
 
+/**
+ * This example shows how to create and use a movable image.
+ */
 public class ExampleImages {
 
 	private static final int ANIMATION_TIME = 20;	// in ms
@@ -27,7 +30,7 @@ public class ExampleImages {
 		MicroUI.start();
 
 		// get the default display
-		Display display = Display.getDefaultDisplay();
+		Display display = Display.getDisplay();
 
 		int width = display.getWidth();
 		int height = display.getHeight();
@@ -44,14 +47,20 @@ public class ExampleImages {
 		displayable.addImage(movableImage2);
 
 		// create controller and populate it
-		ImagesAnimation controller = new ImagesAnimation(displayable, 2);
+		final ImagesAnimation controller = new ImagesAnimation(displayable, 2);
 		controller.addMovableImage(movableImage1);
 		controller.addMovableImage(movableImage2);
 
 		// start the animation
-		displayable.show();
+		display.requestShow(displayable);
 		Timer animationTimer = new Timer();
-		animationTimer.scheduleAtFixedRate(controller, ANIMATION_TIME, ANIMATION_TIME);
+		animationTimer.schedule(new TimerTask() {
+
+			@Override
+			public void run() {
+				controller.run();
+			}
+		}, ANIMATION_TIME, ANIMATION_TIME);
 	}
 
 	private static MovableImage createMovableImage(Display display, String name, int x, int y, boolean top, boolean left) throws IOException {
@@ -68,7 +77,8 @@ public class ExampleImages {
 		// create an image with the same size as display
 		int width = display.getWidth();
 		int height = display.getHeight();
-		Image background = Image.createImage(display, width, height);
+
+		BufferedImage background = new BufferedImage(width, height);
 
 		// load image pattern
 		Image pattern = createImage(name);
@@ -79,7 +89,7 @@ public class ExampleImages {
 		GraphicsContext gc = background.getGraphicsContext();
 		int x = 0;
 		for(int i = nbPatterns; --i>=0;) {
-			gc.drawImage(pattern, x, height - 1, GraphicsContext.LEFT | GraphicsContext.BOTTOM);
+			Painter.drawImage(gc, pattern, x, 0);
 			x += patternWidth;
 		}
 
@@ -88,6 +98,6 @@ public class ExampleImages {
 	}
 
 	private static Image createImage(String name) throws IOException {
-		return Image.createImage("/images/" + name);
+		return Image.getImage("/images/" + name);
 	}
 }

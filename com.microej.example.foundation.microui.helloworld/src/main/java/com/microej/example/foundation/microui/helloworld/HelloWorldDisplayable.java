@@ -1,18 +1,19 @@
-/**
- * Java
- *
- * Copyright 2009-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+/*
+ * Copyright 2009-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.helloworld;
 
 import ej.microui.display.Colors;
 import ej.microui.display.Display;
 import ej.microui.display.Displayable;
+import ej.microui.display.Font;
 import ej.microui.display.GraphicsContext;
-import ej.microui.util.EventHandler;
+import ej.microui.display.Painter;
 
+/**
+ * This class displays the HelloWorld message.
+ */
 public class HelloWorldDisplayable extends Displayable {
 
 	/**
@@ -21,26 +22,30 @@ public class HelloWorldDisplayable extends Displayable {
 	private static final String HELLO_WORLD = "Hello World !!!";
 
 	public HelloWorldDisplayable(Display display) {
-		super(display);
+		super();
 	}
 
 	@Override
-	public void paint(GraphicsContext g) {
-		// get workgin area size
+	public void render(GraphicsContext g) {
+		// get working area size
 		int width = g.getClipWidth();
 		int height = g.getClipHeight();
 
 		// erase background
 		g.setColor(Colors.WHITE);
-		g.fillRect(0, 0, width, height);
+		Painter.fillRectangle(g, 0, 0, width, height);
 		// draw the string in the middle of the display
 		g.setColor(Colors.BLACK);
-		g.drawString(HELLO_WORLD, width / 2, height / 2, GraphicsContext.HCENTER | GraphicsContext.VCENTER);
+		int stringWidth = Font.getDefaultFont().stringWidth(HELLO_WORLD);
+		int stringHeight = Font.getDefaultFont().getHeight();
+		Painter.drawString(g, HELLO_WORLD, Font.getDefaultFont(),
+				(width - stringWidth) / 2,
+				(height - stringHeight) / 2);
 	}
 
 	@Override
-	public EventHandler getController() {
-		// Not needed here.
-		return null;
+	public boolean handleEvent(int event) {
+		return false;
 	}
+
 }

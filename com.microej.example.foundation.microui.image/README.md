@@ -1,6 +1,11 @@
 # Overview
 
-This example shows how to create and use a font.
+This example shows how to create and use images. The following use cases have been implemented in this example:
+
+* Draw a .PNG image with transparency, pre-generated during the application build
+* Draw a .PNG image without transparency, pre-generated during the application build
+* Draw a .PNG image with transparency, decoded at runtime (using the runtime PNG decoder)
+* Draw a .PNG image without transparency, decoded at runtime (using the runtime PNG decoder)
 
 # Usage
 
@@ -47,10 +52,11 @@ This example shows how to create and use a font.
 
 This example has been tested on:
 
-* MicroEJ SDK 5.1
+* MicroEJ SDK 5.3
 * With a platform that contains:
-    * EDC-1.2
-    * MICROUI-2.0
+    * EDC-1.3
+    * BON-1.4
+    * MICROUI-3.0
 
 ## Dependencies
 
@@ -65,7 +71,5 @@ N/A
 None.
  
 ---  
-_Markdown_   
-_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
-_For demonstration purpose only._   
-_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  
+_Copyright 2016-2020 MicroEJ Corp. All rights reserved._  
+_Use of this source code is governed by a BSD-style license that can be found with this software._ 

@@ -1,9 +1,6 @@
 /*
- * Java
- *
- * Copyright 2009-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2009-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.image;
 
@@ -13,9 +10,10 @@ import java.util.Observer;
 import ej.microui.display.Colors;
 import ej.microui.display.Display;
 import ej.microui.display.Displayable;
+import ej.microui.display.Font;
 import ej.microui.display.GraphicsContext;
 import ej.microui.display.Image;
-import ej.microui.util.EventHandler;
+import ej.microui.display.Painter;
 
 public class ImageDisplayable extends Displayable implements Observer {
 
@@ -30,13 +28,13 @@ public class ImageDisplayable extends Displayable implements Observer {
 	private ImageModel model;
 
 	public ImageDisplayable(Display display, ImageModel model) {
-		super(display);
+		super();
 		this.model = model;
 		setModel(model);
 	}
 
 	public ImageDisplayable(Display display) {
-		super(display);
+		super();
 	}
 
 	public ImageModel getModel() {
@@ -57,37 +55,37 @@ public class ImageDisplayable extends Displayable implements Observer {
 	}
 
 	@Override
-	public void paint(GraphicsContext g) {
+	public void render(GraphicsContext g) {
 		// Fill view with a white background
 		g.setColor(Colors.WHITE);
-		g.fillRect(0, 0, this.getDisplay().getWidth(), this.getDisplay().getHeight());
+		Painter.fillRectangle(g, 0, 0, Display.getDisplay().getWidth(), Display.getDisplay().getHeight());
 
 		// Load current image from model
 		Image i = model.getImage();
 
 		if (i != null) {
 			// draw the image to the center of display
-			g.drawImage(i, this.getDisplay().getWidth() / 2, this.getDisplay().getHeight() / 2,
-					GraphicsContext.HCENTER | GraphicsContext.VCENTER);
+			Painter.drawImage(g, i, (Display.getDisplay().getWidth() - i.getWidth()) / 2,
+					(Display.getDisplay().getHeight() - i.getHeight()) / 2);
 
 		} else {
 			// nothing to draw! -> draw a message
 			g.setColor(Colors.BLACK);
-			g.drawString("Invalid image: " + model.getImagePath(), 5, 5, GraphicsContext.TOP | GraphicsContext.LEFT);
+			Painter.drawString(g, "Invalid image: " + model.getImagePath(), Font.getDefaultFont(), 5, 5);
 		}
 	}
 
-	@Override
-	public EventHandler getController() {
-		// Not needed here.
-		return null;
-	}
 
 	@Override
 	public void update(Observable observable, Object arg) {
 		if (observable == model) {
-			repaint();
+			requestRender();
 		}
+	}
+
+	@Override
+	public boolean handleEvent(int event) {
+		return false;
 	}
 
 }

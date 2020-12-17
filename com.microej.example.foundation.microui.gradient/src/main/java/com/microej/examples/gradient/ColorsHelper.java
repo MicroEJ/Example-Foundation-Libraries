@@ -1,16 +1,17 @@
-/**
- * Java
- *
- * Copyright 2014-2019 MicroEJ Corp. All rights reserved.
- *For demonstration purpose only.
- *MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+/*
+ * Copyright 2014-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
+
 package com.microej.examples.gradient;
 
 import ej.microui.display.Colors;
 import ej.microui.display.Display;
 import ej.microui.display.GraphicsContext;
 
+/**
+ * This class helps for the drawing of the gradient.
+ */
 public class ColorsHelper {
 
 	// private static final int ALPHA_SHIFT = 24;
@@ -98,7 +99,7 @@ public class ColorsHelper {
 	}
 
 	public static int[] getGradient(int startColor, int endColor) {
-		GraphicsContext g = Display.getDefaultDisplay().getNewGraphicsContext();
+		GraphicsContext g = Display.getDisplay().getGraphicsContext();
 		return getGradient(g, startColor, endColor);
 	}
 
@@ -129,7 +130,8 @@ public class ColorsHelper {
 		while (--maxSteps >= 0) {
 			// compute color and save it if different than the previous one
 			int color = getColor((int) currentRed, (int) currentGreen, (int) currentBlue);
-			int displayColor = g.getDisplayColor(color);
+			Display d = Display.getDisplay();
+			int displayColor = d.getDisplayColor(color);
 			if (displayColor != lastColor) {
 				try {
 					colors[length++] = displayColor;

@@ -1,9 +1,6 @@
-/**
- * Java
- *
- * Copyright 2009-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+/*
+ * Copyright 2009-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.font;
 
@@ -12,7 +9,11 @@ import ej.microui.display.Display;
 import ej.microui.display.Displayable;
 import ej.microui.display.Font;
 import ej.microui.display.GraphicsContext;
-import ej.microui.util.EventHandler;
+import ej.microui.display.Painter;
+
+/**
+ * Shows five messages on the display using different fonts.
+ */
 
 public class FontsDisplayable extends Displayable {
 
@@ -21,16 +22,22 @@ public class FontsDisplayable extends Displayable {
 	 */
 	public static final String MESSAGE = "Hello World! + * / = { ] |";
 	/**
+	 * Font path
+	 */
+	public static final String CUSTOM_FONT_PATH = "/fonts/custom";
+	public static final String MONOSPACE_FONT_PATH = "/fonts/monospace";
+	public static final String PROPORTIONAL_FONT_PATH = "/fonts/proportional";
+	/**
 	 * Message color
 	 */
 	public static final int MESSAGE_COLOR = Colors.BLACK;
 
 	public FontsDisplayable(Display display) {
-		super(display);
+		super();
 	}
 
 	@Override
-	public void paint(GraphicsContext g) {
+	public void render(GraphicsContext g) {
 		int width = g.getClipWidth();
 		int height = g.getClipHeight();
 		int areaHeight = height / 5 /* 5 texts to print */;
@@ -39,7 +46,7 @@ public class FontsDisplayable extends Displayable {
 
 		// erase background
 		g.setColor(Colors.WHITE);
-		g.fillRect(0, 0, width, height);
+		Painter.fillRectangle(g, 0, 0, width, height);
 
 		// draw the message with the "proportional" font
 		Font font = getProportionalFont();
@@ -68,8 +75,8 @@ public class FontsDisplayable extends Displayable {
 		// draw the message with ellipsis mode
 		font = getProportionalFont();
 		int clipWidth = font.stringWidth(MESSAGE) / 2;
-		x1 = drawTitle(g, "Draw with setEllipsis(true)", x, y);
-		g.setEllipsis(true);
+		x1 = drawTitle(g, "Draw with enableEllipsis(clipWidth)", x, y);
+		g.enableEllipsis(clipWidth);
 		g.setClip(x1, g.getClipY(), clipWidth, g.getClipHeight());
 		drawText(g, MESSAGE, font, x1, y, MESSAGE_COLOR);
 	}
@@ -80,7 +87,7 @@ public class FontsDisplayable extends Displayable {
 	 * @return the proportional {@link Font}
 	 */
 	private Font getProportionalFont() {
-		return Font.getFont(Font.LATIN, 15, Font.STYLE_PLAIN);
+		return Font.getFont(PROPORTIONAL_FONT_PATH);
 	}
 
 	/**
@@ -89,7 +96,7 @@ public class FontsDisplayable extends Displayable {
 	 * @return the monospace {@link Font}
 	 */
 	private Font getMonospaceFont() {
-		return Font.getFont(Font.LATIN, 14, Font.STYLE_PLAIN);
+		return Font.getFont(MONOSPACE_FONT_PATH);
 	}
 
 	/**
@@ -98,8 +105,7 @@ public class FontsDisplayable extends Displayable {
 	 * @return the custom {@link Font}
 	 */
 	private Font getCustomFont() {
-		return Font.getFont(
-				99 /* custom font unique identifier (see custom.ejf file) */, 12, Font.STYLE_PLAIN);
+		return Font.getFont(CUSTOM_FONT_PATH);
 	}
 
 	/**
@@ -184,16 +190,14 @@ public class FontsDisplayable extends Displayable {
 	private int drawText(GraphicsContext gc, String text, Font font, int x, int y, int color) {
 		// print the text
 		gc.setColor(color);
-		gc.setFont(font);
-		gc.drawString(text, x, y, GraphicsContext.LEFT | GraphicsContext.BASELINE);
+		Painter.drawString(gc, text, font, x, y);
 		x += font.stringWidth(text);
 		// return the x offset
 		return x;
 	}
 
 	@Override
-	public EventHandler getController() {
-		// Not needed here.
-		return null;
+	public boolean handleEvent(int event) {
+		return false;
 	}
 }

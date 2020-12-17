@@ -1,22 +1,20 @@
 /*
- * Java
- *
- * Copyright 2011-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2009-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.image;
 
 import java.util.Observable;
 
 import ej.microui.display.Image;
+import ej.microui.display.ResourceImage;
 
 public class ImageModel extends Observable {
 
 	/**
 	 * Current image.
 	 */
-	private Image image; // null init
+	private ResourceImage image; // null init
 
 	/**
 	 * Current image path.
@@ -46,6 +44,11 @@ public class ImageModel extends Observable {
 	public void setImage(String path) {
 
 		this.imagePath = path;
+
+		if (this.image != null) {
+			image.close();
+		}
+
 		this.image = loadImage(path);
 
 		// notifies its listeners that it has changed
@@ -54,14 +57,14 @@ public class ImageModel extends Observable {
 
 	}
 
-	private Image loadImage(String path) {
+	private ResourceImage loadImage(String path) {
 		System.out.print("Try to load the image: \"");
 		System.out.print(path);
 		System.out.print("\"... ");
 
 		try {
 			// try to load the image
-			Image image = Image.createImage(path);
+			ResourceImage image = ResourceImage.loadImage(path);
 			System.out.println("loading done!");
 			return image;
 

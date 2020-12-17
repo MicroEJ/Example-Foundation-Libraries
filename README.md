@@ -1,6 +1,6 @@
 # Overview
 
-This project gathers some basic examples of the foundation libraries. Those examples are developed as standalone applications and as such can be run by following the associated instructions (see **README.md** file of each example).
+This project gathers basic examples on how to use some of the foundation libraries. Those examples are developed as standalone applications and as such can be run by following the associated instructions (see **README.md** file of each example).
 
 Note that to run them on board:
 
@@ -57,17 +57,23 @@ HAL libraries present an abstraction of the communication with the hardware.
 MicroUI provides the minimal cornerstone for quick construction of advanced, portable and user-friendly applications for a wide and heterogeneous range of devices with just-what-is-needed resources.
 
 **Available Examples**:
-* [com.microej.example.foundation.microui.antialiased](com.microej.example.foundation.microui.antialiased): Shows how to use anti-aliased shapes.
 * [com.microej.example.foundation.microui.font](com.microej.example.foundation.microui.font): Shows how to create and use a font.
-* [com.microej.example.foundation.microui.gradient](com.microej.example.foundation.microui.gradient): This example shows how to draw a gradient on a display.
+* [com.microej.example.foundation.microui.gradient](com.microej.example.foundation.microui.gradient): Shows how to draw a gradient on a display.
 * [com.microej.example.foundation.microui.helloworld](com.microej.example.foundation.microui.helloworld): Shows how to print a string on a display.
 * [com.microej.example.foundation.microui.image](com.microej.example.foundation.microui.image): Shows how to create and use images.
-* [com.microej.example.foundation.microui.input](com.microej.example.foundation.microui.input): Shows how to listen the MicroUI input events.
+* [com.microej.example.foundation.microui.input](com.microej.example.foundation.microui.input): Shows how to listen to the MicroUI input events.
 * [com.microej.example.foundation.microui.led](com.microej.example.foundation.microui.led): Shows how to use the LEDs.
-* [com.microej.example.foundation.microui.movableimage](com.microej.example.foundation.microui.movableimage): Shows how to create and use a movable image.
+* [com.microej.example.foundation.microui.movableimage](com.microej.example.foundation.microui.movableimage): Shows how to create and use movable images.
 * [com.microej.example.foundation.microui.mvc](com.microej.example.foundation.microui.mvc): Shows how to create and use a MVC design pattern.
 * [com.microej.example.foundation.microui.out](com.microej.example.foundation.microui.out): Shows how to redirect the standard SystemOut to the display.
-* [com.microej.example.foundation.microui.transform](com.microej.example.foundation.microui.transform): Shows how to use MicroUI transform.
+
+### Drawing
+
+The Drawing Foundation Library extends MicroUI drawing APIs with more complex ones.
+
+**Available Examples**:
+* [com.microej.example.foundation.drawing.transform](com.microej.example.foundation.drawing.transform): Shows how to use anti-aliased shapes.
+* [com.microej.example.foundation.drawing.antialiased](com.microej.example.foundation.drawing.antialiased): Shows how to apply transformations on an image.
 
 ## Communication with the world
 
@@ -90,6 +96,5 @@ FS is a library to access multiple storage devices (in and out data streams) thr
 
 ---  
 _Markdown_   
-_Copyright 2016-2019 MicroEJ Corp. All rights reserved._   
-_For demonstration purpose only._   
-_MicroEJ Corp. PROPRIETARY. Use is subject to license terms._  
+_Copyright 2020 MicroEJ Corp. All rights reserved._  
+_Use of this source code is governed by a BSD-style license that can be found with this software._

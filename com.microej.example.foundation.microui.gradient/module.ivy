@@ -1,9 +1,6 @@
 <!--
-	Ivy
-	
-	Copyright 2014-2019 MicroEJ Corp. All rights reserved.
-    For demonstration purpose only.
-    MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+	Copyright 2016-2020 MicroEJ Corp. All rights reserved.
+	Use of this source code is governed by a BSD-style license that can be found with this software.
 -->
 <ivy-module version="2.0" xmlns:ea="http://www.easyant.org" xmlns:m="http://ant.apache.org/ivy/extra" xmlns:ej="https://developer.microej.com" ej:version="2.0.0"> 
     <info organisation="com.microej.example.foundation.microui" module="gradient" status="integration" revision="2.0.2">
@@ -37,8 +34,8 @@
 			Put MicroEJ API dependencies to the "provided->*" configuration
 			Other regular runtime dependencies are in the "default" configuration  
 		-->
-		<dependency org="ej.api" name="edc" rev="1.2.3"/>
-		<dependency org="ej.api" name="bon" rev="1.2.3"/>
-        <dependency org="ej.api" name="microui" rev="2.0.6"/>
+		<dependency org="ej.api" name="edc" rev="1.3.3"/>
+		<dependency org="ej.api" name="bon" rev="1.4.0"/>
+		<dependency org="ej.api" name="microui" rev="3.0.3"/>
     </dependencies>
 </ivy-module>

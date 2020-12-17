@@ -1,9 +1,6 @@
 /*
- * Java
- *
- * Copyright 2009-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2009-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.image;
 
@@ -11,7 +8,7 @@ import ej.microui.MicroUI;
 import ej.microui.display.Display;
 
 /**
- * Shows three messages on the display using different fonts.
+ * This example shows how to create and use images.
  */
 public class ExampleImages {
 
@@ -42,7 +39,7 @@ public class ExampleImages {
 		MicroUI.start();
 
 		// Gets the default display instance
-		Display d = Display.getDefaultDisplay();
+		Display d = Display.getDisplay();
 
 		// Creates an ImageView (using all display area)
 		ImageDisplayable displayable = new ImageDisplayable(d);
@@ -53,7 +50,7 @@ public class ExampleImages {
 		// Defines model as view's model
 		displayable.setModel(exampleModel);
 
-		displayable.show();
+		d.requestShow(displayable);
 
 		// Does an infinite loop that changes the model
 		// Modifying model leads to repainting the view (MVC design pattern)

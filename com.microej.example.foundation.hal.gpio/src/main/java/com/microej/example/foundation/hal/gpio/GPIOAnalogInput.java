@@ -1,9 +1,6 @@
 /*
- * Java
- *
- * Copyright 2016-2019 MicroEJ Corp. All rights reserved.
- * For demonstration purpose only.
- * MicroEJ Corp. PROPRIETARY. Use is subject to license terms.
+ * Copyright 2016-2020 MicroEJ Corp. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.hal.gpio;
 
@@ -18,8 +15,8 @@ public class GPIOAnalogInput extends GPIOInputOutput {
 
 	private boolean hasChangedValue;
 	private int currentValue;
-	private int noiseThreshold;
-	
+	private final int noiseThreshold;
+
 	/**
 	 *
 	 * @param pin
@@ -46,7 +43,7 @@ public class GPIOAnalogInput extends GPIOInputOutput {
 	public void updateValue() {
 		final int readValue = GPIO.getAnalogValue(ANALOG_PORT, pin);
 
-		final int absoluteDiff = Math.abs(readValue - this.currentValue); 
+		final int absoluteDiff = Math.abs(readValue - this.currentValue);
 		if ( absoluteDiff > this.noiseThreshold )
 		{
 			this.hasChangedValue = true;
@@ -57,7 +54,7 @@ public class GPIOAnalogInput extends GPIOInputOutput {
 			this.hasChangedValue = false;
 		}
 	}
-	
+
 	public boolean hasChangedValue()
 	{
 		boolean result = this.hasChangedValue;
