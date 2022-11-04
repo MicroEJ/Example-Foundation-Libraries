@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2020 MicroEJ Corp. All rights reserved.
+ * Copyright 2009-2022 MicroEJ Corp. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.image;
@@ -15,22 +15,14 @@ public class ExampleImages {
 	/**
 	 * Images pre-generated during the application build
 	 */
-	public static final String IMAGE_COMPILETIME_A = "/images/flower_A.png"; // image
-	// without
-	// transparency
-	public static final String IMAGE_COMPILETIME_B = "/images/flower_B.png"; // image
-	// with
-	// transparency
+	public static final String IMAGE_COMPILETIME_A = "/images/meteo_screen.png"; // image without transparency
+	public static final String IMAGE_COMPILETIME_B = "/images/microej_logo.png"; // image with transparency
 
 	/**
 	 * Images decoded at runtime (using the runtime PNG decoder)
 	 */
-	public static final String IMAGE_RUNTIME_A = "/images/angkor.png"; // image
-	// without
-	// transparency
-	public static final String IMAGE_RUNTIME_B = "/images/plane.png"; // image
-	// with
-	// transparency
+	public static final String IMAGE_RUNTIME_A = "/images/temperature_screen.png"; // image without transparency
+	public static final String IMAGE_RUNTIME_B = "/images/microej_carousel.png"; // image with transparency
 
 	public static final int SLEEP = 1000; // in ms
 

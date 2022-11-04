@@ -21,7 +21,7 @@ This example shows how to create and use images. The following use cases have be
         1. Select **Execute on Simulator**
 6. In **Configuration** tab
     1. Go to **Libraries -> MicroUI**
-        1. Set **Images heap size (in bytes)** to `250000`
+        1. Set **Images heap size (in bytes)** to `500000`
 7. Press **Apply**
 8. Press **Run**
 
@@ -39,7 +39,7 @@ This example shows how to create and use images. The following use cases have be
         1. Select **Execute on Simulator**
 6. In **Configuration** tab
     1. Go to **Libraries -> MicroUI**
-        1. Set **Images heap size (in bytes)** to `250000`
+        1. Set **Images heap size (in bytes)** to `500000`
 7. Press **Apply**
 8. Press **Run**
 9. The application file (`.o` or `.out`) has been generated
@@ -71,5 +71,5 @@ N/A
 None.
  
 ---  
-_Copyright 2016-2020 MicroEJ Corp. All rights reserved._  
+_Copyright 2016-2022 MicroEJ Corp. All rights reserved._  
 _Use of this source code is governed by a BSD-style license that can be found with this software._ 
