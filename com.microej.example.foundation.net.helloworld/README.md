@@ -11,7 +11,7 @@ This example shows a simple helloworld using NET.
 ## Run on MicroEJ Simulator
 
 1. Right-click on 
-    * [exampleerver.java](src/main/java/com/microej/example/foundation/net/helloworld/exampleerver.java)
+    * [ExampleServer.java](src/main/java/com/microej/example/foundation/net/helloworld/ExampleServer.java)
     * OR [ExampleClient.java](src/main/java/com/microej/example/foundation/net/helloworld/ExampleClient.java)
 2. Select **Run as -> MicroEJ Application**
 3. Select your platform 
@@ -63,5 +63,5 @@ None.
  
 ---  
 _Markdown_   
-_Copyright 2016-2020 MicroEJ Corp. All rights reserved._  
+_Copyright 2016-2023 MicroEJ Corp. All rights reserved._  
 _Use of this source code is governed by a BSD-style license that can be found with this software._
