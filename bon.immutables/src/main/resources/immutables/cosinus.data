@@ -1,5 +1,8 @@
 <immutables>
-
+<!--
+    Copyright 2016-2023 MicroEJ Corp. All rights reserved.
+    Use of this source code is governed by a BSD-style license that can be found with this software.
+-->
 	<array id="tabcos" type="double[]">
 		<elem value="1.000000"/>
 		<elem value="0.999848"/>

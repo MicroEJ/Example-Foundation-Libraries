@@ -1,22 +1,25 @@
 
-.. image:: https://shields.microej.com/endpoint?url=https://repository.microej.com/packages/badges/sdk_5.8.json
-   :alt: sdk_5.8 badge
+.. image:: https://shields.microej.com/endpoint?url=https://repository.microej.com/packages/badges/sdk_6.0.json
+   :alt: sdk_6.0 badge
    :align: left
-.. image:: https://shields.microej.com/endpoint?url=https://repository.microej.com/packages/badges/arch_7.17.json
-   :alt: arch_7.17 badge
+.. image:: https://shields.microej.com/endpoint?url=https://repository.microej.com/packages/badges/arch_8.0.json
+   :alt: arch_8.0 badge
    :align: left
+
+.. class:: center
+
+⚠️ Those samples are compatible with MICROEJ SDK 6. MICROEJ SDK 5 compatible samples are available `here <https://github.com/MicroEJ/Example-Foundation-Libraries/tree/SDK-5.x>`_. ⚠️
 
 Overview
 ========
 
-This project gathers basic examples on how to use some of the foundation libraries. Those examples are developed as standalone applications and as such can be run by following the associated instructions (see **README.md** file of each example).
+This project gathers basic examples on how to use Foundation Libraries.
 
-Note that to run them on board:
+By default, the samples will use the `STM32F7508-DK VEE Port <https://github.com/MicroEJ/VEEPort-STMicroelectronics-STM32F7508-DK>`_.
 
-If you are using MicroEJ SDK:
+See https://github.com/search?q=org%3AMicroEJ+VEEPort&type=repositories for the list of supported boards using MICROEJ SDK.
 
-- You need a supported board (see https://github.com/search?q=org%3AMicroEJ+VEEPort&type=repositories for a list of supported boards using MicroEJ SDK evaluation version)
-- And the associated VEE Port sources (retrieve it from the previous link and import it into MicroEJ SDK)
+Each sample provides a ``README.md`` that contains instructions on how to run it.
 
 Details
 =======
@@ -45,17 +48,6 @@ BON focuses on devices with non-volatile and volatile memories. This library all
 
 Communication with other hardware
 ---------------------------------
-
-ECOM
-~~~~
-
-ECOM libraries provide a standard communication over UART.
-
-**Available Examples**:
-
-- `ecom.hotplug <ecom.hotplug>`_: Shows how to listen on plug/unplug of dynamic ComConnections and shows their properties.
-- `ecom.writer <ecom.writer>`_: Shows how to write some bytes to a CommConnection.
-- `ecom.reader <ecom.reader>`_: Shows how to read some bytes from a CommConnection.
 
 HAL
 ~~~
@@ -124,5 +116,5 @@ FS is a library to access multiple storage devices (in and out data streams) thr
 --------------
 
 .. ReStructuredText
-.. Copyright 2020-2023 MicroEJ Corp. All rights reserved.
+.. Copyright 2020-2024 MicroEJ Corp. All rights reserved.
 .. Use of this source code is governed by a BSD-style license that can be found with this software.

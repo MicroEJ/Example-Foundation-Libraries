@@ -1,4 +1,14 @@
-Copyright (c) 2020-2022 MicroEJ Corp.
+﻿MicroEJ Corp. does not claim any right in the Specification of this file. For the purpose
+of this paragraph, Specification means the methods' names and the structure, sequence and 
+organization of the API.
+You are free to use this Specification to make any clean room implementations or
+derivative work as long as you don't claim that Your work is compliant with this Specification. 
+Compliance tests may be available from MicroEJ Corp.
+If the data contained in the file is only composed of a Specification, then the following 
+license doesn't apply.
+
+-----------------------------------------------------------------------------
+
 All rights reserved.
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -12,7 +22,7 @@ modification, are permitted provided that the following conditions are met:
   used to endorse or promote products derived from this software without 
   specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND ANY
+THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ''AS IS'' AND ANY
 EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
 DISCLAIMED. IN NO EVENT SHALL THE REGENTS AND CONTRIBUTORS BE LIABLE FOR ANY

@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2020 MicroEJ Corp. All rights reserved.
+ * Copyright 2009-2024 MicroEJ Corp. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.microui.font;
@@ -24,9 +24,9 @@ public class FontsDisplayable extends Displayable {
 	/**
 	 * Font path
 	 */
-	public static final String CUSTOM_FONT_PATH = "/fonts/custom";
-	public static final String MONOSPACE_FONT_PATH = "/fonts/monospace";
-	public static final String PROPORTIONAL_FONT_PATH = "/fonts/proportional";
+	public static final String CUSTOM_FONT_PATH = "/fonts/custom.ejf";
+	public static final String MONOSPACE_FONT_PATH = "/fonts/monospace.ejf";
+	public static final String PROPORTIONAL_FONT_PATH = "/fonts/proportional.ejf";
 	/**
 	 * Message color
 	 */
