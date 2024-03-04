@@ -101,6 +101,16 @@ NET is a lightweight Java library dedicated to networking applications. It suppo
 - `net.echo <net.echo>`_: Shows a simple echo server.
 - `net.helloworld <net.helloworld>`_: Shows a simple helloworld using NET.
 
+Bluetooth
+~~~~~~~~~
+
+The Bluetooth Foundation Library provides APIs to use Bluetooth in an Application.
+
+**Available Examples**:
+
+- `bluetooth.central <bluetooth.central>`_: Shows how to scan, connect and discover services.
+- `bluetooth.peripheral <bluetooth.peripheral>`_: Shows how to advertise and provide services.
+
 Data storage
 ------------
 

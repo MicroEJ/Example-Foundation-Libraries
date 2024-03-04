@@ -6,10 +6,10 @@
  */
 
 group = "com.microej.example.foundation.microui"
-version = "2.0.2"
+version = "4.1.0"
 
 plugins {
-    id("com.microej.gradle.application") version "0.14.0"
+    id("com.microej.gradle.application") version "0.15.0"
 }
 
 dependencies {
@@ -33,13 +33,13 @@ dependencies {
     /*
     * To use a VEE Port published in an artifact repository use this VEE Port dependency.
     */
-    microejVeePort("com.microej.veeport.st.stm32f7508-dk:M5QNX_eval:2.2.0")
+    microejVee("com.microej.veeport.st.stm32f7508-dk:M5QNX_eval:2.2.0")
 
     /*
-    * To use a local VEE Port, uncomment the property below, set the path of the platform to use and comment the published microejVeePort dependency (see above).
+    * To use a local VEE Port, uncomment the property below, set the path of the platform to use and comment the published microejVee dependency (see above).
     * To use an Archived VEE Port, point the path directly to the Archive instead of a source folder: "C:\\path\\to\\my\\veePort\\file.zip".
     */
-    // microejVeePort(files("C:\\path\\to\\my\\veePort\\source"))
+    // microejVee(files("C:\\path\\to\\my\\veePort\\source"))
 }
 
 microej {
