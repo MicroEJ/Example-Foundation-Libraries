@@ -5,6 +5,8 @@
  * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 rootProject.name = "foundation"
+include("audio.record")
+include("audio.track")
 include("bluetooth.central")
 include("bluetooth.peripheral")
 include("bon.immortals")

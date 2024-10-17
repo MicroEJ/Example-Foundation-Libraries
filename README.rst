@@ -58,6 +58,16 @@ HAL libraries present an abstraction of the communication with the hardware.
 
 - `hal.gpio <hal.gpio>`_: Shows how to use GPIOs.
 
+Audio
+~~~~~
+
+The Audio Foundation Library provides APIs to record and play audio.
+
+**Available Examples**:
+
+- `audio.record <audio.record>`_: Shows how to record audio.
+- `audio.track <audio.track>`_: Shows how to play audio.
+
 Design a user interface
 -----------------------
 
