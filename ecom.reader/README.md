@@ -12,14 +12,17 @@ This example shows how to read some bytes from a CommConnection.
 
 This example has been tested on:
 
-* Android Studio with MicroEJ plugin for Android Studio 0.1.2.
+* IntelliJ IDEA with MicroEJ plugin for IntelliJ IDEA ``1.1.0``.
 * [STM32F7508-DK VEE Port 2.2.0.](https://github.com/MicroEJ/VEEPort-STMicroelectronics-STM32F7508-DK/tree/2.2.0)
 
 # Usage
 
-By default, the sample will use the STM32F7508-DK VEE Port.
+Follow [MICROEJ SDK 6 Installation Guide](https://docs.microej.com/en/latest/SDK6UserGuide/install.html) to setup the SDK.
 
-Refer to the [Select a VEE Port](https://docs.microej.com/en/latest/SDK6UserGuide/selectVeePort.html) documentation for more information.
+By default, the sample will use the
+[STM32F7508-DK VEE Port 2.2.0](https://github.com/MicroEJ/VEEPort-STMicroelectronics-STM32F7508-DK/tree/2.2.0).
+Refer to the [Select a VEE Port](https://docs.microej.com/en/latest/SDK6UserGuide/selectVeePort.html)
+documentation to use another VEE Port in your project.
 
 ## Configuration
 
@@ -32,27 +35,30 @@ Refer to the [Select a VEE Port](https://docs.microej.com/en/latest/SDK6UserGuid
 
 Configuration options can be found in: `configuration/common.properties`.
 
-## Run on simulator
+## Run on Simulator
 
-In Android Studio:
-- Open the Gradle tool window by clicking on the elephant icon on the right side,
-- Expand the `Tasks` list,
-- From the `Tasks` list, expand the `microej` list,
-- Double-click on `runOnSimulator`,
-- The application starts, the traces are visible in the Run view.
+Run the following command in your IDE
+(or click the ``Play`` button next to the line
+below when opening this README in IntelliJ IDEA):
+
+`./gradlew :ecom.reader:runOnSimulator`
 
 Alternative ways to run in simulation are described in the [Run on Simulator](https://docs.microej.com/en/latest/SDK6UserGuide/runOnSimulator.html) documentation.
 
-## Run on device
+## Run on Device
 
-Make sure to properly setup the VEE Port environment before going further.
-Refer to the VEE Port README for more information.
+Complete the [Getting Started for STM32F7508-DK Evaluation Kit](https://docs.microej.com/en/latest/SDK6UserGuide/gettingStartedSTM32F7508.html)
+to make sure your environment is fully setup.
 
-In Android Studio:
-- Open the Gradle tool window by clicking on the elephant on the right side,
-- Expand the `Tasks` list,
-- From the `Tasks` list, expand the `microej` list,
-- Double-Click on `runOnDevice`.
+If you are using another VEE Port, make sure to properly setup the VEE Port environment
+before going further. Refer to the dedicated VEE Port README or Getting Started for more information.
+
+Run the following command in your IDE
+(or click the ``Play`` button next to the line
+below when opening this README in IntelliJ IDEA):
+
+`./gradlew :ecom.reader:runOnDevice`
+
 - The device is flashed. Use the appropriate tool to retrieve the execution traces.
 - Use an serial connection to your board's UART with this configuration:
   * baudrate: 9600
@@ -62,12 +68,30 @@ In Android Studio:
 
 Alternative ways to run on device are described in the [Run on Device](https://docs.microej.com/en/latest/SDK6UserGuide/runOnDevice.html) 
 
+## Expected Behavior
+
+The content of the [filein.txt](sim/filein.txt) file should be displayed in the console:
+
+```
+[LOG] Comm connection opened.
+[LOG] Input stream opened
+This is an example to send some characters.
+Don't forget the '\n' at the end of the string to send the string.
+[LOG] Time limit has been reached, so we close the comm connection.
+[LOG] Input stream closed.
+[ERR] Cannot receive any more bytes.
+[LOG] Comm connection closed.
+```
+
 ## Troubleshooting
 
 1. When executing I get the error **ECOM-COMM: Invalid connection descriptor.**
   * The port com has not been correctly set, redo the steps **Go to Configuration tab**
 
 # Dependencies
+
+The dependencies defined in [build.gradle.kts](build.gradle.kts)
+are configured in [libs.versions.toml](../gradle/libs.versions.toml).
 
 _All dependencies are retrieved transitively by Ivy resolver_.
 
@@ -81,5 +105,5 @@ None.
  
 ---  
 _Markdown_   
-_Copyright 2016-2024 MicroEJ Corp. All rights reserved._  
+_Copyright 2016-2025 MicroEJ Corp. All rights reserved._  
 _Use of this source code is governed by a BSD-style license that can be found with this software._

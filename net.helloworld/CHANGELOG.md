@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.2.0] - 2025-03-14
+
+### Added
+
+- Add ``Expected Behavior`` section in the README.
+
+### Changed
+
+- Use [NXP i.MX RT1170 VEE Port v3.0.0](https://github.com/MicroEJ/nxp-vee-imxrt1170-evk/tree/NXPVEE-MIMXRT1170-EVK-3.0.0) by default.
+- Define ``build.gradle.kts`` dependencies in [libs.versions.toml](../gradle/libs.versions.toml).
+- Update README to use IntelliJ IDEA.
+- Update ``com.microej.gradle.application`` plugin version to `1.1.0`.
+
 ## 3.1.0 - 2024-03-04
 
 ### Changed
@@ -69,5 +82,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  
 ---  
 _Markdown_   
-_Copyright 2016-2024 MicroEJ Corp. All rights reserved._  
+_Copyright 2016-2025 MicroEJ Corp. All rights reserved._  
 _Use of this source code is governed by a BSD-style license that can be found with this software._

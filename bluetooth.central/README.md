@@ -25,15 +25,19 @@ Here's the flow of the example:
     * BLUETOOTH-2.2 or higher.
 
 This example has been tested on:
-
-* Android Studio with MicroEJ plugin for Android Studio 0.1.2.
+* IntelliJ IDEA with MicroEJ plugin for IntelliJ IDEA ``1.1.0``.
 * [Espressif ESP32-S3 VEE Port 2.3.1.](https://github.com/MicroEJ/VEEPort-Espressif-ESP32-S3-DevKitC-1/tree/2.3.1)
 
 # Usage
 
-By default, the sample does not load VEE Port and thus it cannot be built for a device nor ran on the simulator.
+No default VEE Port has been configured to run this sample.
 
-Refer to the [Select a VEE Port](https://docs.microej.com/en/latest/SDK6UserGuide/selectVeePort.html) documentation for more information.
+It is recommended to start using this sample with the
+[Espressif ESP32-S3 VEE Port 2.3.1](https://github.com/MicroEJ/VEEPort-Espressif-ESP32-S3-DevKitC-1/tree/2.3.1).
+
+Refer to the VEE Port README to setup your environment.
+
+Refer to the [Select a VEE Port](https://docs.microej.com/en/latest/SDK6UserGuide/selectVeePort.html) documentation for more information about using a VEE Port in your project.
 
 ## Mobile App
 
@@ -56,32 +60,30 @@ Here are the instructions to complete the mobile-side steps of the flow with thi
   - For step 7:
     - This is done automatically by the mobile app.
 
-## Run on simulator
+## Run on Simulator
 
-In Android Studio:
-- Open the Gradle tool window by clicking on the elephant icon on the right side,
-- Expand the `Tasks` list,
-- From the `Tasks` list, expand the `microej` list,
-- Double-click on `runOnSimulator`,
-- The application starts, the traces are visible in the Run view.
+Run the following command in your IDE
+(or click the ``Play`` button next to the line
+below when opening this README in IntelliJ IDEA):
+
+`./gradlew :bluetooth.central:runOnSimulator`
 
 Alternative ways to run in simulation are described in the [Run on Simulator](https://docs.microej.com/en/latest/SDK6UserGuide/runOnSimulator.html) documentation.
 
-## Run on device
+## Run on Device
 
-Make sure to properly setup the VEE Port environment before going further.
-Refer to the VEE Port README for more information.
+Run the following command in your IDE
+(or click the ``Play`` button next to the line
+below when opening this README in IntelliJ IDEA):
 
-In Android Studio:
-- Open the Gradle tool window by clicking on the elephant on the right side,
-- Expand the `Tasks` list,
-- From the `Tasks` list, expand the `microej` list,
-- Double-Click on `runOnDevice`.
-- The device is flashed. Use the appropriate tool to retrieve the execution traces.
+`./gradlew :bluetooth.central:runOnDevice`
 
-Alternative ways to run on device are described in the [Run on Device](https://docs.microej.com/en/latest/SDK6UserGuide/runOnDevice.html) documentation.
+Alternative ways to run in simulation are described in the [Run on Simulator](https://docs.microej.com/en/latest/SDK6UserGuide/runOnSimulator.html) documentation.
 
 # Dependencies
+
+The dependencies defined in [build.gradle.kts](build.gradle.kts)
+are configured in [libs.versions.toml](../gradle/libs.versions.toml).
 
 _All dependencies are retrieved transitively by Gradle_.
 
@@ -94,5 +96,5 @@ N/A
 None.
 
 ---
-_Copyright 2018-2024 MicroEJ Corp. All rights reserved._  
+_Copyright 2018-2025 MicroEJ Corp. All rights reserved._  
 _Use of this source code is governed by a BSD-style license that can be found with this software._  

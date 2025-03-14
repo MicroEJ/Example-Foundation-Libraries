@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2020 MicroEJ Corp. All rights reserved.
+ * Copyright 2014-2025 MicroEJ Corp. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 package com.microej.example.foundation.net.helloworld;
@@ -19,7 +19,7 @@ public interface HelloWorldConstants {
 	/**
 	 * Remote host port
 	 */
-	public static final int PORT = 12345;
+	public static final int PORT = 1234;
 
 	/**
 	 * Message sent by the client

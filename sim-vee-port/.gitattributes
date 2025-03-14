@@ -1,0 +1,2 @@
+# Files with .tpl extension are wrongly detected as Smarty.
+*.tpl -linguist-detectable

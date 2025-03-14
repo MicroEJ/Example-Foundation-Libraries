@@ -1,15 +1,19 @@
 /*
  * Kotlin
  *
- * Copyright 2024 MicroEJ Corp. All rights reserved.
+ * Copyright 2024-2025 MicroEJ Corp. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 
 group = "com.microej.example.foundation.bluetooth"
-version = "3.0.0"
+version = "3.1.0"
 
 plugins {
-    id("com.microej.gradle.application") version "0.15.0"
+    id("com.microej.gradle.application") version libs.versions.microej.sdk
+}
+
+microej {
+    applicationEntryPoint = "com.microej.example.bluetooth.central.Main"
 }
 
 dependencies {
@@ -19,9 +23,9 @@ dependencies {
     * implementation("[org]:[otherArtifact]:[M.m.p]")
     * e.g.: implementation("ej.library.runtime:basictool:1.7.0")
     */
-    implementation("ej.api:edc:1.3.5")
-    implementation("ej.api:bluetooth:2.2.1")
-    implementation("ej.library.iot:bluetooth-util:2.0.0")
+    implementation(libs.api.edc)
+    implementation(libs.api.bluetooth)
+    implementation(libs.library.bluetooth.util)
 
     /*
     * Put your test dependencies here. An example of test dependency declaration is provided below:
@@ -40,9 +44,4 @@ dependencies {
     * To use an Archived VEE Port, point the path directly to the Archive instead of a source folder: "C:\\path\\to\\my\\veePort\\file.zip".
     */
     // microejVee(files("C:\\path\\to\\my\\veePort\\source"))
-}
-
-microej {
-    applicationMainClass = "com.microej.example.bluetooth.central.Main"
-    produceVirtualDeviceDuringBuild(false)
 }

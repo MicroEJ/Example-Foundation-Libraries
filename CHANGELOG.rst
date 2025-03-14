@@ -8,6 +8,23 @@ The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`
 and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
 -------------------
+54.0.0 - 2025-03-14
+-------------------
+
+Added
+=====
+
+- Add ``sim-vee-port`` project to run audio projects on Simulator.
+
+Changed
+=======
+
+- Use `NXP i.MX RT1170 VEE Port v3.0.0 <https://github.com/MicroEJ/nxp-vee-imxrt1170-evk/tree/NXPVEE-MIMXRT1170-EVK-3.0.0>`__ by default.
+- Update README files.
+- Define ``build.gradle.kts`` dependencies in ``gradle/libs.versions.toml`` file.
+- Exclude ``net.helloworld`` and ``net.echo`` from SonarQube analysis.
+
+-------------------
 53.0.0 - 2024-10-16
 -------------------
 
@@ -198,5 +215,5 @@ MicroEj 3.1:
 --------------
 
 .. ReStructuredText
-.. Copyright 2020-2024 MicroEJ Corp. All rights reserved.
+.. Copyright 2020-2025 MicroEJ Corp. All rights reserved.
 .. Use of this source code is governed by a BSD-style license that can be found with this software.

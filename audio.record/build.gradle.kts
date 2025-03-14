@@ -1,15 +1,19 @@
 /*
  * Kotlin
  *
- * Copyright 2024 MicroEJ Corp. All rights reserved.
+ * Copyright 2024-2025 MicroEJ Corp. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 
 group = "com.microej.example.foundation.audio"
-version = "1.0.0"
+version = "1.1.0"
 
 plugins {
-    id("com.microej.gradle.application") version "0.18.0"
+    id("com.microej.gradle.application") version libs.versions.microej.sdk
+}
+
+microej {
+    applicationEntryPoint = "com.microej.example.audio.ExampleRecord"
 }
 
 dependencies {
@@ -19,11 +23,11 @@ dependencies {
     * implementation("[org]:[otherArtifact]:[M.m.p]")
     * e.g.: implementation("ej.library.runtime:basictool:1.7.0")
     */
-    implementation("ej.api:edc:1.3.5")
-    implementation("ej.api:bon:1.4.3")
-    implementation("ej.api:fs:2.1.1")
-    implementation("ej.api:audio:1.0.0")
-    implementation("ej.library.eclasspath:logging:1.2.1")
+    implementation(libs.api.edc)
+    implementation(libs.api.bon)
+    implementation(libs.api.fs)
+    implementation(libs.api.audio)
+    implementation(libs.library.logging)
 
     /*
     * Put your test dependencies here. An example of test dependency declaration is provided below:
@@ -31,6 +35,8 @@ dependencies {
     * testImplementation("[org]:[otherArtifact]:[M.m.p]")
     * e.g.: testImplementation("ej.library.test:junit:1.7.1")
     */
+
+    microejVee(project(":sim-vee-port"))
 
     /*
     * To use a VEE Port published in an artifact repository use this VEE Port dependency.
@@ -42,9 +48,4 @@ dependencies {
     * To use an Archived VEE Port, point the path directly to the Archive instead of a source folder: "C:\\path\\to\\my\\veePort\\file.zip".
     */
     // microejVee(files("C:\\path\\to\\my\\veePort\\source"))
-}
-
-microej {
-    applicationEntryPoint = "com.microej.example.audio.ExampleRecord"
-    produceVirtualDeviceDuringBuild(false)
 }

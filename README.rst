@@ -2,8 +2,8 @@
 .. image:: https://shields.microej.com/endpoint?url=https://repository.microej.com/packages/badges/sdk_6.0.json
    :alt: sdk_6.0 badge
    :align: left
-.. image:: https://shields.microej.com/endpoint?url=https://repository.microej.com/packages/badges/arch_8.0.json
-   :alt: arch_8.0 badge
+.. image:: https://shields.microej.com/endpoint?url=https://repository.microej.com/packages/badges/arch_8.3.json
+   :alt: arch_8.3 badge
    :align: left
 
 .. class:: center
@@ -15,7 +15,15 @@ Overview
 
 This project gathers basic examples on how to use Foundation Libraries.
 
-By default, the samples will use the `STM32F7508-DK VEE Port <https://github.com/MicroEJ/VEEPort-STMicroelectronics-STM32F7508-DK>`_.
+The samples are using various VEE Ports, depending on the Foundation Libraries demonstrated.
+The VEE Ports used are the following:
+
+- `NXP i.MX RT1170 VEE Port <https://github.com/MicroEJ/nxp-vee-imxrt1170-evk>`_
+- `STM32F7508-DK VEE Port <https://github.com/MicroEJ/VEEPort-STMicroelectronics-STM32F7508-DK>`_
+- `Espressif ESP32-S3 VEE Port <https://github.com/MicroEJ/VEEPort-Espressif-ESP32-S3-DevKitC-1>`_
+- Simulator only
+
+Those VEE Ports are retrieved as modules.
 
 See https://github.com/search?q=org%3AMicroEJ+VEEPort&type=repositories for the list of supported boards using MICROEJ SDK.
 
@@ -136,5 +144,5 @@ FS is a library to access multiple storage devices (in and out data streams) thr
 --------------
 
 .. ReStructuredText
-.. Copyright 2020-2024 MicroEJ Corp. All rights reserved.
+.. Copyright 2020-2025 MicroEJ Corp. All rights reserved.
 .. Use of this source code is governed by a BSD-style license that can be found with this software.

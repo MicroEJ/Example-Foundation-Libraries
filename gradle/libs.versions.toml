@@ -1,0 +1,60 @@
+# Copyright 2025 MicroEJ Corp. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be found with this software.
+
+[versions]
+microej-sdk = "1.1.0"
+pack-ui = "14.2.0"
+
+[libraries]
+# APIs
+api-edc =                       { group = "ej.api", name = "edc", version = "1.3.7" }
+api-bon =                       { group = "ej.api", name = "bon", version = "1.4.4" }
+api-net =                       { group = "ej.api", name = "net", version = "1.1.4" }
+api-audio =                     { group = "ej.api", name = "audio", version = "1.0.0" }
+api-bluetooth =                 { group = "ej.api", name = "bluetooth", version = "2.2.1" }
+api-drawing =                   { group = "ej.api", name = "drawing", version = "1.0.5" }
+api-ecom-comm =                 { group = "ej.api", name = "ecom-comm", version = "1.1.4" }
+api-ecom =                      { group = "ej.api", name = "ecom", version = "1.1.4" }
+api-fs =                        { group = "ej.api", name = "fs", version = "2.1.1" }
+api-hal =                       { group = "ej.api", name = "hal", version = "1.0.4" }
+api-microui =                   { group = "ej.api", name = "microui", version = "3.6.0" }
+
+# Add-on libraries
+library-bluetooth-util =        { group = "ej.library.iot", name = "bluetooth-util", version = "2.0.0" }
+library-logging =               { group = "ej.library.eclasspath", name = "logging", version = "1.2.1" }
+
+# Default VEE Ports
+vee-port-nxp-mimxrt1170 =       { group = "com.nxp.vee.mimxrt1170", name = "vee-port", version = "3.0.0" }
+vee-port-st-stm32f7508 =        { group = "com.microej.veeport.st.stm32f7508-dk", name = "M5QNX_eval", version = "2.2.0" }
+
+
+# SIM VEE Port dependencies
+
+
+# Architecture
+architecture = { group = "com.microej.architecture.CM4.CM4hardfp_GCC48", name = "flopi4G25", version = "8.2.0" }
+
+# Packs
+pack-ui-architecture =  { group = "com.microej.architecture.CM4.CM4hardfp_GCC48", name = "flopi4G25-ui-pack", version.ref = "pack-ui" }
+pack-audio =            { group = "com.microej.pack.audio", name = "audio-pack", version = "1.0.0" }
+pack-bluetooth =        { group = "com.microej.pack.bluetooth", name = "bluetooth-pack", version = "2.6.0" }
+pack-device =           { group = "com.microej.pack.device", name = "device-pack", version = "1.2.0" }
+pack-ecom-network =     { group = "com.microej.pack.ecom-network", name = "ecom-network-pack", version = "1.0.0" }
+pack-ecom-wifi =        { group = "com.microej.pack.ecom-wifi", name = "ecom-wifi-pack", version = "1.1.0" }
+pack-fs =               { group = "com.microej.pack", name = "fs", version = "6.0.4" }
+pack-net =              { group = "com.microej.pack.net", name = "net-pack", version = "11.1.0" }
+pack-ui =               { group = "com.microej.pack.ui", name = "ui-pack", version.ref = "pack-ui" }
+pack-vg =               { group = "com.microej.pack.vg", name = "vg-pack", version = "1.7.0" }
+pack-watchdog-timer =   { group = "com.microej.pack.watchdog-timer", name = "watchdog-timer-pack", version = "2.0.1" }
+
+# Libraries
+frontpanel-framework =  { group = "ej.tool.frontpanel", name = "framework", version = "1.1.0" }
+frontpanel-ui-widget =  { group = "ej.tool.frontpanel", name = "widget", version = "4.0.2" }
+eclasspath-logging =    { group = "ej.library.eclasspath", name = "logging", version = "1.2.1" }
+
+# Test Libraries
+junit =             { group = "ej.library.test", name = "junit", version = "1.7.1" }
+junit-platform =    { group = "org.junit.platform", name = "junit-platform-launcher", version = "1.8.2" }
+
+# Simulation
+mock-api = { group = "com.microej.tool.runtime", name = "mock-api", version = "2.5.0" }
