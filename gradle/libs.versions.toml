@@ -2,7 +2,7 @@
 # Use of this source code is governed by a BSD-style license that can be found with this software.
 
 [versions]
-microej-sdk = "1.1.0"
+microej-sdk = "1.2.0"
 pack-ui = "14.2.0"
 
 [libraries]
@@ -18,9 +18,11 @@ api-ecom =                      { group = "ej.api", name = "ecom", version = "1.
 api-fs =                        { group = "ej.api", name = "fs", version = "2.1.1" }
 api-hal =                       { group = "ej.api", name = "hal", version = "1.0.4" }
 api-microui =                   { group = "ej.api", name = "microui", version = "3.6.0" }
+api-microai =                   { group = "ej.api", name = "microai", version = "2.0.0" }
 
 # Add-on libraries
 library-bluetooth-util =        { group = "ej.library.iot", name = "bluetooth-util", version = "2.0.0" }
+library-collections =           { group = "ej.library.eclasspath", name = "collections", version = "1.4.2" }
 library-logging =               { group = "ej.library.eclasspath", name = "logging", version = "1.2.1" }
 
 # Default VEE Ports

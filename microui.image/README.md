@@ -31,6 +31,13 @@ The sample retrieves the VEE Port as a [module](https://docs.microej.com/en/late
 Refer to the [Select a VEE Port](https://docs.microej.com/en/latest/SDK6UserGuide/selectVeePort.html) 
 documentation to use another VEE Port in your project.
 
+## Configuration
+
+Configuration options can be found in: [configuration/common.properties](configuration/common.properties).
+
+The [images heap](https://docs.microej.com/en/latest/ApplicationDeveloperGuide/UI/MicroUI/images.html#images-heap) 
+size has been set to 500kB for the PNG images runtime decoding.
+
 ## Run on Simulator
 
 Run the following command in your IDE

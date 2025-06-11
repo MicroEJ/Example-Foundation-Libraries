@@ -141,6 +141,19 @@ FS is a library to access multiple storage devices (in and out data streams) thr
 
 - `fs.helloworld <fs.helloworld>`_: Creates a list of folders, adds some files and deletes them all.
 
+Machine Learning
+----------------
+
+MicroAI
+~~~~~~~
+
+MicroAI Library provides an API to load pre-trained ML models, get their characteristics and run inferences.
+
+**Available Examples**:
+
+- `microai.sinemodel <microai.sinemodel>`_: Runs an inference on a basic sine model.
+- `microai.mnist_lstm <microai.mnist_lstm>`_: Runs an image classification model on a given dataset.
+
 --------------
 
 .. ReStructuredText
