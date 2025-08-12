@@ -26,12 +26,13 @@ public class SineModel {
     private static MLInferenceEngine model;
     private static InputTensor inputTensor;
     private static OutputTensor outputTensor;
+    private static final int MEMORY_POOL = 1200;
 
     public static void main(String[] args) {
         LOGGER.info("MicroAI Sample on Sine model");
 
         // Create the inference engine from the model stored in application resources.
-        model = new MLInferenceEngine(SINE_MODEL);
+        model = new MLInferenceEngine(SINE_MODEL, MEMORY_POOL);
 
         // Get input/output tensors from the inference engine.
         inputTensor = model.getInputTensor(0);

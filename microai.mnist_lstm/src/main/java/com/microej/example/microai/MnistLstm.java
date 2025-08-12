@@ -18,12 +18,13 @@ import java.util.logging.Logger;
 public class MnistLstm {
     private static final Logger LOGGER = Logger.getLogger("[MicroAI MNIST LSTM Sample]");
     private static final String MNIST_LSTM_MODEL_PATH = "/model/trained_lstm_int8.tflite";
+    private static final int MEMORY_POOL = 4800;
 
     public static void main(String[] args) {
         LOGGER.info("MicroAI Sample on MNIST LSTM model");
 
         // Create the inference engine from the model stored in application resources.
-        MLInferenceEngine model = new MLInferenceEngine(MNIST_LSTM_MODEL_PATH);
+        MLInferenceEngine model = new MLInferenceEngine(MNIST_LSTM_MODEL_PATH, MEMORY_POOL);
 
         // Get input/output tensors from the inference engine.
         InputTensor inputTensor = model.getInputTensor(0);

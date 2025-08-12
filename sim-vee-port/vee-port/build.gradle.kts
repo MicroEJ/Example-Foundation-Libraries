@@ -31,6 +31,6 @@ dependencies {
     // microejPack(libs.pack.watchdog.timer)
 
     // SDK6 Foundation library
-    api(libs.api.microai)
+    microejPack(libs.api.microai)
     microejFrontPanel(project(":sim-vee-port:front-panel"))
 }

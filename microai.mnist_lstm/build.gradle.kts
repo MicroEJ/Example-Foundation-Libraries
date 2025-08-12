@@ -6,7 +6,7 @@
  */
 
 group = "com.microej.example.foundation.microai"
-version = "1.0.0"
+version = "1.1.0"
 
 plugins {
     id("com.microej.gradle.application") version libs.versions.microej.sdk
@@ -26,7 +26,6 @@ dependencies {
     implementation(libs.api.edc)
     implementation(libs.api.bon)
     implementation(libs.api.microai)
-    implementation(libs.api.microui)
     implementation(libs.library.collections)
     implementation(libs.library.logging)
 

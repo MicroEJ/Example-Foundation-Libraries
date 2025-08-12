@@ -6,7 +6,7 @@
  */
 
 group = "com.microej.example.foundation.microai"
-version = "1.0.0"
+version = "1.1.0"
 
 plugins {
     id("com.microej.gradle.application") version libs.versions.microej.sdk
